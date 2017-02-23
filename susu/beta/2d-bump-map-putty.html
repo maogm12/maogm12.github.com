@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D-bump-map-putty</title>
+</head>
+<body>
+    <canvas id="c"></canvas>
+    <script>
+g = Math;
+q = 256;
+s = b = 128;
+R = 24;
+A = "setAttribute";
+B = "addColorStop";
+F = "getImageData";
+
+function l(d) {
+    return g.round(g.min(g.max(d, 0), q - 1))
+}
+
+function a(d, e) {
+    return (e * q + d) * 4
+}
+
+function u(d) {
+    for (y = q; y--;)
+        for (x = q; x--;) d(x, y)
+}
+
+function L(d, e, k, n, o) {
+    if (o) {
+        r = d.createRadialGradient(e, k, 0, e, k, R);
+        z = "rgba(0,0," + (b ? "255" : "0") + ",0";
+        r[B](0, z + ".2)");
+        r[B](1, z + ")");
+        d.fillStyle = r;
+        d.fillRect(e - R, k - R, R * 2, R * 2)
+    }
+    r = d[F](0, 0, q, q).data;
+    v = d[F](0, 0, q, q);
+    u(function (f, j) {
+        t = l(n[l(r[a(f, j + 1) + 2] - r[a(f, j - 1) + 2] - j + k + s) * q + l(r[a(f + 1, j) + 2] - r[a(f - 1, j) + 2] - f + e + s)]);
+        for (i = 3; i--;) v.data[a(f, j) + i] = t;
+        v.data[a(f, j) + 3] = q - 1
+    });
+    d.putImageData(v, q, 0)
+}
+M = [];
+u(function (d, e) {
+    V = (d - s) / s;
+    W = (e - s) / s;
+    M[e * q + d] = g.max(0, 1 - g.sqrt(V * V + W * W)) * q
+});
+H = I = m = 0;
+h = document.body.children.c;
+h[A]("width", q * 2);
+h[A]("height", q);
+c = h.getContext("2d");
+c.fillRect(0, 0, 512, q);
+c.fillStyle = "#004";
+c.font = "80px Arial";
+c.fillText("JS1k", 40, s + R);
+onmousedown = function () {
+    m = 1
+};
+onmouseup = function () {
+    m = 0
+};
+onmousemove = function (d) {
+    H = d.clientX - 8;
+    I = d.clientY - 8
+};
+onkeyup = function (d) {
+    G = d.which - 48;
+    b = G == -16 ? !b : b;
+    R = G > -1 & G < 10 ? G * 4 : R
+};
+setInterval("L(c,H,I,M,m)", 5);    
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Identicon.js</title>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <script src="./identicon.js"></script>
+    <script>
+    window.onload = function(){
+        //default text
+        var dft_text = "maogm12@gmail.com";
+        var in_elem = document.getElementById("text");
+        in_elem.value = dft_text;
+
+        //create a Identicon object
+        var icon = new Identicon({
+            renderTo: "identicon",
+            text: dft_text,
+            width: 128,
+            height: 128
+        });
+
+        //repaint
+        var btn_repaint = document.getElementById("repaint");
+        btn_repaint.onclick = function() {
+            var text = in_elem.value;
+            icon.setText(text); //repaint defaultly
+        };
+    };
+    </script>
+</head>
+<body>
+    <div style="width:960px; margin:0 auto; text-align:center;">
+        <div style="width: 500px; margin:20px auto 20px; text-align:center;">
+            <input type="input" id="text"/>
+            <input type="button" id="repaint" value="repaint"/>
+        </div>
+        <div id="identicon"></div>
+    </div>
+</body>
+</html>

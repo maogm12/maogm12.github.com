@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Waiting...</title>
+	<style>
+#prompt {
+	position: absolute;
+	top: 50px;
+	left: 10%;
+	width: 80%;
+	text-align: center;
+	color: lightgray;
+	font-size: xx-large;
+	background-color: #333333;
+}
+	</style>
+</head>
+<body style="text-align: center">
+	<canvas id="c"></canvas>
+	<div id="prompt" style="position: absolute;"></div>
+	<script>
+var blocks = [],
+    M = Math,
+    i, n, img, word, word2, hundun, num = 1200,
+    c = {},
+		rate = 0,
+		index = 0,
+		block_size = 3,
+		pos_x, pos_y,
+		W = innerWidth - 20, H = innerHeight - 20,
+		step = 0,
+		inter = 40,
+		steps = 5000/inter;
+		
+rand = M.random, round = M.round, P = M.PI, floor = M.floor, startStr = 'rgb(';
+with(document.body.children.c) width = W, height = H, x = getContext('2d');
+x.font = '300px Times';
+
+var due = new Date(2014, 2, 14);
+var prompt = document.getElementById("prompt");
+prompt.innerText = "To " + due.toLocaleDateString();
+
+setInterval(function () {
+	if (step == 0) {
+		//get count-down number, in number and image form.
+		n = round((due.getTime() - (new Date()).getTime())/1000);
+		if (n < 100) {
+			steps = 2000/inter;
+		}
+	
+		if (n < 100) {
+			if (n % 2 != 0) {
+				n++;
+			}
+		} else {
+		if (n%5 >= 3) {
+				n = n + 5 - n%5;
+			} else {
+				n = n - n%5;
+			}
+		}
+		
+		x.fillStyle = startStr + '3,0,0)';
+		x.fillText(n, W/2 - x.measureText(n).width / 2, H/2);
+		img = x.getImageData(0, 0, W, H).data;
+		word = [];
+		hundun = [];
+		for (i = 0; i < img.length; i += 4) {
+			if (img[i] == 3 & rand() > .9) {
+				word.push([(i / 4) % W, floor((i / 4) / W)]);
+				hundun.push([rand() * W, rand() * H]);
+			}
+		}
+		
+		x.fillStyle = startStr + '6,0,0)';
+		if (n < 100) {
+			x.fillText(n-2, W/2 - x.measureText(n).width / 2, H/2);
+		} else {
+			x.fillText(n-5, W/2 - x.measureText(n).width / 2, H/2);
+		}
+			
+		
+		img = x.getImageData(0, 0, W, H).data;
+		word2 = [];
+		for (i = 0; i < img.length; i += 4) {
+			if (img[i] == 6 & rand() > .9) {
+				word2.push([(i / 4) % W, floor((i / 4) / W)]);
+			}
+		}
+		
+		blocks = [];
+		for (i = 0; i < num; i++) {
+			blocks.push([floor(rand() * word.length),
+									 floor(rand() * hundun.length),
+									 floor(rand() * word2.length)]);
+		}
+	}
+
+	//reset the canvas..
+	x.fillStyle = startStr + '0,0,0)';
+	x.fillRect(0, 0, W, H);
+
+	x.fillStyle = startStr + '255,255,255)';
+	for (i = 0; i < num; i++) {
+		index = blocks[i];
+		if (step < steps / 2) {
+			rate = (4*steps*step - 4*step*step)/(steps*steps);
+			pos_x = word[index[0]][0] + (hundun[index[1]][0] - word[index[0]][0]) * rate;
+			pos_y = word[index[0]][1] + (hundun[index[1]][1] - word[index[0]][1]) * rate;
+		} else {
+			rate = 1 - (4*steps*(step-steps/2) - 4*(step-steps/2)*(step-steps/2))/(steps*steps);
+			pos_x = word2[index[2]][0] + (hundun[index[1]][0] - word2[index[2]][0]) * rate;
+			pos_y = word2[index[2]][1] + (hundun[index[1]][1] - word2[index[2]][1]) * rate;
+		}
+		
+
+		x.fillRect(pos_x, pos_y, block_size, block_size);
+	}
+
+	if (step >= steps) {
+		step = 0;
+	} else {
+		step++;
+	}
+}, inter);
+	</script>
+</body>
+</html>

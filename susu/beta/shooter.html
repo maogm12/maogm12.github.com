@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shooter</title>
+</head>
+<body>
+	<canvas id="c"></canvas>
+	
+	<script>
+		/* Based on Sebastian Sprenger's Quine Shooter on http://js1k.com/2010-first/demo/799 */
+		(function () {
+				with(document.getElementById("c")) {
+						C = getContext("2d");
+						W = width = innerWidth - 16;
+						H = height = innerHeight - 21
+				}
+				
+				var q = "Nothing compares to your hands, nothing like the brown-black of your eyes. My body is filled with you for days and days. you are the mirror of the night. the violent flash of lightning. the dampness of the earth. The hollow of your armpits is my shelter. my fingers touch your blood. All my joy is to feel life spring from your flower-fountain that mine keeps to fill all the paths of my nerves which are yours.",
+						i = q.length,
+						w = (I = (M = Math).floor)(W / .6 / (F = M.sqrt(W * H * 1.6 / q.length)));
+				B = F * 2 + "pt sans-serif";
+				Q = [];
+				while (i-- > 0)
+						if (q.charCodeAt(i) > 32) Q.push({
+								"c": q[i],
+								"x": F * .6 * (i % w),
+								"y": F * I(i / w),
+								"w": 0,
+								"h": 0
+						});
+				T = null;
+				onmousedown = function (e) {
+						if (!T) T = new Date().getTime();
+						var i = Q.length,
+								j, k = e.pageX - F / 2,
+								l = e.pageY - F / 2,
+								m, n;
+						with(C) {
+								textAlign = "center";
+								fillStyle = "red";
+								font = B;
+								fillText("♥", k, l + F * 2);
+						}
+						while (i-- > 0) with(Q[i]) if ((d = H / 4 - M.abs(m = x - k) - M.abs(n = y - l)) > 0) {
+								w += m > 0 ? d : -d;
+								h += n > 0 ? d : -d
+						}
+				};
+				
+				setInterval(function () {
+						with(C) {
+								clearRect(0, 0, W, H);
+								textAlign = "right";
+								font = B;
+								var i = Q.length,
+										f = "#090";
+								if (Q.length > 0) {
+										f = "#CCC";
+										t = T ? (new Date().getTime() - T) / 100 : 0;
+										t = I(t / 10) + "." + I(t) % 10
+								}
+								fillStyle = f;
+								fillText(t, W / 2 + F, F*2);
+								textAlign = "left";
+								font = F + "px monospace";
+								fillStyle = "#000";
+								while (i-- > 0) with(Q[i]) {
+										x += w;
+										y += h;
+										if (x > -9 && y > -9 && x < W - 9 && y < H - 9) {
+												fillText(c, x, y + F * .8);
+												w *= .7;
+												h *= .7
+										} else Q.splice(i, 1)
+								}
+						}
+				}, 99)
+		})();
+	</script>
+</body>
+</html>

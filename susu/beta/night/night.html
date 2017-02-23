@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>night</title>
+<style>
+* { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+canvas { display:block; } /* To remove the scrollbars */
+
+/* to show the canvas bounds */
+canvas {
+  background: #eee;
+}
+
+canvas:-webkit-full-screen {
+  width: 100% !important;
+}
+canvas:-moz-full-screen {
+  width: 100% !important;
+}
+canvas:-ms-fullscreen {
+  width: 100% !important;
+}
+canvas:fullscreen {
+  width: 100% !important;
+}
+</style>
+</head>
+<body>
+	<canvas id="c"></canvas>
+
+	<img id="clouds" src="./clouds.png" style="display:none;" />
+	<script>
+(function() {
+	var canvas = document.getElementById('c'),
+			context = canvas.getContext('2d');
+	var stars= [];
+	var SIZE = 500;
+	var meteors = [];
+	var meteor_size = 20;
+	var inter;
+
+	// resize the canvas to fill browser window dynamically
+	window.addEventListener('resize', resizeCanvas, false);
+
+	function resizeCanvas() {
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		if (stars.length < SIZE) {
+			makeStar();
+		}
+
+		/**
+		 * Your drawings need to be inside this function otherwise they will be reset when 
+		 * you resize the browser window and the canvas goes will be cleared.
+		 */
+		drawStuff(); 
+	}
+	resizeCanvas();
+
+	// draw night sky
+	function drawSky() {
+		context.fillStyle="black";
+		context.fillRect(0, 0, canvas.width, canvas.height);
+	}
+	
+	function makeStar() {
+		stars = []
+		for (var i = 0; i < SIZE/4; ++i) {
+			var x = Math.random()*canvas.width;
+			var y = Math.random()*canvas.height;
+			var s = Math.random()*2;	//Big stars
+			stars.push([x, y, s]);
+		}
+		
+		for (var i = 0; i < SIZE - SIZE/4; ++i) {
+			var x = Math.random()*canvas.width;
+			var y = Math.random()*canvas.height;
+			var s = Math.random();	//Small stars
+			stars.push([x, y, s]);
+		}
+	}
+	// draw star
+	function drawStar() {
+		context.shadowBlur = 2;
+		context.shadowColor = "#555555";
+		context.fillStyle = "white";
+		for (var i = 0; i < stars.length; ++i) {
+			var x = stars[i][0];
+			var y = stars[i][1];
+			var s = stars[i][2];
+			context.beginPath();
+			context.arc(x, y, s, 0, 2*Math.PI, false);
+			context.fill();
+		}
+	}
+	
+	function drawMoon(x, y, r) {
+		context.beginPath();
+		context.arc(x, y, r, 0, 2*Math.PI, false);
+		context.fillStyle = "white";
+		context.fill();
+
+		shadow = context.createRadialGradient(x, y, r, x, y, 10*r);
+		shadow.addColorStop(0, "white");
+		shadow.addColorStop(0.01,"rgba(255,255,255,.3)");
+		shadow.addColorStop(1,"rgba(80,120,220,0)");
+		context.fillStyle = shadow;
+		context.fillRect(x - 10*r, y - 10*r, 20*r, 20*r);
+	}
+	
+	function drawCloud() {
+		var img=document.getElementById("clouds");
+		context.drawImage(img, 0, 200);
+	}
+	
+	function makeMeteor() {
+		var x = 0, y = 0, d;
+		while (x >= 0 && x <= canvas.width && y >= 0 && y <= canvas.height) {
+			x = Math.random()*(canvas.width + 500) - 250;
+			y = Math.random()*(canvas.width/2 + 250) - 250;
+		}
+		
+		if (x < canvas.width/2) {
+			d = Math.random()*Math.PI/2 + Math.PI;
+		} else {
+			d = Math.random()*Math.PI/2 + Math.PI*3/2;
+		}
+		var w = Math.random()*3 + 1;
+		var l = w*50;
+		meteors.push({"x":x, "y":y, "angle":d, "width":w, "length":l});
+	}
+	
+	function drawMeteor() {
+		var i = 0;
+		var temp = [];
+			while (meteors.length > 0) {
+				var m = meteors.shift();
+				context.beginPath();
+				context.lineWidth = m.width;
+				var line = context.createLinearGradient(m.x, m.y, m.x + m.length*Math.cos(m.angle), m.y + m.length*Math.sin(m.angle));
+				line.addColorStop(0, "white");
+				line.addColorStop(0.1, "rgba(255,255,255,0.8)");
+				line.addColorStop(1, "rgba(255,255,255,0)");
+				context.strokeStyle = line;
+				context.moveTo(m.x, m.y);
+				context.lineTo(m.x + m.length*Math.cos(m.angle), m.y + m.length*Math.sin(m.angle));  
+				context.closePath();
+				context.shadowBlur = 5;
+				context.shadowColor = "white";
+				context.stroke();
+				
+				context.beginPath();
+				context.arc(m.x, m.y, m.width/2, 0, 2*Math.PI, false);
+				context.fillStyle = "white";
+				context.fill();
+				
+				m.x = m.x + 20*Math.cos(m.angle - Math.PI);
+				m.y = m.y + 20*Math.sin(m.angle - Math.PI);
+				
+				if (m.x > -m.length && m.x < m.length + canvas.width) {
+					temp.push(m);
+				}
+			}
+
+			meteors = temp;
+			temp = [];
+
+			if (Math.random() < 0.05) {
+				makeMeteor();
+			}
+	}
+
+	function drawStuff() {
+		clearInterval(inter);
+		drawSky();
+		drawStar();
+		drawMoon(600, 300, 150);
+		var bg = context.getImageData(0, 0, canvas.width, canvas.height);
+		inter = setInterval(function() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.putImageData(bg, 0, 0);
+			drawMeteor();
+		}, 20);
+	}
+})();
+	</script>
+</body>
+</html>

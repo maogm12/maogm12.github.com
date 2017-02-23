@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Love U, susu~</title>
+	<style>
+		html {
+			width: 100%;
+			padding: 0px;
+		}
+
+		body {
+			width: 100%;
+			margin: 0 auto 0;
+			background: white;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		.ripple-wrap {
+			width: 100vm;
+			max-width: 800px;
+			margin: 0 auto 0;
+			position: relative;
+		}
+
+		.ripple-wrap canvas {
+			margin: 0 auto 0;
+			z-index: 1;
+		}
+		
+		.ripple-wrap img {
+			width: 100%;
+			margin: 0 auto 0;
+		}
+	</style>
+	<script src="./js/ripple.js"></script>
+</head>
+<body>
+	<div class="ripple-wrap"><img src="./image/iloveu.jpg" onload="waterRipple(this);" /></div>
+</body>
+</html>

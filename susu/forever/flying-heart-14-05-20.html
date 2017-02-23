@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <title>Love U, susu~</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <style>
+            html {
+                width: 100%;
+                padding: 0px;
+            }
+        body {
+            width: 100%;
+            margin: 0 auto 0;
+            background: #ddd;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        #page {
+            width: 100vw;
+            height: 500vw;
+            margin: 0;
+            padding: 0;
+            background:#07b3d9;
+            background:-webkit-gradient(linear, 0 0, 0 bottom, from(white), to(#4ec0ca));
+            background:-moz-linear-gradient(top, white, #4ec0ca);
+            background:-o-linear-gradient(top, white, #4ec0ca);
+            position: relative;
+        }
+
+        #sun {
+            width: 30vw;
+            position: absolute;
+            top: 20;
+            right: 5vw;
+        }
+
+        #iu {
+            width: 100vw;
+            position: absolute;
+            top: 45vw;
+            right: 0vw;
+        }
+
+        #cloud1 {
+            position: absolute;
+            bottom: 110vw;
+            left: 0px;
+            width: 40vw;
+        }
+
+        #cloud2 {
+            position: absolute;
+            bottom: 220vw;
+            right: 0px;
+            width: 90vw;
+        }
+
+        #cloud3 {
+            position: absolute;
+            top: 130vw;
+            left: -30vw;
+            width: 90vw;
+        }
+
+        #ground {
+            position: absolute;
+            bottom:  0px;
+            left: 0px;
+            width: 100vw;
+        }
+
+        #string {
+            position: fixed;
+            bottom: 8vw;
+            left: 25vw;
+        }
+
+        @-webkit-keyframes sway {
+            25% {
+                bottom: 47vw;
+                -webkit-transform-origin: center bottom;
+                -webkit-transform: rotate(-10deg) scale(1.1);
+            }
+            50% {
+                bottom: 47vw;
+                left: 20vw;
+                -webkit-transform-origin: center bottom;
+                -webkit-transform: rotate(0deg) scale(1);
+            }
+            75% {
+                left: 20vw;
+                -webkit-transform-origin: center bottom;
+                -webkit-transform: rotate(10deg) scale(1.1);
+            }
+        }
+        @-moz-keyframes sway {
+            25% {
+                bottom: 47vw;
+                -moz-transform-origin: center bottom;
+                -moz-transform: rotate(-10deg) scale(1.1);
+            }
+            50% {
+                bottom: 47vw;
+                left: 20vw;
+                -moz-transform-origin: center bottom;
+                -moz-transform: rotate(0deg) scale(1);
+            }
+            75% {
+                left: 20vw;
+                -moz-transform-origin: center bottom;
+                -moz-transform: rotate(10deg) scale(1.1);
+            }
+        }
+        @-ms-keyframes sway {
+            25% {
+                bottom: 47vw;
+                -ms-transform-origin: center bottom;
+                -ms-transform: rotate(-10deg) scale(1.1);
+            }
+            50% {
+                bottom: 47vw;
+                left: 20vw;
+                -ms-transform-origin: center bottom;
+                -ms-transform: rotate(0deg) scale(1);
+            }
+            75% {
+                left: 20vw;
+                -ms-transform-origin: center bottom;
+                -ms-transform: rotate(10deg) scale(1.1);
+            }
+        }
+
+        @keyframes sway {
+            25% {
+                bottom: 47vw;
+                transform-origin: center bottom;
+                transform: rotate(-10deg) scale(1.1);
+            }
+            50% {
+                bottom: 47vw;
+                left: 20vw;
+                transform-origin: center bottom;
+                transform: rotate(0deg) scale(1);
+            }
+            75% {
+                left: 20vw;
+                transform-origin: center bottom;
+                transform: rotate(10deg) scale(1.1);
+            }
+        }
+
+        #love {
+            position: fixed;
+            z-index: 7;
+            width: 40vw;
+            bottom: 56vw;
+            left: 28vw;
+        }
+
+        .sway {
+            -webkit-animation: 4s 0s sway linear infinite none normal;
+            -moz-animation: 4s 0s sway linear infinite none normal;
+            -ms-animation: 4s 0s sway linear infinite none normal;
+            animation: 4s 0s sway linear infinite none normal;
+        }
+
+        #hint {
+            position: absolute;
+            bottom: 95vw;
+            font-family: monospace;
+            font-size: 1.5em;
+            text-align: center;
+            width: 100%;
+            color: white;
+        }
+
+        @-moz-keyframes floating {
+            25% { -moz-transform: translateY(5vw); }
+            50% { -moz-transform: translateY(0vw); }
+            75% { -moz-transform: translateY(-5vw); }
+        }
+
+        @-ms-keyframes floating {
+            25% { -ms-transform: translateY(5vw); }
+            50% { -ms-transform: translateY(0vw); }
+            75% { -ms-transform: translateY(-5vw); }
+        }
+
+        @keyframes floating {
+            25% { transform: translateY(5vw); }
+            50% { transform: translateY(0vw); }
+            75% { transform: translateY(-5vw); }
+        }
+
+        @-webkit-keyframes floating {
+            25% { -webkit-transform: translateY(5vw); }
+            50% { -webkit-transform: translateY(0vw); }
+            75% { -webkit-transform: translateY(-5vw); }
+        }
+
+        .floating {
+            -webkit-animation: 2s 0s floating linear infinite none normal;
+            -moz-animation: 2s 0s floating linear infinite none normal;
+            -ms-animation: 2s 0s floating linear infinite none normal;
+            animation: 2s 0s floating linear infinite none normal;
+        }
+        </style>
+
+
+        <script src="./js/jquery.min.js"></script>
+        <script>
+$(document).ready(function(){
+    // scroll to bottom
+    window.scrollTo(0,document.body.scrollHeight);
+    var love = $("#love");
+    love.click(function(){
+        love.addClass("sway");
+        $("#string").css({'position': 'absolute'});
+
+        $('html, body').animate({scrollTop: 0}, 7000);
+
+        var iu = $("#iu")
+        setTimeout(function() {
+            iu.css('position', 'fixed');
+            iu.css('z-index', '6');
+            iu.animate({top: love.offset().top}, 1000);
+            iu.addClass('floating');
+        }, 7000);
+    });
+});
+        </script>
+    </head>
+
+    <body>
+        <div id="page">
+            <img id="love" src="./image/love.png">
+            <img id="sun" src="./image/sun.png">
+            <img id="iu" src="./image/iu.png">
+            <img id="cloud3" src="./image/cloud2.png">
+            <img id="cloud2" src="./image/cloud2.png">
+            <img id="cloud1" src="./image/cloud1.png">
+            <img id="ground" src="./image/ground.png">
+            <img id="string" src="./image/string.png">
+
+            <div id="hint">Click The Balloon~</div>
+        </div>
+    </body>
+</html>

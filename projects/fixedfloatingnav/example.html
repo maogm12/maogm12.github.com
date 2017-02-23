@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed Floating Nav for Avalonjs</title>
+    <script src="./bower_components/avalon/avalon.js"></script>
+    <style>
+        html, body, div, ul, ol, li, a {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            color: #4b4a48;
+        }
+
+        .ms-controller {
+            display: none;
+        }
+
+        #header {
+            text-align: center;
+            background-color: #eee;
+        }
+
+        #footer {
+            text-align: center;
+            background-color: #eee;
+            height: 200px;
+            font-size: 30px;
+            padding-top: 30px;
+        }
+
+        #anchor1, #anchor2, #anchor3, #anchor4 {
+            margin: 5px;
+            background-color: #eee;
+            border: 1px #ddd solid;
+            height: 600px;
+            font-size: 30px;
+            text-align: center;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body ms-controller="demo" class="ms-controller">
+    <div id="header"><h1>Fixed Floating Navigation Bar for Avalonjs</h1></div>
+    <div ms-widget="fixedfloatingnav">
+        <nav>
+            <a href="#anchor2">条目二</a>
+            <a href="#anchor4">条目四</a>
+            <a href="http://www.baidu.com">百度</a>
+        </nav>
+    </div>
+
+    <div id="anchor1">我是条目一</div>
+    <div id="anchor2">我是条目二</div>
+    <!--<div id="anchor3">我是未实现的条目</div>-->
+    <div id="anchor4">我是条目四</div>
+    <div id="footer">忽略我这个 footer</div>
+    <script>
+        require(["../../fixedfloatingnav/fixedFloatingNav"], function() {
+            avalon.define("demo", function(vm){
+                vm.fixedfloatingnav = {
+                    navItems: [
+                        {label: "条目一", location: "#anchor1"},
+                        {label: "未实现", location: "#anchor3"},
+                    ]
+                },
+                vm.$skipArray = ["fixedfloatingnav"];
+            });
+            avalon.scan();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Trees in Canvas</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type='text/javascript' src='algoTree.js'></script>
+</head>
+<body>
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+		<h1><a>Beautiful Trees</a></h1>
+		<form id="form_89901" class="appnitro">
+		<div class="form_description">
+			<h2>Beautiful Trees</h2>
+            <p>Algorithmic trees in Canvas</p>
+		</div>						
+			
+            <canvas style="border:1px solid #c0c0c0;" id="canvas"></canvas>
+            <div style="float:left;">
+			<li class="buttons">
+				<input id="redraw" class="button_text" type="button" value="Redraw" />
+                <input id="saveImage" class="button_text" type="button" value="Save Image" />
+            </li>
+            </div>
+            <div style="float:right; margin-right: 20px;">
+            <label class="description" for="element_1">Options</label>
+            <span>
+                <input id="auto" name="auto" class="element checkbox" type="checkbox" />
+                <label class="choice">Auto Redraw</label>
+                <input id="noLeaves" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                <label class="choice">Draw leaves</label>
+                <label class="description" for="element_1">Tree Spread</label>
+                <div>
+                <select class="element select large" id="spread" name="spread"> 
+                    <option value="0.3" >0.3</option>
+                    <option value="0.4" >0.4</option>
+                    <option value="0.5" >0.5</option>
+                    <option value="0.6" selected="selected">0.6</option>
+                    <option value="0.7" >0.7</option>
+                    <option value="0.8" >0.8</option>
+                    <option value="0.9" >0.9</option>
+                </select>
+                </div> 
+                <div id="ltype">
+                <label class="description" for="element_1">Leaves Type</label>
+                <select class="element select large" id="leaveType" name="leaveType"> 
+                    <option value="1">Small</option>
+                    <option value="2"  selected="selected">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Thin</option>
+                </select>
+                </div> 
+            </span> 
+            </div>
+		</form>	
+		<div id="footer">
+		</div>
+	</div>
+    <script type="application/javascript">
+
+    var height = 500;
+    var width = 600;  
+    var intervalId = 0;
+    
+    
+    function init() {
+        
+        var canvas = document.getElementById("canvas");
+        
+        if(canvas.getContext("2d")) {
+    
+        document.getElementById("redraw").onclick = function() {
+            drawTree();
+        } 
+        
+        document.getElementById("saveImage").onclick = function() {
+            window.location = canvas.toDataURL("image/png");
+        }
+        
+        document.getElementById("noLeaves").onclick = function() {
+            if(this.checked == false)
+                document.getElementById('leaveType').disabled = true;
+            else
+                document.getElementById('leaveType').disabled = false;
+        }
+        
+        document.getElementById("auto").onclick = function() {
+            if(this.checked == false)
+                clearInterval(intervalId);
+            else
+                intervalId = setInterval ("drawTree()", 1000 );
+        }
+        
+        canvas.height = height;
+        canvas.width = width;
+        ctx = canvas.getContext("2d");
+        drawTree();
+        
+        } else {
+            document.getElementById('form_container').innerHTML = "Your browser doen't support Canvas!";
+        }
+    };
+ 
+    function drawTree() {
+        var drawLeaves = document.getElementById('noLeaves').checked;
+        var treeSpread = document.getElementById('spread').value;
+        var temp  = document.getElementById('leaveType').value;
+        var leaveType = '';
+
+        switch(temp) {
+            case '1': leaveType = tree.SMALL_LEAVES;
+                    break;
+            case '2': leaveType = tree.MEDIUM_LEAVES;
+                    break;
+            case '3': leaveType = tree.BIG_LEAVES;
+                    break;
+            case '4': leaveType = tree.THIN_LEAVES;
+                    break;
+            default:leaveType = tree.MEDIUM_LEAVES;
+        }
+
+        ctx.save();
+        tree.draw(ctx,height,width,treeSpread,drawLeaves,leaveType);
+        ctx.restore();
+    }
+   
+
+init();
+  </script>
+	</body>
+</html>

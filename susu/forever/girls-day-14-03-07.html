@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Waiting...</title>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<!--<script src="./js/jquery.min.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="./suClock/jquery.tzineClock.css" />
+	<script type="text/javascript" src="./suClock/jquery.suClock.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			function makeFlip() {
+				$("body").removeClass("clock-body");
+				$("#count-down").hide();
+				$("#container").show();
+				
+				document.title = "Happy Girls' Day~"
+				
+				var w = $(document).width();
+				var h = $(document).height();
+				var size = h;
+				if (h > w) size = w;
+				
+				var pieces = 21;
+				var scale = Math.floor(size/pieces);
+				size = scale * pieces;
+
+				var front = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,0,1,0,1,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0],
+										 [0,1,1,1,1,1,0,0,1,1,1,1,1,0,0,1,1,1,1,1,0],
+										 [0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0],
+										 [0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,0],
+										 [0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0],
+										 [0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0],
+										 [0,1,0,0,0,1,0,0,1,1,1,1,1,0,0,0,0,1,0,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,0,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0],
+										 [0,0,0,0,0,0,0,0,2,2,2,2,2,0,0,0,0,0,0,0,0],
+										 [0,0,0,0,0,0,0,0,2,2,2,2,2,0,0,0,0,0,0,0,0],
+										 [0,0,1,0,0,1,0,0,0,2,2,2,0,0,0,0,0,0,1,0,0],
+										 [0,0,1,0,1,1,1,0,0,0,2,0,0,0,1,1,1,1,0,0,0],
+										 [0,1,1,0,0,1,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0],
+										 [0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,0],
+										 [0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0],
+										 [0,0,1,0,1,1,1,0,0,0,0,0,0,0,1,0,1,0,1,0,0],
+										 [0,0,1,1,1,0,1,1,0,0,0,0,0,0,1,0,1,0,1,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+										 
+				var back =  [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,1,0,1,0,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1,0],
+										 [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
+										 [0,1,1,1,0,1,1,1,0,1,1,0,0,1,1,0,0,1,1,1,0],
+										 [0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0],
+										 [0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,1,1,1,0,1,1,1,0,1,0,1,0,0,0,1,1,1,0,1,0],
+										 [0,1,0,0,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,0],
+										 [0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,1,1,1,0,0,0],
+										 [0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,1,0,0,0],
+										 [0,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,1,1,0,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [0,0,0,0,0,1,1,0,0,0,1,0,0,1,0,1,0,0,0,0,0],
+										 [0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0],
+										 [0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,1,0,0,0,0,0],
+										 [0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,0,0,0,0,0],
+										 [0,0,0,0,0,1,1,0,0,1,0,1,0,0,1,0,0,0,0,0,0],
+										 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+										 [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]]; 
+				
+				for (var i = 0; i < pieces; ++i) {
+					var row = $("<div>").width(size+pieces+3).height(scale).addClass("row");
+					for (var j = 0; j < pieces; ++j) {
+						var container = $("<div>").width(scale).height(scale).addClass("flip-container");
+						var flipper = $("<div>").width(scale).height(scale).addClass("flipper")
+													.attr("id", ""+i+"_"+j);  //set id
+
+						var div_front = $("<div>").width(scale).height(scale).addClass("front");
+						if (front[i][j] == 0) {
+							div_front.addClass("front-bg");
+						} else if (front[i][j] == 1){
+							div_front.addClass("front-word");
+						} else if (front[i][j] == 2) {
+							div_front.addClass("heart");
+						}
+						flipper.append(div_front);
+
+						var div_back = $("<div>").width(scale).height(scale).addClass("back");
+						if (back[i][j] == 0) {
+							div_back.addClass("back-bg");
+						} else if (back[i][j] == 1) {
+							div_back.addClass("back-word");
+						} else if (back[i][j] == 2) {
+							div_back.addClass("grass");
+						}
+						flipper.append(div_back);
+						
+						container.append(flipper);
+						row.append(container);
+					}
+					$("#container").append(row);
+				}
+				
+				// adjust pos is in array
+				var arrinArray = function(pos, arr) {
+					for (var i = 0; i < arr.length; ++i) {
+						if (arr[i][0] == pos[0] && arr[i][1] == pos[1]) {
+							return i;
+						}
+					}
+					
+					return -1;
+				}
+				
+				//click
+				$(".heart").click(function() {
+					var id = $(this).parent().attr("id");
+					var ij = id.split("_");
+					var si = parseInt(ij[0]);
+					var sj = parseInt(ij[1]);
+					
+					var flipped = 0;
+					var toflip = [];
+					var visited = [];
+					for (var i = 0; i < pieces; ++i) {
+						var row = [];
+						for (var j = 0; j < pieces; ++j) {
+							row.push(0);
+						}
+						visited.push(row);
+					}
+					
+					toflip.push([si, sj]);
+					visited[si][sj] = 1;
+
+					// ripple flip effect
+					function rippleFlip(toflip, flipped, visited) {
+						if (flipped >= pieces*pieces) {
+							clearTimeout();
+							return;
+						}
+						
+						var outbound = [];
+						while (toflip.length > 0) {
+							var pos = toflip.shift();
+							flipped += 1;
+							$("#" + pos[0] + "_" + pos[1]).removeClass("rotatex");
+							$("#" + pos[0] + "_" + pos[1]).toggleClass("rotatey");
+							
+							//visited
+							if (pos[0] > 0 && visited[pos[0]-1][pos[1]] == 0) {
+								if (arrinArray([pos[0]-1, pos[1]], outbound) == -1)
+									outbound.push([pos[0]-1, pos[1]]);
+							}
+							if (pos[0] < pieces - 1 && visited[pos[0]+1][pos[1]] == 0) {
+								if (arrinArray([pos[0]+1, pos[1]], outbound) == -1)
+									outbound.push([pos[0]+1, pos[1]]);
+							}
+							if (pos[1] > 0 && visited[pos[0]][pos[1]-1] == 0) {
+								if (arrinArray([pos[0], pos[1]-1], outbound) == -1)
+									outbound.push([pos[0], pos[1]-1]);
+							}
+							if (pos[1] < pieces - 1 && visited[pos[0]][pos[1]+1] == 0) {
+								if (arrinArray([pos[0], pos[1]+1], outbound) == -1)
+									outbound.push([pos[0], pos[1]+1]);
+							}
+							visited[pos[0]][pos[1]] = 1;
+						}
+						toflip = outbound;
+						
+						setTimeout(function() {rippleFlip(toflip, flipped, visited);}, 100);
+					}
+					rippleFlip(toflip, flipped, visited);
+				});
+				
+				$(".grass").click(function() {
+					// louver flip effect
+					function louverFlip(row) {
+						if (row < 0) {
+							clearTimeout();
+							return;
+						}
+						
+						// from bottom to top
+						for (var i = 0; i < pieces; ++i) {
+							$("#" + row + "_" + i).removeClass("rotatey");
+							$("#" + row + "_" + i).toggleClass("rotatex");
+						}
+						
+						setTimeout(function() {louverFlip(row-1);}, 100);
+					}
+					louverFlip(pieces-1);
+				});
+			}
+			
+			function countDown() {
+				if ((new Date()).getTime() >= girlsday.getTime()) {
+					clearTimeout();
+					makeFlip();
+					return;
+				}
+				setTimeout(function() {countDown();}, 1000);
+			}
+			
+			$("body").addClass("clock-body");
+			$("#container").hide();
+			// Girls' day
+			var girlsday = new Date(2014, 2, 7);
+			$('#fancyClock').suClock({"toTime": girlsday.getTime()});
+			$("#count-down").show();
+			$("#count-down-prompt").text("To " + girlsday.toLocaleDateString());
+			countDown();
+		});
+	</script>
+	
+	<style>
+		body{
+			margin: 0;
+			padding: 1px;
+		}
+		
+		#container {
+			text-align: center;
+		}
+		
+		.row {
+			display: block;
+			margin: 0 auto 0;
+		}
+		
+		
+		/* flip container, keeps perspective */
+		.flip-container {
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			-ms-perspective: 1000;
+			perspective: 1000;
+			
+			-ms-transform: perspective(1000px);
+			-moz-transform: perspective(1000px);
+    	-moz-transform-style: preserve-3d; 
+    	-ms-transform-style: preserve-3d; 
+			
+			border-left: 1px solid lightgray;
+			border-top: 1px solid lightgray;
+		}
+
+		
+		/* rotatey  */
+		.rotatey {
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			-o-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+		}
+		
+		/* rotatex  */
+		.rotatex {
+			-webkit-transform: rotateX(180deg);
+			-moz-transform: rotateX(180deg);
+			-o-transform: rotateX(180deg);
+			transform: rotateX(180deg);
+		}
+
+		.flip-container, .front, .back {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* flip speed goes here */
+		.flipper {
+			-webkit-transition: 0.6s;
+			-webkit-transform-style: preserve-3d;
+			-ms-transition: 0.6s;
+
+			-moz-transition: 0.6s;
+			-moz-transform: perspective(1000px);
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+
+			transition: 0.6s;
+			transform-style: preserve-3d;
+
+			position: relative;
+		}
+
+		/* hide back of pane during swap */
+		.front, .back {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			-webkit-transition: 0.6s;
+			-webkit-transform-style: preserve-3d;
+
+			-moz-transition: 0.6s;
+			-moz-transform-style: preserve-3d;
+
+			-o-transition: 0.6s;
+			-o-transform-style: preserve-3d;
+
+			-ms-transition: 0.6s;
+			-ms-transform-style: preserve-3d;
+
+			transition: 0.6s;
+			transform-style: preserve-3d;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		/* front pane, placed above back */
+		.front {
+			-webkit-transform: rotateY(0deg);
+			-ms-transform: rotateY(0deg);
+			z-index: 2;
+		}
+
+		/* back, initially hidden pane */
+		.back{
+			-webkit-transform: rotateY(-180deg);
+			-moz-transform: rotateY(-180deg);
+			-o-transform: rotateY(-180deg);
+			-ms-transform: rotateY(-180deg);
+			transform: rotateY(-180deg);
+		}
+		
+		.front-bg {
+			background-color: #c5eb81;
+		}
+		
+		.front-word {
+			background-color: #bf953f;
+		}
+		
+		.back-bg {
+			background-color: #e0b695
+		}
+		
+		.back-word {
+			background-color: #ca69df;
+		}
+		
+		.heart {
+			background-color: #de3548;
+		}
+		
+		.grass {
+			background-color: #54b025;
+		}
+
+		/* For clock */
+		#fancyClock{
+			margin:40px auto;
+			height:200px;
+			border:1px solid #111111;
+			width:600px;
+		}
+
+		h1{
+			background-color:#222222;
+			font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+			font-size:20px;
+			font-weight:normal;
+			margin-bottom:15px;
+			padding:15px;
+			text-align:center;
+		}
+
+		h2 {
+			font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			padding-right:140px;
+			position:relative;
+			right:0;
+			text-align:right;
+			text-transform:uppercase;
+			top:-48px;
+		}
+		
+		.clock-body {
+			/* Setting default text color, background and a font stack */
+			color:#dddddd;
+			font-size:13px;
+			background: #302b23;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="count-down">
+		<h1 id="count-down-prompt"></h1>
+		<div id="fancyClock"></div>
+	</div>
+	<div id="container"></div>
+</body>
+</html>

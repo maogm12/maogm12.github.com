@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>LOVE</title>
+    <style type="text/css">
+        body{
+            margin:50px;
+            background-color:#2C3437;
+        }
+        .content{
+            display:inline-block;
+            width:780px;
+            height:239px;
+            margin: 10px auto 0;
+        }
+        .play{
+            cursor:pointer;
+            background-color:#060;
+        }
+        div>div{
+            display:block;
+            height:20px;
+        }
+        div>div>div{
+            width:16px;
+            height:16px;
+            background-color:pink;
+            display:inline-block;
+            float:right;
+            margin:2px;
+            visibility:hidden;
+        }
+        .play {
+            visibility:visible;
+        }
+        .name {
+            background-color: orange;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //animate();
+            $(".play").click(animate).mouseover(function(){
+                $(".play").css({"background-color":"#A55"});
+            }).mouseout(function(){
+                $(".play").css({"background-color":"#060"});
+            });
+        });
+
+        function animate(){
+            $('div>div>div').each(function(id){
+                $(this).css({
+                    position: 'relative',
+                    top: '-200px',
+                    opacity: 0,
+                    visibility: 'visible'
+                });
+                var wait = Math.floor((Math.random()*3000)+1);
+                $(this).delay(wait).animate({
+                    top: '0px',
+                    opacity: 1
+                    },1000);
+                });
+        }
+    </script>
+  </head>
+<body>
+    <div class='content'>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:82px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:62px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:82px'></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:62px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:22px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:82px'></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:42px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:62px'></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:22px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:22px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:22px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:42px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:62px'></div>
+    </div>
+    <div>
+      <div style='margin-right:222px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:42px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:62px'></div>
+    </div>
+    <div>
+      <div class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div class='name'></div>
+      <div style='margin-right:62px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:62px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:82px'></div>
+    </div>
+    <div>
+      <div class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:22px' class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:42px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:82px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:102px'></div>
+    </div>
+    <div>
+      <div class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:82px' class='name'></div>
+      <div style='margin-right:42px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:102px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:122px'></div>
+    </div>
+    <div>
+      <div class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:22px' class='name'></div>
+      <div class='name'></div>
+      <div class='name'></div>
+      <div class='name'></div>
+      <div style='margin-right:42px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:122px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:142px'></div>
+    </div>
+    <div>
+      <div class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:22px' class='name'></div>
+      <div style='margin-right:102px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:142px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:162px'></div>
+    </div>
+    <div>
+      <div class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:22px' class='name'></div>
+      <div style='margin-right:42px' class='name'></div>
+      <div style='margin-right:42px'></div>
+      <div style='margin-right:82px'></div>
+      <div style='margin-right:162px'></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:182px'></div>
+    </div>
+    <div>
+      <div style='margin-right:22px' class='name'></div>
+      <div class='name'></div>
+      <div style='margin-right:62px' class='name'></div>
+      <div class='name'></div>
+      <div style='margin-right:82px'></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:202px'></div>
+      <div style='margin-right:182px'></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  </body>
+</html>
+

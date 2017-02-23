@@ -1,0 +1,62 @@
+$colorBg: #f8f8f8;
+$colorActive: #dc0031;
+$fontDefault: normal 20px/1.5 "Helvetica Neue",Helvetica,Arial,Sans-serif;
+
+.fixed-floating-nav-panel {
+  text-align: center;
+}
+
+.fixed-floating-nav-bar {
+  position: relative;
+  background-color: $colorBg; 
+}
+
+.fixed-floating-nav-bar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 0 5px gray;
+}
+
+.fixed-floating-nav-item {
+  display: inline-block;
+
+  >a {
+    font: $fontDefault;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  >a:hover {
+    color: $colorActive;
+    cursor: pointer;
+  }
+
+  &:after {
+    content: "";
+    vertical-align: middle;
+    background: url('./images/dot-dc0031.png') repeat-x center;
+    margin:0 10px;
+    display: inline-block;
+    width: 65px;
+    height: 20px;
+  }
+}
+
+.fixed-floating-nav-item-active {
+  color: $colorActive;
+}
+
+.fixed-floating-nav-item-last {
+  &:after {
+    content: "";
+    width: 0;
+    margin: 0;
+  }
+}

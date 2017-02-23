@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Love U, susu~</title>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/date.js"></script>
+	<script src="./js/count_down.js"></script>
+	<script src="./js/susu.js"></script>
+	<script>
+$(document).ready(function(){
+	var the_due;
+	if (typeof due === "undefined") {
+		var now = new Date();
+		var yesteday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		the_due = new Date(yesteday + 24*60*60*1000);
+	} else {
+		the_due = due;
+	}
+	
+	if ((new Date()).getTime() > the_due.getTime()) {
+		iloveu();
+	} else {
+		var def_counter;
+		if (typeof count_down === "function") {
+			count_down();
+		} else {
+			$("#c").hide();
+			$("#container").css("text-align", "center")
+										 .css("margin-top", "200px")
+										 .css("vertical-align", "middle")
+										 .css("font", "large Consolas");
+			var now = new Date();
+			var msg = "Something magical is going to happen~";
+			var seconds = 0;
+			def_counter = setInterval(function() {
+				now = new Date();
+				seconds = (the_due.getTime() - now.getTime())/1000;
+				$("#container").html(msg + "<br />" + seconds.toFixed(1) + "s");
+			}, 100);
+		}
+		
+		var counter = setInterval(function(){
+			if ((new Date()).getTime() >= the_due.getTime()) {
+				$("#container").removeAttr("style").text("").hide();
+				$("#c").removeAttr("style").attr("style", "width:100%;height:100%;margin:0px;");
+				clearInterval(def_counter);
+				clearInterval(counter);
+				iloveu();
+			}
+		}, 1000);
+	}
+});
+	</script>
+</head>
+<body style="width:100%;height:100%;margin:0px;">
+	<div id="container"></div>
+	<canvas id="c" style="width:100%;height:100%;margin:0px;"/>
+</body>
+</html>

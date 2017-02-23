@@ -1,0 +1,18 @@
+---
+layout: post
+title: Hello, world in Rust
+date: 2015-01-27 15:45
+author: Gavin
+category: blog
+tags:
+  - Rust
+slug: hello-world-in-rust
+---
+
+Hello, rust !!!
+
+```rust
+fn main() {
+    println!("Hello, rust!");
+}
+```

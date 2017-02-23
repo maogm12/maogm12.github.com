@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tree</title>
+	<script>
+var animateDrawLine = function(ctx, x, y, len, angle) {
+	var step = 1;
+	var i = len / step;
+	var count = 0;
+	var drawing = setInterval(function(){
+		ctx.beginPath();
+		ctx.moveTo(x + count*step*Math.sin(angle), y + count*step*Math.cos(angle));
+		if (count <= i) {
+			ctx.lineTo(x + (count + 1)*step*Math.sin(angle), y + (count + 1)*step*Math.cos(angle));
+		} else {
+			ctx.lineTo(x + len*Math.sin(angle), y + len*Math.cos(angle));
+		}
+		ctx.strokeStyle="green";
+		ctx.stroke();
+		
+		if (count > i) {
+			clearInterval(drawing);
+		}
+		count++;
+	}, 10);
+}
+window.onload = function() {
+var c=document.getElementById("c");
+var cxt=c.getContext("2d");
+cxt.fillStyle="#FF0000";
+animateDrawLine(cxt, 10, 10, 60, 0);
+animateDrawLine(cxt, 100, 50, 600, 1);
+};
+	</script>
+</head>
+<body>
+	<canvas id="c" width="1000px" height="600px"></canvas>
+</body>
+</html>
