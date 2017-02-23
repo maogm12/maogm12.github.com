@@ -19,7 +19,7 @@ slug: avalon-css-injector
 
 这次用 avalon 做前端的时候，激进地使用了单页面的模式，并且把各个模块的 html/js/css 都放在了各个模块目录下面，然后在 JS 里面用 requirejs 加载模板和 css 文件，这样感觉拓展性比较好，萌萌哒啊！不过发现有些页面跳转时样式乱了，因为 requirejs 里面的 css 插件把加载的样式一股脑儿加到了 head 里面，这样多跳转几次，head 里面就加载了好多好多 css 文件。所以模块一多，重名的地方就乱了，原谅我 css 功力不够。。。
 
-要是能动态加载 css 文件就好了，并且在这种单页面应用中，页面跳转清除动态加载的 css 文件，这样样式就不乱了。恩，还真有，找到了一个 angularjs 的服务叫 [angular-css-injector](https://github.com/Yappli/angular-css-injector)，其实就是在 head 操作 一些 link 标签。于是就有了这个 avalon-css-injector (太山寨了 →_→)，看 [github 地址](https://github.com/Garnel/avalon-css-injector)。
+要是能动态加载 css 文件就好了，并且在这种单页面应用中，页面跳转清除动态加载的 css 文件，这样样式就不乱了。恩，还真有，找到了一个 angularjs 的服务叫 [angular-css-injector](https://github.com/Yappli/angular-css-injector)，其实就是在 head 操作 一些 link 标签。于是就有了这个 avalon-css-injector (太山寨了 →_→)，看 [github 地址](https://github.com/maogm12/avalon-css-injector)。
 
 动态加载还是好做，avalon 里面有 `ms-repeat`，建个 module：
 
