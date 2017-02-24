@@ -24,6 +24,9 @@ permalink: /:categories/:title.html
 twitter_username: maogm12
 github_username:  maogm12
 
+disqus:
+  shortname: maogm12
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
