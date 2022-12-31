@@ -11,7 +11,11 @@ lang: zh
 slug: percentage-width-in-autolayout
 ---
 
-参考自这两篇博客 [http://simblestudios.com/blog/development/percentage-width-in-autolayout.html](http://simblestudios.com/blog/development/percentage-width-in-autolayout.html) 和 [http://simblestudios.com/blog/development/easier-percentage-width-in-autolayout.html](http://simblestudios.com/blog/development/easier-percentage-width-in-autolayout.html)
+参考自这两篇博客[^link_update]：
+- [Percentage Widths And Centering in Autolayout with XCode 6](https://web.archive.org/web/20170624134422/http://simblestudios.com/blog/development/percentage-width-in-autolayout.html)
+- [Even Easier Percentage Widths And Centering in Storyboards with XCode 6](https://web.archive.org/web/20170704113819/http://simblestudios.com/blog/development/easier-percentage-width-in-autolayout.html)
+
+[^link_update]: 博客链接挂了，换了 Internet Archive 的。
 
 Storyboard 是开发的未来，最近刚刚上手 iOS 开发，直接用的 Storyboard，没有手动写布局，也没有单独写 xib 之类的。
 
