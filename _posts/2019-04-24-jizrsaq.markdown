@@ -1,4 +1,4 @@
-—
+---
 layout: post
 title: 雞子石
 date: 2019-04-24 17:25
@@ -7,8 +7,9 @@ category: blog
 tags:
   - 方言
   - 汉语
+lang: zh 
 slug: jizrsaq
-—
+---
 
 ![雞子石](../images/jizrsaq.jpeg ”雞子石”)
 
