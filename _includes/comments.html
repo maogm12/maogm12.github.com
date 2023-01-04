@@ -1,18 +1,18 @@
 {% assign giscus = site.giscus %}
 {% if giscus.repo %}
 <script src="https://giscus.app/client.js"
-        data-repo={{ giscus.repo }}
-        data-repo-id={{ giscus.repo-id }}
-        data-category={{ giscus.category }}
-        data-category-id={{ giscus.category-id }}
-        data-strict={{ giscus.strict }}
-        data-mapping={{ giscus.mapping }}
-        data-reactions-enabled={{ giscus.reaction-enabled }}
-        data-emit-metadata={{ giscus.emit-metadata }}
-        data-input-position={{ giscus.input-position }}
-        data-theme={{ giscus.theme }}
-        data-lang={{ giscus.lang }}
-        crossorigin={{ giscus.crossorigin }}
-        async>
+  data-repo="{{ giscus.repo }}"
+  data-repo-id="{{ giscus.repo-id }}"
+  data-category="{{ giscus.category }}"
+  data-category-id="{{ giscus.category-id }}"
+  data-strict="{{ giscus.strict }}"
+  data-mapping="{{ giscus.mapping }}"
+  data-reactions-enabled="{{ giscus.reaction-enabled }}"
+  data-emit-metadata="{{ giscus.emit-metadata }}"
+  data-input-position="{{ giscus.input-position }}"
+  data-theme="{{ giscus.theme }}"
+  data-lang="{{ giscus.lang }}"
+  crossorigin="{{ giscus.crossorigin }}"
+  async>
 </script>
 {% endif %}
