@@ -37,7 +37,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 
 # Comments
 giscus:
-  repo:                maogm12/maogm12.github.com
+  repo:                "maogm12/maogm12.github.com"
   repo-id:             "MDEwOlJlcG9zaXRvcnk0Nzc4MjA2"
   category:            "Comments"
   category-id:         "DIC_kwDOAEjo3s4CTZmM"
