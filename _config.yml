@@ -34,6 +34,21 @@ rss: rss
 
 show_excerpts: true # set to true to show excerpts on the homepage
 
+# Comments
+giscus:
+  repo:                maogm12/maogm12.github.com
+  repo-id:             "MDEwOlJlcG9zaXRvcnk0Nzc4MjA2"
+  category:            "Comments"
+  category-id:         "DIC_kwDOAEjo3s4CTZmM"
+  mapping:             "pathname"
+  strict:              "0"
+  reaction-enabled:    "1"
+  emit-metadata:       "0"
+  input-position:      "bottom"
+  theme:               "light"
+  lang:                "en"
+  crossorigin:         "anonymous"
+
 # Build settings
 theme: minima
 minima:
@@ -41,6 +56,7 @@ minima:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
