@@ -19,9 +19,14 @@ layout: default
     {{ content }}
   </div>
 
+  <div>
   {% if page.tags %}
-    <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+    {% for tag in page.tags | compact %}
+      {% assign tag = tag | downcase %}
+      <span><code class="highligher-rouge"><nobr>#{{ tag }}</nobr></code>&nbsp;</span>
+    {% endfor %}
   {% endif %}
+  </div>
 
   {% include comments.html %}
 
