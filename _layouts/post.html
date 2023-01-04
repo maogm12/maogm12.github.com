@@ -20,10 +20,10 @@ layout: default
   </div>
 
   <div>
+    🔖
   {% if page.tags %}
     {% for tag in page.tags | compact %}
-      {% assign tag = tag | downcase %}
-      <span><code class="highligher-rouge"><nobr>#{{ tag }}</nobr></code>&nbsp;</span>
+      <span><code class="highligher-rouge"><nobr>{{ tag | downcase }}</nobr></code>&nbsp;</span>
     {% endfor %}
   {% endif %}
   </div>
