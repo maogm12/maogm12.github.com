@@ -37,7 +37,7 @@ slug: markdown-syntax
 
 提示：本文自身也是用Markdown书写的，你可以[查看源码][md]。
 
-[md]: https://raw.github.com/maogm12/maogm12.github.com/source/_posts/2012-12-31-markdown-syntax.markdown
+[md]: https://raw.githubusercontent.com/maogm12/maogm12.github.com/gh-pages/_posts/2012-12-31-markdown-syntax.markdown
       "查看源码"
 
 <!--more-->

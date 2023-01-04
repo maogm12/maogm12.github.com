@@ -149,7 +149,7 @@ toggle() {
 
 ![效果图](../images/atom-package-demo/toggle.gif)
 
-项目在这里：<https://github.com/maogm12/seperate-number>
+项目在这里：<https://github.com/maogm12/separate-number>
 
 TODO：
 
