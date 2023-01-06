@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+<link rel="stylesheet" href="/assets/custom.css">
+
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -17,15 +20,16 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
-  </div>
 
-  <div>
-  {% if page.tags %}
-    {% assign page_tags = page.tags | compact %}
-    {% for tag in page_tags %}
-      <span><code class="highligher-rouge"><nobr>#{{ tag | downcase }}</nobr></code>&nbsp;</span>
-    {% endfor %}
-  {% endif %}
+    {% if page.tags %}
+      <div class="post-tags">
+      {% assign page_tags = page.tags | compact | sort %}
+      {% for tag in page_tags %}
+        {% assign tag = page.tag_slugs | map: tag %}
+        <a class="post-tag" href="/tag/{{ tag | replace: '#', 'sharp' | replace: '+', 'plus' | slugify }}"><code class="highligher-rouge"><svg class="svg-icon"><use xlink:href="/assets/custom-icons.svg#tag"></use></svg><nobr>{{ tag }}</nobr></code>&nbsp;</a>
+      {% endfor %}
+      </div>
+    {% endif %}
   </div>
 
   {% include comments.html %}

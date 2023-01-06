@@ -4,8 +4,7 @@ title: 夏日烧烤菜谱
 date: 2022-10-23 13:15
 author: Guangming Mao
 category: blog
-tags:
-  - 菜谱
+tags: 菜谱
 lang: zh 
 slug: summer-bbq-recipe
 ---

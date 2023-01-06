@@ -4,9 +4,7 @@ title: 詹橋話拼音方案
 date: 2019-05-02 23:41
 author: Guangming Mao
 category: blog
-tags:
-  - 方言
-  - 汉语
+tags: 方言 汉语 拼音
 lang: zh 
 slug: jizrsa-pinyin
 ---

@@ -5,7 +5,7 @@ date: 2014-1-5 17:51
 author: Guangming Mao
 category: blog
 tags:
-  - CPP
+  - C++
   - factorial
 slug: big-number-factorial
 ---

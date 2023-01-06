@@ -8,15 +8,9 @@ slug: plan-for-cycling-in-hainan
 author: Guangming Mao
 ---
 
-# 骑行海南岛
-
 	@author		毛光明
 	@data		2012年12月23日
 	@version	2.0
-
-[查看源码][src]
-
-[src]: https://raw.github.com/maogm12/maogm12.github.com/source/content/notices/plan-for-cycling-in-hainan.markdown
 
 ##参考文档：
 

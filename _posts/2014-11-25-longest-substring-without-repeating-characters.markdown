@@ -5,7 +5,7 @@ date: 2014-11-25 22:30
 author: Guangming Mao
 category: blog
 tags:
-  - CPP
+  - C++
   - Python
   - LeetCode
 lang: en

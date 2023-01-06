@@ -7,7 +7,7 @@ category: blog
 tags:
   - Convex Hull
   - Algorithm
-  - CPP
+  - C++
   - Computational Geometry
 slug: convex-hull-gift-wrapping-2d
 ---
