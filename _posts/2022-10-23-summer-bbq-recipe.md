@@ -60,7 +60,7 @@ slug: summer-bbq-recipe
 ---
 
 ## 參考
-1. 賴皮猴愛美食 https://youtu.be/u8fBaEHkLy4
+1. 賴皮猴愛美食 <https://youtu.be/u8fBaEHkLy4>
 
     肉部分：肥瘦相间牛肉500g 、羊排或羊腿肉500g。
 
@@ -72,4 +72,4 @@ slug: summer-bbq-recipe
 
     秘制鲜香料部分： 鸡精100g、 味精30g、陈有香肉香粉5g、四宝浓缩鲜香粉5g、 十三香1g
 
-2. 小高姐 烤魚 https://youtu.be/3GeG8wzJXdU
+2. 小高姐 烤魚 <https://youtu.be/3GeG8wzJXdU>
