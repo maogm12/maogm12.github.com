@@ -5,3 +5,7 @@
 .giscus-frame {
   border: none;
 }
+
+a.post-tag {
+  text-decoration: none;
+}
