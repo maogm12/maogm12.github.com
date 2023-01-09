@@ -26,7 +26,7 @@ layout: default
       {% assign page_tags = page.tags | compact | sort %}
       {% for tag in page_tags %}
         {% assign tag = page.tag_slugs | map: tag %}
-        <a class="post-tag" href="/tag/{{ tag | replace: '#', 'sharp' | replace: '+', 'plus' | slugify }}"><code class="highligher-rouge"><svg class="svg-icon"><use xlink:href="/assets/custom-icons.svg#tag"></use></svg><nobr>{{ tag }}</nobr></code>&nbsp;</a>
+        <a class="post-tag" href="/tag/{{ tag | replace: '#', 'sharp' | replace: '+', 'plus' | slugify }}"><code class="highligher-rouge">{% octicon tag height:16 class:svg-icon %}<nobr>{{ tag }}</nobr></code>&nbsp;</a>
       {% endfor %}
       </div>
     {% endif %}
