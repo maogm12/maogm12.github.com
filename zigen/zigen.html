@@ -79,7 +79,7 @@
 <body>
 	<div>
 		<label for="zigen-categories">字根分区:</label>
-		<select name="zigen-categories" id="zigen-categories" onchange="chooseCategories();"></select>
+		<select name="zigen-categories" id="zigen-categories" onchange="chooseCategories(false);"></select>
 		<br>
 		<label for="random">随机展示字根：</label>
 		<input type="checkbox" name="random" id="random" onchange="updateRandomOption();">
@@ -122,22 +122,38 @@
 				categoryOptions.add(option);
 			});
 
-			var cacheKey = `${zigenConfig.name}_${zigenConfig.version}_category`;
-			categoryOptions.selectedIndex = localStorage.getItem(cacheKey) || 0;
+			var categoryKey = `${zigenConfig.name}_${zigenConfig.version}_category`;
+			var indexKey = `${zigenConfig.name}_${zigenConfig.version}_index`;
+			let cachedCategory = localStorage.getItem(categoryKey);
+			if (!!cachedCategory) {
+				categoryOptions.selectedIndex = cachedCategory;
+				console.log(`Restoring category [${categoryKey}: ${cachedCategory}]`)
 
-			chooseCategories();
+				currentIndex = localStorage.getItem(indexKey) || 0;
+				console.log(`Restoring index [${indexKey}: ${currentIndex}]`);
+			} else {
+				categoryOptions.selectedIndex = 0;
+				currentIndex = 0;
+				localStorage.removeItem(indexKey);
+			}
+
+
+			chooseCategories(true); // init load
 		}
 
-		function chooseCategories() {
+		function chooseCategories(initLoad = false) {
 			var categoryOptions = document.getElementById("zigen-categories");
 			var categoryIndex = categoryOptions.options[categoryOptions.selectedIndex].value;
 
-			var cacheKey = `${zigenConfig.name}_${zigenConfig.version}_category`;
-			localStorage.setItem(cacheKey, categoryOptions.selectedIndex);
+			var categoryKey = `${zigenConfig.name}_${zigenConfig.version}_category`;
+			localStorage.setItem(categoryKey, categoryOptions.selectedIndex);
 
 			var codes = zigenConfig.categories[categoryIndex].codes;
 			currentGlyphs = zigenConfig.glyphs.filter(glyph => codes.includes(glyph.code));
-			currentIndex = 0;
+
+			if (!initLoad) {
+				currentIndex = 0;
+			}
 
 			showZigen();
 		}
@@ -149,6 +165,10 @@
 				if (currentIndex >= currentGlyphs.length) {
 					currentIndex = 0;
 				}
+
+				var indexKey = `${zigenConfig.name}_${zigenConfig.version}_index`;
+				localStorage.setItem(indexKey, currentIndex);
+				console.log(`Saving index [${indexKey}: ${currentIndex}]`);
 			}
 
 			let glyph = currentGlyphs[currentIndex];
@@ -244,7 +264,6 @@
 				configCategories();
 				loadFont();
 				loadNotes();
-
 				showZigen();
 			});
 
@@ -267,6 +286,10 @@
 
 		inputElement.addEventListener("input", function () {
 			writeAnswer();
+		});
+
+		inputElement.addEventListener("focus", function () {
+			window.scrollTo({top: 0, behavior: 'smooth' });
 		});
 
 		inputElement.focus();
