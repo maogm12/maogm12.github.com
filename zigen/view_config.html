@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字根列表</title>
+    <style>
+        .glyph-card {
+            font-size: 60px;
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 140px;
+            border: 1px solid black;
+        }
+
+        .glyph-card span {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .glyph-card .glyph-code {
+            font-family: monospace;
+            font-size: 30px;
+            top: 10px;
+        }
+
+        .glyph-card .glyph {
+            top: 40px;
+            color: black;
+        }
+
+        .glyph-card .glyph-context {
+            top: 40px;
+            color: lightgray;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <H1>
+            <span id="name"></span> <span id="version"></span>
+        </H1>
+
+        <p>
+        <ul id="note"></ul>
+        </p>
+
+        <p id="glyphs">
+        </p>
+    </div>
+    <script>
+        var zigenConfig = {};
+
+        function render() {
+            // name, version
+            var name = document.getElementById('name');
+            var version = document.getElementById('version');
+            name.innerHTML = zigenConfig.name;
+            version.innerHTML = zigenConfig.version;
+
+            // note
+            var note = document.getElementById('note');
+            Object.entries(zigenConfig.note).forEach(([key, value]) => {
+                var li = document.createElement('li');
+                li.innerHTML = key + ': ' + value;
+                note.appendChild(li);
+            });
+
+            // glyphs
+            var glyphs = document.getElementById('glyphs');
+            zigenConfig.glyphs.sort((a, b) => {
+                return a.code > b.code || (a.code == b.code && a.glyph > b.glyph);
+            }).forEach((glyph) => {
+                var div = document.createElement('div');
+                div.classList.add('glyph-card');
+
+                var spanCode = document.createElement('span');
+                spanCode.classList.add('glyph-code');
+                spanCode.innerHTML = glyph.code;
+
+                var spanContext = document.createElement('span');
+                spanContext.classList.add('glyph-context');
+                spanContext.innerHTML = glyph.context || "";
+
+                var spanGlyph = document.createElement('span');
+                spanGlyph.classList.add('glyph');
+                spanGlyph.innerHTML = glyph.glyph;
+
+                div.appendChild(spanCode);
+                div.appendChild(spanContext);
+                div.appendChild(spanGlyph);
+
+                glyphs.appendChild(div);
+            });
+
+            // font
+            const zigenFont = new FontFace(zigenConfig.fontName, 'url(' + zigenConfig.font + ')');
+            document.fonts.add(zigenFont);
+            zigenFont.load().then(
+                () => {
+                    // font loaded successfully!
+                    var elems = document.getElementsByClassName('glyph-card');
+                    elems = Array.from(elems);
+                    elems.forEach((elem) => {
+                        elem.style.fontFamily = zigenConfig.fontName;
+                    });
+                },
+                (err) => {
+                    console.error(err);
+                },);
+
+        }
+
+        fetch('./config.json')
+            .then((response) => response.json())
+            .then((json) => {
+                zigenConfig = json;
+                render();
+            });
+    </script>
+</body>
+
+</html>

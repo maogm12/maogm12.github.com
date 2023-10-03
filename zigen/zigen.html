@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字根练习</title>
+    <style>
+        #container {
+            position: relative;
+            top: -30px;
+            display: inline-block;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        #glyph-card {
+            font-size: 8em;
+            display: inline-block;
+            width: 100px;
+            height: 140px;
+        }
+
+        #glyph-card span {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        #glyph-card #glyph {
+            top: 0;
+            color: black;
+        }
+
+        #glyph-card #glyph-context {
+            top: 0;
+            color: lightgray;
+        }
+
+        #answer {
+            text-align: center;
+            cursor: none;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid black;
+            margin: 0 auto 0;
+            font-family: monospace;
+            font-size: 2em;
+            text-transform: capitalize;
+            display: block;
+            caret-color: transparent;
+            width: 50%;
+        }
+
+        #note {
+            list-style-type: none;
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        .note-key {
+            border: 1px solid gray;
+            font-family: monospace;
+            border-radius: 4px;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="zigen-categories">字根分区:</label>
+        <select name="zigen-categories" id="zigen-categories" onchange="chooseCategories();"></select>
+        <br>
+        <label for="random">随机展示字根：</label>
+        <input type="checkbox" name="random" id="random" onchange="showZigen();">
+        <br>
+        <label for="show-code">打开提示：</label>
+        <input type="checkbox" name="show-code" id="show-code" onchange="showZigen();">
+    </div>
+    <div id="container">
+        <div id="glyph-card">
+            <span id="glyph-context">
+                冠
+            </span>
+
+            <span id="glyph">
+                &#xE000;
+            </span>
+        </div>
+    </div>
+
+
+    <input type="text" id="answer">
+
+    <p>
+    <ul id="note"></ul>
+    </p>
+
+    <script>
+        var zigenConfig;
+        var currentGlyphs = [];
+        var currentIndex = 0;
+        var currentGlyph;
+
+        function configCategories() {
+            var categoryOptions = document.getElementById("zigen-categories");
+            Object.entries(zigenConfig.categories).forEach(([index, category]) => {
+                var option = document.createElement("option");
+                option.value = index;
+                option.text = category.name;
+                categoryOptions.add(option);
+            });
+
+            chooseCategories();
+        }
+
+        function chooseCategories() {
+            var categoryOptions = document.getElementById("zigen-categories");
+            var categoryIndex = categoryOptions.options[categoryOptions.selectedIndex].value;
+
+            var codes = zigenConfig.categories[categoryIndex].codes;
+            currentGlyphs = zigenConfig.glyphs.filter(glyph => codes.includes(glyph.code));
+            currentIndex = 0;
+
+            showZigen();
+        }
+
+        function showZigen() {
+            if (document.getElementById('random').checked) {
+                currentIndex = Math.floor(Math.random() * currentGlyphs.length);
+            } else {
+                if (currentIndex >= currentGlyphs.length) {
+                    currentIndex = 0;
+                }
+            }
+
+            let glyph = currentGlyphs[currentIndex];
+            currentGlyph = glyph;
+            document.getElementById('glyph').innerText = glyph.glyph;
+            document.getElementById('glyph-context').innerText = glyph.context || "";
+            
+            if (document.getElementById('show-code').checked) {
+                document.getElementById('answer').placeholder = glyph.code;
+            }
+        }
+
+        function loadFont() {
+            const zigenFont = new FontFace(zigenConfig.fontName, 'url(' + zigenConfig.font + ')');
+            document.fonts.add(zigenFont);
+            zigenFont.load().then(
+                () => {
+                    // font loaded successfully!
+                    var card = document.getElementById('glyph-card');
+                    card.style.fontFamily = zigenConfig.fontName;
+                },
+                (err) => {
+                    console.error(err);
+                },);
+        }
+
+        function loadNote() {
+            var note = document.getElementById('note');
+            Object.entries(zigenConfig.note).forEach(([key, value]) => {
+                var li = document.createElement('li');
+                var keySpan = document.createElement('span');
+                keySpan.classList.add('note-key');
+                keySpan.innerText = key;
+                li.appendChild(keySpan);
+                var noteSpan = document.createElement('span');
+                noteSpan.innerText = value;
+                li.appendChild(noteSpan);
+                note.appendChild(li);
+            });
+        }
+
+        function writeAnswer() {
+            var answerInput = document.getElementById('answer');
+            var answer = answerInput.value;
+            if (currentGlyph.code.toLowerCase().startsWith(answer.toLowerCase())) {
+                answerInput.style.color = "green";
+            } else {
+                answerInput.style.color = "red";
+            }
+
+            if (answer.toLowerCase() == currentGlyph.code.toLowerCase()) {
+                currentIndex++;
+                answerInput.value = "";
+                showZigen();
+            }
+        }
+
+        fetch('./config.json')
+            .then((response) => response.json())
+            .then((json) => {
+                zigenConfig = json;
+                document.title = zigenConfig.name + ' ' + zigenConfig.version;
+                configCategories();
+                loadFont();
+                showZigen();
+                loadNote();
+            });
+
+        const inputElement = document.getElementById("answer");
+
+        inputElement.addEventListener('keydown', function (event) {
+            if (event.key === 'Backspace') {
+                return true;
+            }
+
+            // Check if the key pressed is a letter
+            if (event.key.match(/[a-z]/i) && inputElement.value.length < currentGlyph.code.length) {
+                return true;
+            } else {
+                // Prevent any other key from being pressed
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        inputElement.addEventListener("input", function () {
+            writeAnswer();
+        });
+
+        inputElement.focus();
+
+    </script>
+</body>
+
+</html>

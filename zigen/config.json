@@ -1,0 +1,5291 @@
+{
+  "name": "宇浩字根",
+  "version": "2.5.0",
+  "font": "YuhaoZigen-ExtraLight.ttf",
+  "note": {
+    "A": "丁丌(jī)行右(亍)瓦，耳下(丅)打(扌丁)七寸。",
+    "S": "草头(艹卅𠂇)二犬厂，辰考(丂)而有臣。",
+    "D": "古來十石尤其戊，西雨不走馬豕丰。",
+    "F": "一木甫三工。",
+    "G": "大王革春(𡗗)夫，框(匚)面弋酉戈。",
+    "H": "老上(耂)青(龶)士示(礻)兀牙，末世土干未至车。",
+    "J": "早日山曰田。",
+    "K": "甲申由禺电，下框(冂)凹里业，虫贝水上见。",
+    "L": "口是心非。 ",
+    "M": "巾网(罒wǎng)貝皿且具上，小目立刀(刂)卜虎(虍)骨。",
+    "N": "方框(囗)二三(丨〢〣)竖，黑册尚止(龰)足。",
+    "Q": "荒下没右(殳)鱼儿气，撇(丿)川瓜矢几竹舟。 ",
+    "W": "周围(⺆勹)炙顶(⺼)皆同月，千鬼上身生金牛(牜)，告头(⺧)杀上(乂)谁侧(隹)缶？",
+    "E": "反文(攵pū)人(亻)欠斤，白爪壬乌夭。",
+    "R": "双人(彳)食(饣)匕入舌臼，微禾向夕反犬(犭)毛，衣下(𧘇)古風僉繁鳥。",
+    "T": "八人手长二三撇(彡)，金边(钅)自用介下卯。",
+    "Y": "秃盖(冖mì)心合豸(zhì)，阜(𠂤duī)上食九鸟。",
+    "U": "兰头(丷䒑)将(丬)左四点(灬)火，广言亡羊赢外框。",
+    "I": "鹿户三点(ッ)立水(氵)上。",
+    "O": "辛亥高宝盖(宀)，言旁(讠)点(丶)捺(乀)方。",
+    "P": "文门亦米走之底(辶chuò)，病头(疒)麻穴衣字旁(衤)。"
+  },
+  "glyphs": [
+    {
+      "code": "Ac",
+      "repr": "寸",
+      "glyph": "寸"
+    },
+    {
+      "code": "Ac",
+      "repr": "寸",
+      "glyph": "",
+      "context": "冠"
+    },
+    {
+      "code": "Ac",
+      "repr": "寸",
+      "glyph": "",
+      "context": "对"
+    },
+    {
+      "code": "Ah",
+      "repr": "亍",
+      "glyph": "亍"
+    },
+    {
+      "code": "Ah",
+      "repr": "亍",
+      "glyph": "",
+      "context": "行"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "七"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "东"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "亳"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "切"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "尧"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "屯"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "氏"
+    },
+    {
+      "code": "Ai",
+      "repr": "七",
+      "glyph": "",
+      "context": "民"
+    },
+    {
+      "code": "Aj",
+      "repr": "丌",
+      "glyph": "丌"
+    },
+    {
+      "code": "Aj",
+      "repr": "丌",
+      "glyph": "",
+      "context": "亚"
+    },
+    {
+      "code": "Aj",
+      "repr": "丌",
+      "glyph": "",
+      "context": "鼻"
+    },
+    {
+      "code": "Ak",
+      "repr": "丅",
+      "glyph": "丅"
+    },
+    {
+      "code": "Ak",
+      "repr": "丅",
+      "glyph": "",
+      "context": "丐"
+    },
+    {
+      "code": "Ak",
+      "repr": "下",
+      "glyph": "下"
+    },
+    {
+      "code": "An",
+      "repr": "丁",
+      "glyph": "丁"
+    },
+    {
+      "code": "An",
+      "repr": "丁",
+      "glyph": "",
+      "context": "可"
+    },
+    {
+      "code": "An",
+      "repr": "丁",
+      "glyph": "",
+      "context": "哥"
+    },
+    {
+      "code": "Ao",
+      "repr": "㐄",
+      "glyph": "㐄"
+    },
+    {
+      "code": "Ao",
+      "repr": "㐄",
+      "glyph": "",
+      "context": "夅"
+    },
+    {
+      "code": "Ao",
+      "repr": "㐄",
+      "glyph": "",
+      "context": "年"
+    },
+    {
+      "code": "Ao",
+      "repr": "扌",
+      "glyph": "扌"
+    },
+    {
+      "code": "Ao",
+      "repr": "扌",
+      "glyph": "",
+      "context": "我"
+    },
+    {
+      "code": "Ao",
+      "repr": "扌",
+      "glyph": "",
+      "context": "打"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "キ"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "举"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "击"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "判"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "半"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "择"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "聿"
+    },
+    {
+      "code": "Ao",
+      "repr": "キ",
+      "glyph": "",
+      "context": "那"
+    },
+    {
+      "code": "Ar",
+      "repr": "耳",
+      "glyph": "耳"
+    },
+    {
+      "code": "Ar",
+      "repr": "耳",
+      "glyph": "",
+      "context": "戢"
+    },
+    {
+      "code": "Ar",
+      "repr": "耳",
+      "glyph": "",
+      "context": "敢"
+    },
+    {
+      "code": "Ar",
+      "repr": "耳",
+      "glyph": "",
+      "context": "最"
+    },
+    {
+      "code": "Au",
+      "repr": "于下",
+      "glyph": "",
+      "context": "乎"
+    },
+    {
+      "code": "Au",
+      "repr": "于下",
+      "glyph": "",
+      "context": "事"
+    },
+    {
+      "code": "Au",
+      "repr": "于下",
+      "glyph": "",
+      "context": "于"
+    },
+    {
+      "code": "Au",
+      "repr": "于下",
+      "glyph": "",
+      "context": "才"
+    },
+    {
+      "code": "Aw",
+      "repr": "瓦",
+      "glyph": "瓦"
+    },
+    {
+      "code": "Bc",
+      "repr": "丑",
+      "glyph": "丑"
+    },
+    {
+      "code": "Bd",
+      "repr": "刀",
+      "glyph": "刀"
+    },
+    {
+      "code": "Bd",
+      "repr": "刀",
+      "glyph": "",
+      "context": "刃"
+    },
+    {
+      "code": "Bh",
+      "repr": "尸",
+      "glyph": "尸"
+    },
+    {
+      "code": "Bh",
+      "repr": "尸",
+      "glyph": "",
+      "context": "假"
+    },
+    {
+      "code": "Bh",
+      "repr": "尸",
+      "glyph": "",
+      "context": "卢"
+    },
+    {
+      "code": "Bh",
+      "repr": "尸",
+      "glyph": "",
+      "context": "官"
+    },
+    {
+      "code": "Bh",
+      "repr": "尸",
+      "glyph": "",
+      "context": "尺"
+    },
+    {
+      "code": "Bh",
+      "repr": "尸",
+      "glyph": "",
+      "context": "遣"
+    },
+    {
+      "code": "Bh",
+      "repr": "眉上",
+      "glyph": "",
+      "context": "声"
+    },
+    {
+      "code": "Bh",
+      "repr": "眉上",
+      "glyph": "",
+      "context": "眉"
+    },
+    {
+      "code": "Bi",
+      "repr": "已",
+      "glyph": "已"
+    },
+    {
+      "code": "Bj",
+      "repr": "己",
+      "glyph": "己"
+    },
+    {
+      "code": "Bj",
+      "repr": "己",
+      "glyph": "",
+      "context": "凯"
+    },
+    {
+      "code": "Bj",
+      "repr": "己",
+      "glyph": "",
+      "context": "忌"
+    },
+    {
+      "code": "Bj",
+      "repr": "己",
+      "glyph": "",
+      "context": "改"
+    },
+    {
+      "code": "Bk",
+      "repr": "飛",
+      "glyph": "飛"
+    },
+    {
+      "code": "Bm",
+      "repr": "彑",
+      "glyph": "彑"
+    },
+    {
+      "code": "Bm",
+      "repr": "彑",
+      "glyph": "",
+      "context": "互"
+    },
+    {
+      "code": "Bm",
+      "repr": "彑",
+      "glyph": "",
+      "context": "彔"
+    },
+    {
+      "code": "Bm",
+      "repr": "彑",
+      "glyph": "",
+      "context": "彘"
+    },
+    {
+      "code": "Bm",
+      "repr": "母",
+      "glyph": "母"
+    },
+    {
+      "code": "Bm",
+      "repr": "母",
+      "glyph": "",
+      "context": "每"
+    },
+    {
+      "code": "Bm",
+      "repr": "母",
+      "glyph": "",
+      "context": "毒"
+    },
+    {
+      "code": "Bm",
+      "repr": "互中",
+      "glyph": "",
+      "context": "彖"
+    },
+    {
+      "code": "Bm",
+      "repr": "母框",
+      "glyph": "",
+      "context": "毋"
+    },
+    {
+      "code": "Bm",
+      "repr": "母框",
+      "glyph": "",
+      "context": "贯"
+    },
+    {
+      "code": "Bs",
+      "repr": "糸",
+      "glyph": "糸"
+    },
+    {
+      "code": "Bs",
+      "repr": "糸",
+      "glyph": "",
+      "context": "彝"
+    },
+    {
+      "code": "Bs",
+      "repr": "糸",
+      "glyph": "",
+      "context": "徽"
+    },
+    {
+      "code": "Bs",
+      "repr": "糸",
+      "glyph": "",
+      "context": "系"
+    },
+    {
+      "code": "Bs",
+      "repr": "糸",
+      "glyph": "",
+      "context": "累"
+    },
+    {
+      "code": "Bs",
+      "repr": "糹",
+      "glyph": "糹"
+    },
+    {
+      "code": "Bs",
+      "repr": "糹",
+      "glyph": "",
+      "context": "彎"
+    },
+    {
+      "code": "Bs",
+      "repr": "糹",
+      "glyph": "",
+      "context": "紅"
+    },
+    {
+      "code": "Bs",
+      "repr": "糹",
+      "glyph": "",
+      "context": "羅"
+    },
+    {
+      "code": "Bu",
+      "repr": "コ",
+      "glyph": "コ"
+    },
+    {
+      "code": "Bu",
+      "repr": "コ",
+      "glyph": "",
+      "context": "侯"
+    },
+    {
+      "code": "Bu",
+      "repr": "コ",
+      "glyph": "",
+      "context": "兜"
+    },
+    {
+      "code": "Bu",
+      "repr": "コ",
+      "glyph": "",
+      "context": "决"
+    },
+    {
+      "code": "Bu",
+      "repr": "コ",
+      "glyph": "",
+      "context": "官"
+    },
+    {
+      "code": "Bu",
+      "repr": "コ",
+      "glyph": "",
+      "context": "巨"
+    },
+    {
+      "code": "Bu",
+      "repr": "ス",
+      "glyph": "ス"
+    },
+    {
+      "code": "Bu",
+      "repr": "ス",
+      "glyph": "",
+      "context": "径"
+    },
+    {
+      "code": "Bu",
+      "repr": "龴",
+      "glyph": "龴"
+    },
+    {
+      "code": "Bu",
+      "repr": "龴",
+      "glyph": "",
+      "context": "令"
+    },
+    {
+      "code": "Bu",
+      "repr": "龴",
+      "glyph": "",
+      "context": "甬"
+    },
+    {
+      "code": "Bu",
+      "repr": "又",
+      "glyph": "又"
+    },
+    {
+      "code": "Bu",
+      "repr": "又",
+      "glyph": "",
+      "context": "叉"
+    },
+    {
+      "code": "Bu",
+      "repr": "又",
+      "glyph": "",
+      "context": "对"
+    },
+    {
+      "code": "Bu",
+      "repr": "又",
+      "glyph": "",
+      "context": "支"
+    },
+    {
+      "code": "Bu",
+      "repr": "癶",
+      "glyph": "癶"
+    },
+    {
+      "code": "Bu",
+      "repr": "癶",
+      "glyph": "",
+      "context": "登"
+    },
+    {
+      "code": "Bu",
+      "repr": "鼠下",
+      "glyph": "",
+      "context": "巤"
+    },
+    {
+      "code": "Bu",
+      "repr": "鼠下",
+      "glyph": "",
+      "context": "鼠"
+    },
+    {
+      "code": "Cb",
+      "repr": "巴",
+      "glyph": "巴"
+    },
+    {
+      "code": "Ci",
+      "repr": "韋",
+      "glyph": "韋"
+    },
+    {
+      "code": "Ci",
+      "repr": "五下",
+      "glyph": "",
+      "context": "五"
+    },
+    {
+      "code": "Ci",
+      "repr": "五下",
+      "glyph": "",
+      "context": "衞"
+    },
+    {
+      "code": "Cj",
+      "repr": "阝",
+      "glyph": "阝"
+    },
+    {
+      "code": "Cj",
+      "repr": "阝",
+      "glyph": "",
+      "context": "那"
+    },
+    {
+      "code": "Cj",
+      "repr": "阝",
+      "glyph": "",
+      "context": "阿"
+    },
+    {
+      "code": "Ck",
+      "repr": "巳",
+      "glyph": "巳"
+    },
+    {
+      "code": "Ck",
+      "repr": "巳",
+      "glyph": "",
+      "context": "包"
+    },
+    {
+      "code": "Ck",
+      "repr": "巳",
+      "glyph": "",
+      "context": "导"
+    },
+    {
+      "code": "Ck",
+      "repr": "巳",
+      "glyph": "",
+      "context": "民"
+    },
+    {
+      "code": "Cn",
+      "repr": "女",
+      "glyph": "女"
+    },
+    {
+      "code": "Cn",
+      "repr": "女",
+      "glyph": "",
+      "context": "好"
+    },
+    {
+      "code": "Cn",
+      "repr": "女",
+      "glyph": "",
+      "context": "妻"
+    },
+    {
+      "code": "Cu",
+      "repr": "予",
+      "glyph": "予"
+    },
+    {
+      "code": "Cu",
+      "repr": "予",
+      "glyph": "",
+      "context": "矛"
+    },
+    {
+      "code": "Cu",
+      "repr": "予",
+      "glyph": "",
+      "context": "野"
+    },
+    {
+      "code": "Cy",
+      "repr": "乜",
+      "glyph": "乜"
+    },
+    {
+      "code": "Cy",
+      "repr": "也",
+      "glyph": "也"
+    },
+    {
+      "code": "Dd",
+      "repr": "壴",
+      "glyph": "壴"
+    },
+    {
+      "code": "Dd",
+      "repr": "壴",
+      "glyph": "",
+      "context": "喜"
+    },
+    {
+      "code": "Dd",
+      "repr": "壴",
+      "glyph": "",
+      "context": "彭"
+    },
+    {
+      "code": "Dg",
+      "repr": "古",
+      "glyph": "古"
+    },
+    {
+      "code": "Dg",
+      "repr": "古",
+      "glyph": "",
+      "context": "克"
+    },
+    {
+      "code": "Dg",
+      "repr": "古",
+      "glyph": "",
+      "context": "滴"
+    },
+    {
+      "code": "Dh",
+      "repr": "丆",
+      "glyph": "丆"
+    },
+    {
+      "code": "Dh",
+      "repr": "丆",
+      "glyph": "",
+      "context": "夏"
+    },
+    {
+      "code": "Dh",
+      "repr": "丆",
+      "glyph": "",
+      "context": "百"
+    },
+    {
+      "code": "Dh",
+      "repr": "丆",
+      "glyph": "",
+      "context": "页"
+    },
+    {
+      "code": "Dh",
+      "repr": "石",
+      "glyph": "石"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "十"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "丧"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "伞"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "午"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "南"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "妻"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "孛"
+    },
+    {
+      "code": "Di",
+      "repr": "十",
+      "glyph": "",
+      "context": "直"
+    },
+    {
+      "code": "Dj",
+      "repr": "其",
+      "glyph": "其"
+    },
+    {
+      "code": "Dj",
+      "repr": "其",
+      "glyph": "",
+      "context": "甚"
+    },
+    {
+      "code": "Dk",
+      "repr": "走",
+      "glyph": "走"
+    },
+    {
+      "code": "Dl",
+      "repr": "來",
+      "glyph": "來"
+    },
+    {
+      "code": "Dm",
+      "repr": "馬",
+      "glyph": "馬"
+    },
+    {
+      "code": "Dm",
+      "repr": "馬上",
+      "glyph": "",
+      "context": "馬"
+    },
+    {
+      "code": "Dn",
+      "repr": "丰",
+      "glyph": "丰"
+    },
+    {
+      "code": "Dn",
+      "repr": "丰",
+      "glyph": "",
+      "context": "害"
+    },
+    {
+      "code": "Dn",
+      "repr": "丰",
+      "glyph": "",
+      "context": "寿"
+    },
+    {
+      "code": "Dn",
+      "repr": "丰",
+      "glyph": "",
+      "context": "拜"
+    },
+    {
+      "code": "Dn",
+      "repr": "丰",
+      "glyph": "",
+      "context": "邦"
+    },
+    {
+      "code": "Do",
+      "repr": "尢",
+      "glyph": "尢"
+    },
+    {
+      "code": "Do",
+      "repr": "尢",
+      "glyph": "",
+      "context": "尴"
+    },
+    {
+      "code": "Do",
+      "repr": "尢",
+      "glyph": "",
+      "context": "无"
+    },
+    {
+      "code": "Do",
+      "repr": "尤",
+      "glyph": "尤"
+    },
+    {
+      "code": "Do",
+      "repr": "尤",
+      "glyph": "",
+      "context": "龙"
+    },
+    {
+      "code": "Ds",
+      "repr": "豕",
+      "glyph": "豕"
+    },
+    {
+      "code": "Ds",
+      "repr": "豕",
+      "glyph": "",
+      "context": "冢"
+    },
+    {
+      "code": "Ds",
+      "repr": "豕",
+      "glyph": "",
+      "context": "彖"
+    },
+    {
+      "code": "Ds",
+      "repr": "豕",
+      "glyph": "",
+      "context": "蕤"
+    },
+    {
+      "code": "Ds",
+      "repr": "豕下",
+      "glyph": "",
+      "context": "毅"
+    },
+    {
+      "code": "Ds",
+      "repr": "豕下",
+      "glyph": "",
+      "context": "象"
+    },
+    {
+      "code": "Du",
+      "repr": "不",
+      "glyph": "不"
+    },
+    {
+      "code": "Du",
+      "repr": "不",
+      "glyph": "",
+      "context": "丕"
+    },
+    {
+      "code": "Dw",
+      "repr": "戊",
+      "glyph": "戊"
+    },
+    {
+      "code": "Dw",
+      "repr": "戊",
+      "glyph": "",
+      "context": "咸"
+    },
+    {
+      "code": "Dw",
+      "repr": "戊",
+      "glyph": "",
+      "context": "戌"
+    },
+    {
+      "code": "Dw",
+      "repr": "戊",
+      "glyph": "",
+      "context": "戍"
+    },
+    {
+      "code": "Dx",
+      "repr": "襾",
+      "glyph": "襾"
+    },
+    {
+      "code": "Dx",
+      "repr": "西",
+      "glyph": "西"
+    },
+    {
+      "code": "Dy",
+      "repr": "雨",
+      "glyph": "雨"
+    },
+    {
+      "code": "Eb",
+      "repr": "白",
+      "glyph": "白"
+    },
+    {
+      "code": "Eb",
+      "repr": "白",
+      "glyph": "",
+      "context": "兜"
+    },
+    {
+      "code": "Ee",
+      "repr": "亻",
+      "glyph": "亻"
+    },
+    {
+      "code": "Ee",
+      "repr": "亻",
+      "glyph": "",
+      "context": "段"
+    },
+    {
+      "code": "Eh",
+      "repr": "夂",
+      "glyph": "夂"
+    },
+    {
+      "code": "Eh",
+      "repr": "夂",
+      "glyph": "",
+      "context": "冬"
+    },
+    {
+      "code": "Eh",
+      "repr": "夊",
+      "glyph": "夊"
+    },
+    {
+      "code": "Eh",
+      "repr": "夊",
+      "glyph": "",
+      "context": "俊"
+    },
+    {
+      "code": "Eh",
+      "repr": "夊",
+      "glyph": "",
+      "context": "夏"
+    },
+    {
+      "code": "Eh",
+      "repr": "夊",
+      "glyph": "",
+      "context": "故"
+    },
+    {
+      "code": "Ei",
+      "repr": "欠",
+      "glyph": "欠"
+    },
+    {
+      "code": "Ej",
+      "repr": "⺁",
+      "glyph": "⺁"
+    },
+    {
+      "code": "Ej",
+      "repr": "⺁",
+      "glyph": "",
+      "context": "卮"
+    },
+    {
+      "code": "Ej",
+      "repr": "⺁",
+      "glyph": "",
+      "context": "反"
+    },
+    {
+      "code": "Ej",
+      "repr": "⺁",
+      "glyph": "",
+      "context": "殷"
+    },
+    {
+      "code": "Ej",
+      "repr": "斤",
+      "glyph": "斤"
+    },
+    {
+      "code": "Ej",
+      "repr": "斤",
+      "glyph": "",
+      "context": "丘"
+    },
+    {
+      "code": "Ek",
+      "repr": "爪",
+      "glyph": "爪"
+    },
+    {
+      "code": "Ek",
+      "repr": "爪",
+      "glyph": "",
+      "context": "受"
+    },
+    {
+      "code": "En",
+      "repr": "壬",
+      "glyph": "壬"
+    },
+    {
+      "code": "En",
+      "repr": "壬",
+      "glyph": "",
+      "context": "丢"
+    },
+    {
+      "code": "En",
+      "repr": "壬",
+      "glyph": "",
+      "context": "垂"
+    },
+    {
+      "code": "Eo",
+      "repr": "夭",
+      "glyph": "夭"
+    },
+    {
+      "code": "Eo",
+      "repr": "夭",
+      "glyph": "",
+      "context": "乔"
+    },
+    {
+      "code": "Ew",
+      "repr": "乌",
+      "glyph": "乌"
+    },
+    {
+      "code": "Fa",
+      "repr": "三",
+      "glyph": "三"
+    },
+    {
+      "code": "Fa",
+      "repr": "三",
+      "glyph": "",
+      "context": "承"
+    },
+    {
+      "code": "Fa",
+      "repr": "三",
+      "glyph": "",
+      "context": "段"
+    },
+    {
+      "code": "Fi",
+      "repr": "一",
+      "glyph": "一"
+    },
+    {
+      "code": "Fo",
+      "repr": "工",
+      "glyph": "工"
+    },
+    {
+      "code": "Fo",
+      "repr": "工",
+      "glyph": "",
+      "context": "功"
+    },
+    {
+      "code": "Fo",
+      "repr": "工",
+      "glyph": "",
+      "context": "巫"
+    },
+    {
+      "code": "Fu",
+      "repr": "甫",
+      "glyph": "甫"
+    },
+    {
+      "code": "Fu",
+      "repr": "甫",
+      "glyph": "",
+      "context": "尃"
+    },
+    {
+      "code": "Fv",
+      "repr": "木",
+      "glyph": "木"
+    },
+    {
+      "code": "Fv",
+      "repr": "木",
+      "glyph": "",
+      "context": "亲"
+    },
+    {
+      "code": "Fv",
+      "repr": "木",
+      "glyph": "",
+      "context": "刺"
+    },
+    {
+      "code": "Gc",
+      "repr": "叀",
+      "glyph": "叀"
+    },
+    {
+      "code": "Gc",
+      "repr": "車",
+      "glyph": "車"
+    },
+    {
+      "code": "Gc",
+      "repr": "專上",
+      "glyph": "",
+      "context": "專"
+    },
+    {
+      "code": "Gd",
+      "repr": "大",
+      "glyph": "大"
+    },
+    {
+      "code": "Ge",
+      "repr": "革",
+      "glyph": "革"
+    },
+    {
+      "code": "Ge",
+      "repr": "革",
+      "glyph": "",
+      "context": "堇"
+    },
+    {
+      "code": "Gf",
+      "repr": "匚",
+      "glyph": "匚"
+    },
+    {
+      "code": "Gf",
+      "repr": "匚",
+      "glyph": "",
+      "context": "丣"
+    },
+    {
+      "code": "Gf",
+      "repr": "匚",
+      "glyph": "",
+      "context": "区"
+    },
+    {
+      "code": "Gf",
+      "repr": "匚",
+      "glyph": "",
+      "context": "巨"
+    },
+    {
+      "code": "Gf",
+      "repr": "匚",
+      "glyph": "",
+      "context": "既"
+    },
+    {
+      "code": "Gf",
+      "repr": "匚",
+      "glyph": "",
+      "context": "朁"
+    },
+    {
+      "code": "Gf",
+      "repr": "畏下",
+      "glyph": "",
+      "context": "展"
+    },
+    {
+      "code": "Gf",
+      "repr": "畏下",
+      "glyph": "",
+      "context": "畏"
+    },
+    {
+      "code": "Gg",
+      "repr": "戈",
+      "glyph": "戈"
+    },
+    {
+      "code": "Gg",
+      "repr": "戈",
+      "glyph": "",
+      "context": "戋"
+    },
+    {
+      "code": "Gg",
+      "repr": "戈",
+      "glyph": "",
+      "context": "我"
+    },
+    {
+      "code": "Gg",
+      "repr": "戈",
+      "glyph": "",
+      "context": "或"
+    },
+    {
+      "code": "Gg",
+      "repr": "戈",
+      "glyph": "",
+      "context": "戢"
+    },
+    {
+      "code": "Gi",
+      "repr": "面",
+      "glyph": "面"
+    },
+    {
+      "code": "Gn",
+      "repr": "王",
+      "glyph": "王"
+    },
+    {
+      "code": "Gn",
+      "repr": "王",
+      "glyph": "",
+      "context": "主"
+    },
+    {
+      "code": "Gn",
+      "repr": "王",
+      "glyph": "",
+      "context": "再"
+    },
+    {
+      "code": "Gn",
+      "repr": "王",
+      "glyph": "",
+      "context": "噩"
+    },
+    {
+      "code": "Go",
+      "repr": "酉",
+      "glyph": "酉"
+    },
+    {
+      "code": "Go",
+      "repr": "酉",
+      "glyph": "",
+      "context": "酋"
+    },
+    {
+      "code": "Gu",
+      "repr": "夫",
+      "glyph": "夫"
+    },
+    {
+      "code": "Gu",
+      "repr": "夫",
+      "glyph": "",
+      "context": "养"
+    },
+    {
+      "code": "Gu",
+      "repr": "夫",
+      "glyph": "",
+      "context": "卷"
+    },
+    {
+      "code": "Gu",
+      "repr": "夫",
+      "glyph": "",
+      "context": "失"
+    },
+    {
+      "code": "Gu",
+      "repr": "夫",
+      "glyph": "",
+      "context": "夹"
+    },
+    {
+      "code": "Gu",
+      "repr": "𡗗",
+      "glyph": "𡗗"
+    },
+    {
+      "code": "Gu",
+      "repr": "𡗗",
+      "glyph": "",
+      "context": "春"
+    },
+    {
+      "code": "Gy",
+      "repr": "弋",
+      "glyph": "弋"
+    },
+    {
+      "code": "Gy",
+      "repr": "弋",
+      "glyph": "",
+      "context": "式"
+    },
+    {
+      "code": "Gy",
+      "repr": "弋",
+      "glyph": "",
+      "context": "武"
+    },
+    {
+      "code": "Ha",
+      "repr": "長",
+      "glyph": "長"
+    },
+    {
+      "code": "Ha",
+      "repr": "镸",
+      "glyph": "镸"
+    },
+    {
+      "code": "Ha",
+      "repr": "镸",
+      "glyph": "",
+      "context": "套"
+    },
+    {
+      "code": "Ha",
+      "repr": "镸",
+      "glyph": "",
+      "context": "肆"
+    },
+    {
+      "code": "Ha",
+      "repr": "髟",
+      "glyph": "髟"
+    },
+    {
+      "code": "Hc",
+      "repr": "车",
+      "glyph": "车"
+    },
+    {
+      "code": "Hc",
+      "repr": "车",
+      "glyph": "",
+      "context": "斩"
+    },
+    {
+      "code": "He",
+      "repr": "未",
+      "glyph": "未"
+    },
+    {
+      "code": "Hf",
+      "repr": "士",
+      "glyph": "士"
+    },
+    {
+      "code": "Hf",
+      "repr": "龶",
+      "glyph": "龶"
+    },
+    {
+      "code": "Hf",
+      "repr": "龶",
+      "glyph": "",
+      "context": "敖"
+    },
+    {
+      "code": "Hf",
+      "repr": "龶",
+      "glyph": "",
+      "context": "青"
+    },
+    {
+      "code": "Hf",
+      "repr": "穀頭",
+      "glyph": "",
+      "context": "穀"
+    },
+    {
+      "code": "Hg",
+      "repr": "干",
+      "glyph": "干"
+    },
+    {
+      "code": "Hg",
+      "repr": "干",
+      "glyph": "",
+      "context": "平"
+    },
+    {
+      "code": "Hg",
+      "repr": "干",
+      "glyph": "",
+      "context": "爰"
+    },
+    {
+      "code": "Hi",
+      "repr": "世",
+      "glyph": "世"
+    },
+    {
+      "code": "Hk",
+      "repr": "至",
+      "glyph": "至"
+    },
+    {
+      "code": "Ho",
+      "repr": "末",
+      "glyph": "末"
+    },
+    {
+      "code": "Hs",
+      "repr": "示",
+      "glyph": "示"
+    },
+    {
+      "code": "Hs",
+      "repr": "礻",
+      "glyph": "礻"
+    },
+    {
+      "code": "Hs",
+      "repr": "礻",
+      "glyph": "",
+      "context": "礼"
+    },
+    {
+      "code": "Ht",
+      "repr": "土",
+      "glyph": "土"
+    },
+    {
+      "code": "Ht",
+      "repr": "土",
+      "glyph": "",
+      "context": "佳"
+    },
+    {
+      "code": "Ht",
+      "repr": "土",
+      "glyph": "",
+      "context": "冉"
+    },
+    {
+      "code": "Ht",
+      "repr": "土",
+      "glyph": "",
+      "context": "坏"
+    },
+    {
+      "code": "Ht",
+      "repr": "土",
+      "glyph": "",
+      "context": "坐"
+    },
+    {
+      "code": "Ht",
+      "repr": "耂",
+      "glyph": "耂"
+    },
+    {
+      "code": "Ht",
+      "repr": "耂",
+      "glyph": "",
+      "context": "老"
+    },
+    {
+      "code": "Hw",
+      "repr": "兀",
+      "glyph": "兀"
+    },
+    {
+      "code": "Hw",
+      "repr": "兀",
+      "glyph": "",
+      "context": "光"
+    },
+    {
+      "code": "Hw",
+      "repr": "兀",
+      "glyph": "",
+      "context": "兕"
+    },
+    {
+      "code": "Hw",
+      "repr": "兀",
+      "glyph": "",
+      "context": "匹"
+    },
+    {
+      "code": "Hy",
+      "repr": "牙",
+      "glyph": "牙"
+    },
+    {
+      "code": "Id",
+      "repr": "立",
+      "glyph": "立"
+    },
+    {
+      "code": "Id",
+      "repr": "立",
+      "glyph": "",
+      "context": "产"
+    },
+    {
+      "code": "Ie",
+      "repr": "戶",
+      "glyph": "戶"
+    },
+    {
+      "code": "Ie",
+      "repr": "户",
+      "glyph": "户"
+    },
+    {
+      "code": "Ie",
+      "repr": "戸",
+      "glyph": "戸"
+    },
+    {
+      "code": "Il",
+      "repr": "鹿",
+      "glyph": "鹿"
+    },
+    {
+      "code": "Il",
+      "repr": "鹿上",
+      "glyph": "",
+      "context": "鹿"
+    },
+    {
+      "code": "Is",
+      "repr": "⺍",
+      "glyph": "⺍"
+    },
+    {
+      "code": "Is",
+      "repr": "⺍",
+      "glyph": "",
+      "context": "学"
+    },
+    {
+      "code": "Is",
+      "repr": "⺍",
+      "glyph": "",
+      "context": "州"
+    },
+    {
+      "code": "Is",
+      "repr": "氵",
+      "glyph": "氵"
+    },
+    {
+      "code": "Is",
+      "repr": "兴上",
+      "glyph": "",
+      "context": "佥"
+    },
+    {
+      "code": "Is",
+      "repr": "兴上",
+      "glyph": "",
+      "context": "兴"
+    },
+    {
+      "code": "Is",
+      "repr": "兴上",
+      "glyph": "",
+      "context": "应"
+    },
+    {
+      "code": "Ja",
+      "repr": "亞中",
+      "glyph": "",
+      "context": "亞"
+    },
+    {
+      "code": "Ja",
+      "repr": "亞下",
+      "glyph": "",
+      "context": "亞"
+    },
+    {
+      "code": "Ja",
+      "repr": "亞下",
+      "glyph": "",
+      "context": "壺"
+    },
+    {
+      "code": "Ja",
+      "repr": "亞下",
+      "glyph": "",
+      "context": "斲"
+    },
+    {
+      "code": "Jd",
+      "repr": "早",
+      "glyph": "早"
+    },
+    {
+      "code": "Jd",
+      "repr": "早",
+      "glyph": "",
+      "context": "卓"
+    },
+    {
+      "code": "Jd",
+      "repr": "早",
+      "glyph": "",
+      "context": "朝"
+    },
+    {
+      "code": "Je",
+      "repr": "曰",
+      "glyph": "曰"
+    },
+    {
+      "code": "Jm",
+      "repr": "黽",
+      "glyph": "黽"
+    },
+    {
+      "code": "Jm",
+      "repr": "龜下",
+      "glyph": "",
+      "context": "龜"
+    },
+    {
+      "code": "Jr",
+      "repr": "日",
+      "glyph": "日"
+    },
+    {
+      "code": "Jr",
+      "repr": "日",
+      "glyph": "",
+      "context": "临"
+    },
+    {
+      "code": "Jr",
+      "repr": "日",
+      "glyph": "",
+      "context": "昌"
+    },
+    {
+      "code": "Jr",
+      "repr": "日",
+      "glyph": "",
+      "context": "更"
+    },
+    {
+      "code": "Js",
+      "repr": "山",
+      "glyph": "山"
+    },
+    {
+      "code": "Js",
+      "repr": "山",
+      "glyph": "",
+      "context": "幽"
+    },
+    {
+      "code": "Jt",
+      "repr": "田",
+      "glyph": "田"
+    },
+    {
+      "code": "Jt",
+      "repr": "田",
+      "glyph": "",
+      "context": "兽"
+    },
+    {
+      "code": "Kb",
+      "repr": "贝",
+      "glyph": "贝"
+    },
+    {
+      "code": "Kc",
+      "repr": "虫",
+      "glyph": "虫"
+    },
+    {
+      "code": "Kc",
+      "repr": "虫",
+      "glyph": "",
+      "context": "禹"
+    },
+    {
+      "code": "Kd",
+      "repr": "电",
+      "glyph": "电"
+    },
+    {
+      "code": "Kd",
+      "repr": "电",
+      "glyph": "",
+      "context": "⻳"
+    },
+    {
+      "code": "Kd",
+      "repr": "电",
+      "glyph": "",
+      "context": "亀"
+    },
+    {
+      "code": "Kd",
+      "repr": "电",
+      "glyph": "",
+      "context": "曳"
+    },
+    {
+      "code": "Kd",
+      "repr": "电",
+      "glyph": "",
+      "context": "鹌"
+    },
+    {
+      "code": "Ke",
+      "repr": "申",
+      "glyph": "申"
+    },
+    {
+      "code": "Ke",
+      "repr": "申",
+      "glyph": "",
+      "context": "痩"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "冂"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "丙"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "典"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "再"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "冒"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "制"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "刺"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂",
+      "glyph": "",
+      "context": "南"
+    },
+    {
+      "code": "Kf",
+      "repr": "冂丶",
+      "glyph": "",
+      "context": "丽"
+    },
+    {
+      "code": "Kf",
+      "repr": "雋下",
+      "glyph": "",
+      "context": "兕"
+    },
+    {
+      "code": "Kf",
+      "repr": "雋下",
+      "glyph": "",
+      "context": "凹"
+    },
+    {
+      "code": "Kf",
+      "repr": "雋下",
+      "glyph": "",
+      "context": "雋"
+    },
+    {
+      "code": "Kg",
+      "repr": "业",
+      "glyph": "业"
+    },
+    {
+      "code": "Kg",
+      "repr": "业",
+      "glyph": "",
+      "context": "並"
+    },
+    {
+      "code": "Kj",
+      "repr": "甲",
+      "glyph": "甲"
+    },
+    {
+      "code": "Kk",
+      "repr": "里",
+      "glyph": "里"
+    },
+    {
+      "code": "Kk",
+      "repr": "里",
+      "glyph": "",
+      "context": "重"
+    },
+    {
+      "code": "Kl",
+      "repr": "鹵",
+      "glyph": "鹵"
+    },
+    {
+      "code": "Kn",
+      "repr": "門",
+      "glyph": "門"
+    },
+    {
+      "code": "Ko",
+      "repr": "由",
+      "glyph": "由"
+    },
+    {
+      "code": "Ko",
+      "repr": "由",
+      "glyph": "",
+      "context": "寅"
+    },
+    {
+      "code": "Ks",
+      "repr": "丄",
+      "glyph": "丄"
+    },
+    {
+      "code": "Ks",
+      "repr": "丄",
+      "glyph": "",
+      "context": "円"
+    },
+    {
+      "code": "Ks",
+      "repr": "丄",
+      "glyph": "",
+      "context": "與"
+    },
+    {
+      "code": "Ks",
+      "repr": "丄",
+      "glyph": "",
+      "context": "虫"
+    },
+    {
+      "code": "Ks",
+      "repr": "丄",
+      "glyph": "",
+      "context": "贵"
+    },
+    {
+      "code": "Ks",
+      "repr": "上",
+      "glyph": "上"
+    },
+    {
+      "code": "Ks",
+      "repr": "上",
+      "glyph": "",
+      "context": "卡"
+    },
+    {
+      "code": "Kv",
+      "repr": "水",
+      "glyph": "水"
+    },
+    {
+      "code": "Kv",
+      "repr": "水",
+      "glyph": "",
+      "context": "丞"
+    },
+    {
+      "code": "Kv",
+      "repr": "水",
+      "glyph": "",
+      "context": "录"
+    },
+    {
+      "code": "Kv",
+      "repr": "水",
+      "glyph": "",
+      "context": "承"
+    },
+    {
+      "code": "Kv",
+      "repr": "水",
+      "glyph": "",
+      "context": "永"
+    },
+    {
+      "code": "Kv",
+      "repr": "水",
+      "glyph": "",
+      "context": "求"
+    },
+    {
+      "code": "Kx",
+      "repr": "见",
+      "glyph": "见"
+    },
+    {
+      "code": "Ky",
+      "repr": "禺",
+      "glyph": "禺"
+    },
+    {
+      "code": "Li",
+      "repr": "非",
+      "glyph": "非"
+    },
+    {
+      "code": "Li",
+      "repr": "非",
+      "glyph": "",
+      "context": "韭"
+    },
+    {
+      "code": "Lv",
+      "repr": "黽上",
+      "glyph": "",
+      "context": "黽"
+    },
+    {
+      "code": "Lv",
+      "repr": "口",
+      "glyph": "口"
+    },
+    {
+      "code": "Lv",
+      "repr": "口",
+      "glyph": "",
+      "context": "中"
+    },
+    {
+      "code": "Lv",
+      "repr": "口",
+      "glyph": "",
+      "context": "事"
+    },
+    {
+      "code": "Lv",
+      "repr": "口",
+      "glyph": "",
+      "context": "占"
+    },
+    {
+      "code": "Ma",
+      "repr": "小",
+      "glyph": "小"
+    },
+    {
+      "code": "Ma",
+      "repr": "小",
+      "glyph": "",
+      "context": "东"
+    },
+    {
+      "code": "Ma",
+      "repr": "小",
+      "glyph": "",
+      "context": "光"
+    },
+    {
+      "code": "Ma",
+      "repr": "小",
+      "glyph": "",
+      "context": "少"
+    },
+    {
+      "code": "Mb",
+      "repr": "貝",
+      "glyph": "貝"
+    },
+    {
+      "code": "Mc",
+      "repr": "齒",
+      "glyph": "齒"
+    },
+    {
+      "code": "Md",
+      "repr": "刂",
+      "glyph": "刂"
+    },
+    {
+      "code": "Md",
+      "repr": "刂",
+      "glyph": "",
+      "context": "利"
+    },
+    {
+      "code": "Mf",
+      "repr": "目",
+      "glyph": "目"
+    },
+    {
+      "code": "Mf",
+      "repr": "目",
+      "glyph": "",
+      "context": "冒"
+    },
+    {
+      "code": "Mf",
+      "repr": "目",
+      "glyph": "",
+      "context": "夏"
+    },
+    {
+      "code": "Mg",
+      "repr": "骨",
+      "glyph": "骨"
+    },
+    {
+      "code": "Mi",
+      "repr": "且",
+      "glyph": "且"
+    },
+    {
+      "code": "Mi",
+      "repr": "且",
+      "glyph": "",
+      "context": "县"
+    },
+    {
+      "code": "Mn",
+      "repr": "皿",
+      "glyph": "皿"
+    },
+    {
+      "code": "Mn",
+      "repr": "皿",
+      "glyph": "",
+      "context": "血"
+    },
+    {
+      "code": "Mo",
+      "repr": "卜",
+      "glyph": "卜"
+    },
+    {
+      "code": "Mo",
+      "repr": "卜",
+      "glyph": "",
+      "context": "卞"
+    },
+    {
+      "code": "Mo",
+      "repr": "卜",
+      "glyph": "",
+      "context": "占"
+    },
+    {
+      "code": "Mo",
+      "repr": "卜",
+      "glyph": "",
+      "context": "卡"
+    },
+    {
+      "code": "Mo",
+      "repr": "乍下",
+      "glyph": "",
+      "context": "乍"
+    },
+    {
+      "code": "Mo",
+      "repr": "龍右",
+      "glyph": "",
+      "context": "龍"
+    },
+    {
+      "code": "Mu",
+      "repr": "虍",
+      "glyph": "虍"
+    },
+    {
+      "code": "Mu",
+      "repr": "虍",
+      "glyph": "",
+      "context": "虎"
+    },
+    {
+      "code": "Mu",
+      "repr": "虎",
+      "glyph": "虎"
+    },
+    {
+      "code": "Mv",
+      "repr": "巾",
+      "glyph": "巾"
+    },
+    {
+      "code": "Mv",
+      "repr": "巾",
+      "glyph": "",
+      "context": "币"
+    },
+    {
+      "code": "Mv",
+      "repr": "巾",
+      "glyph": "",
+      "context": "敝"
+    },
+    {
+      "code": "Mw",
+      "repr": "罒",
+      "glyph": "罒"
+    },
+    {
+      "code": "Mw",
+      "repr": "罒",
+      "glyph": "",
+      "context": "罗"
+    },
+    {
+      "code": "Mx",
+      "repr": "見",
+      "glyph": "見"
+    },
+    {
+      "code": "Na",
+      "repr": "冎",
+      "glyph": "冎"
+    },
+    {
+      "code": "Na",
+      "repr": "咼",
+      "glyph": "咼"
+    },
+    {
+      "code": "Na",
+      "repr": "咼",
+      "glyph": "",
+      "context": "剮"
+    },
+    {
+      "code": "Nc",
+      "repr": "冊",
+      "glyph": "冊"
+    },
+    {
+      "code": "Nc",
+      "repr": "冊",
+      "glyph": "",
+      "context": "嗣"
+    },
+    {
+      "code": "Nc",
+      "repr": "冊",
+      "glyph": "",
+      "context": "扁"
+    },
+    {
+      "code": "Nc",
+      "repr": "冊",
+      "glyph": "",
+      "context": "瀹"
+    },
+    {
+      "code": "Nd",
+      "repr": "鬥",
+      "glyph": "鬥"
+    },
+    {
+      "code": "Ne",
+      "repr": "黑",
+      "glyph": "黑"
+    },
+    {
+      "code": "Ne",
+      "repr": "黑",
+      "glyph": "",
+      "context": "熏"
+    },
+    {
+      "code": "Nf",
+      "repr": "龰",
+      "glyph": "龰"
+    },
+    {
+      "code": "Nf",
+      "repr": "龰",
+      "glyph": "",
+      "context": "定"
+    },
+    {
+      "code": "Nf",
+      "repr": "龰",
+      "glyph": "",
+      "context": "胥"
+    },
+    {
+      "code": "Ni",
+      "repr": "止",
+      "glyph": "止"
+    },
+    {
+      "code": "Ni",
+      "repr": "止",
+      "glyph": "",
+      "context": "些"
+    },
+    {
+      "code": "Ni",
+      "repr": "止",
+      "glyph": "",
+      "context": "卸"
+    },
+    {
+      "code": "Ni",
+      "repr": "止",
+      "glyph": "",
+      "context": "正"
+    },
+    {
+      "code": "Ns",
+      "repr": "〢",
+      "glyph": "〢"
+    },
+    {
+      "code": "Ns",
+      "repr": "〢",
+      "glyph": "",
+      "context": "临"
+    },
+    {
+      "code": "Ns",
+      "repr": "〢",
+      "glyph": "",
+      "context": "兼"
+    },
+    {
+      "code": "Ns",
+      "repr": "〣",
+      "glyph": "〣"
+    },
+    {
+      "code": "Ns",
+      "repr": "丨",
+      "glyph": "丨"
+    },
+    {
+      "code": "Ns",
+      "repr": "丨",
+      "glyph": "",
+      "context": "个"
+    },
+    {
+      "code": "Ns",
+      "repr": "丨",
+      "glyph": "",
+      "context": "中"
+    },
+    {
+      "code": "Ns",
+      "repr": "丨",
+      "glyph": "",
+      "context": "书"
+    },
+    {
+      "code": "Ns",
+      "repr": "丨",
+      "glyph": "",
+      "context": "修"
+    },
+    {
+      "code": "Ns",
+      "repr": "尚",
+      "glyph": "尚"
+    },
+    {
+      "code": "Ns",
+      "repr": "尚",
+      "glyph": "",
+      "context": "常"
+    },
+    {
+      "code": "Ns",
+      "repr": "龸",
+      "glyph": "龸"
+    },
+    {
+      "code": "Ns",
+      "repr": "龸",
+      "glyph": "",
+      "context": "尝"
+    },
+    {
+      "code": "Nv",
+      "repr": "足",
+      "glyph": "足"
+    },
+    {
+      "code": "Nv",
+      "repr": "足",
+      "glyph": "",
+      "context": "趴"
+    },
+    {
+      "code": "Nw",
+      "repr": "囗",
+      "glyph": "囗"
+    },
+    {
+      "code": "Nw",
+      "repr": "囗",
+      "glyph": "",
+      "context": "回"
+    },
+    {
+      "code": "Nw",
+      "repr": "囗",
+      "glyph": "",
+      "context": "国"
+    },
+    {
+      "code": "Oa",
+      "repr": "讠",
+      "glyph": "讠"
+    },
+    {
+      "code": "Ob",
+      "repr": "亠",
+      "glyph": "亠"
+    },
+    {
+      "code": "Ob",
+      "repr": "亠",
+      "glyph": "",
+      "context": "丹"
+    },
+    {
+      "code": "Ob",
+      "repr": "亠",
+      "glyph": "",
+      "context": "交"
+    },
+    {
+      "code": "Ob",
+      "repr": "宀",
+      "glyph": "宀"
+    },
+    {
+      "code": "Ob",
+      "repr": "宀",
+      "glyph": "",
+      "context": "宁"
+    },
+    {
+      "code": "Od",
+      "repr": "丶",
+      "glyph": "丶"
+    },
+    {
+      "code": "Od",
+      "repr": "丶",
+      "glyph": "",
+      "context": "丸"
+    },
+    {
+      "code": "Od",
+      "repr": "丶",
+      "glyph": "",
+      "context": "主"
+    },
+    {
+      "code": "Od",
+      "repr": "丶",
+      "glyph": "",
+      "context": "书"
+    },
+    {
+      "code": "Od",
+      "repr": "乀",
+      "glyph": "乀"
+    },
+    {
+      "code": "Od",
+      "repr": "乀",
+      "glyph": "",
+      "context": "丈"
+    },
+    {
+      "code": "Od",
+      "repr": "乀",
+      "glyph": "",
+      "context": "及"
+    },
+    {
+      "code": "Od",
+      "repr": "乀",
+      "glyph": "",
+      "context": "夜"
+    },
+    {
+      "code": "Od",
+      "repr": "乀",
+      "glyph": "",
+      "context": "孓"
+    },
+    {
+      "code": "Od",
+      "repr": "乀",
+      "glyph": "",
+      "context": "尺"
+    },
+    {
+      "code": "Og",
+      "repr": "方",
+      "glyph": "方"
+    },
+    {
+      "code": "Oi",
+      "repr": "亥",
+      "glyph": "亥"
+    },
+    {
+      "code": "Ol",
+      "repr": "高头",
+      "glyph": "",
+      "context": "膏"
+    },
+    {
+      "code": "Ol",
+      "repr": "高",
+      "glyph": "高"
+    },
+    {
+      "code": "Ol",
+      "repr": "亮头",
+      "glyph": "",
+      "context": "亭"
+    },
+    {
+      "code": "Ol",
+      "repr": "亮头",
+      "glyph": "",
+      "context": "亮"
+    },
+    {
+      "code": "Ol",
+      "repr": "京头",
+      "glyph": "",
+      "context": "京"
+    },
+    {
+      "code": "Ol",
+      "repr": "京头",
+      "glyph": "",
+      "context": "哀"
+    },
+    {
+      "code": "Ox",
+      "repr": "辛",
+      "glyph": "辛"
+    },
+    {
+      "code": "Ox",
+      "repr": "辛",
+      "glyph": "",
+      "context": "辣"
+    },
+    {
+      "code": "Pa",
+      "repr": "麻",
+      "glyph": "麻"
+    },
+    {
+      "code": "Pa",
+      "repr": "麻",
+      "glyph": "",
+      "context": "摩"
+    },
+    {
+      "code": "Pb",
+      "repr": "疒",
+      "glyph": "疒"
+    },
+    {
+      "code": "Pb",
+      "repr": "疒",
+      "glyph": "",
+      "context": "病"
+    },
+    {
+      "code": "Pd",
+      "repr": "辶",
+      "glyph": "辶"
+    },
+    {
+      "code": "Pd",
+      "repr": "辶",
+      "glyph": "",
+      "context": "过"
+    },
+    {
+      "code": "Pe",
+      "repr": "之",
+      "glyph": "之"
+    },
+    {
+      "code": "Pe",
+      "repr": "之",
+      "glyph": "",
+      "context": "乏"
+    },
+    {
+      "code": "Pi",
+      "repr": "亦",
+      "glyph": "亦"
+    },
+    {
+      "code": "Pi",
+      "repr": "亦",
+      "glyph": "",
+      "context": "变"
+    },
+    {
+      "code": "Pm",
+      "repr": "米",
+      "glyph": "米"
+    },
+    {
+      "code": "Pm",
+      "repr": "米",
+      "glyph": "",
+      "context": "奥"
+    },
+    {
+      "code": "Pm",
+      "repr": "米",
+      "glyph": "",
+      "context": "悉"
+    },
+    {
+      "code": "Pm",
+      "repr": "米",
+      "glyph": "",
+      "context": "来"
+    },
+    {
+      "code": "Pn",
+      "repr": "门",
+      "glyph": "门"
+    },
+    {
+      "code": "Pw",
+      "repr": "文",
+      "glyph": "文"
+    },
+    {
+      "code": "Pw",
+      "repr": "文",
+      "glyph": "",
+      "context": "⻬"
+    },
+    {
+      "code": "Pw",
+      "repr": "文",
+      "glyph": "",
+      "context": "离"
+    },
+    {
+      "code": "Px",
+      "repr": "穴",
+      "glyph": "穴"
+    },
+    {
+      "code": "Px",
+      "repr": "穴",
+      "glyph": "",
+      "context": "空"
+    },
+    {
+      "code": "Py",
+      "repr": "衤",
+      "glyph": "衤"
+    },
+    {
+      "code": "Py",
+      "repr": "衤",
+      "glyph": "",
+      "context": "补"
+    },
+    {
+      "code": "Qc",
+      "repr": "川",
+      "glyph": "川"
+    },
+    {
+      "code": "Qc",
+      "repr": "川",
+      "glyph": "",
+      "context": "州"
+    },
+    {
+      "code": "Qc",
+      "repr": "川",
+      "glyph": "",
+      "context": "顺"
+    },
+    {
+      "code": "Qh",
+      "repr": "殳",
+      "glyph": "殳"
+    },
+    {
+      "code": "Qh",
+      "repr": "殳",
+      "glyph": "",
+      "context": "没"
+    },
+    {
+      "code": "Qi",
+      "repr": "矢",
+      "glyph": "矢"
+    },
+    {
+      "code": "Qi",
+      "repr": "矢",
+      "glyph": "",
+      "context": "侯"
+    },
+    {
+      "code": "Qj",
+      "repr": "几",
+      "glyph": "几"
+    },
+    {
+      "code": "Qj",
+      "repr": "几",
+      "glyph": "",
+      "context": "凡"
+    },
+    {
+      "code": "Qj",
+      "repr": "几",
+      "glyph": "",
+      "context": "朵"
+    },
+    {
+      "code": "Qj",
+      "repr": "⺇",
+      "glyph": "⺇"
+    },
+    {
+      "code": "Qj",
+      "repr": "⺇",
+      "glyph": "",
+      "context": "凤"
+    },
+    {
+      "code": "Qk",
+      "repr": "竹",
+      "glyph": "竹"
+    },
+    {
+      "code": "Qk",
+      "repr": "⺮",
+      "glyph": "⺮"
+    },
+    {
+      "code": "Qk",
+      "repr": "⺮",
+      "glyph": "",
+      "context": "笑"
+    },
+    {
+      "code": "Qk",
+      "repr": "𠂉",
+      "glyph": "𠂉"
+    },
+    {
+      "code": "Qk",
+      "repr": "𠂉",
+      "glyph": "",
+      "context": "乍"
+    },
+    {
+      "code": "Qk",
+      "repr": "𠂉",
+      "glyph": "",
+      "context": "乞"
+    },
+    {
+      "code": "Qk",
+      "repr": "𠂉",
+      "glyph": "",
+      "context": "午"
+    },
+    {
+      "code": "Qk",
+      "repr": "⺮右",
+      "glyph": "",
+      "context": "临"
+    },
+    {
+      "code": "Qo",
+      "repr": "舟",
+      "glyph": "舟"
+    },
+    {
+      "code": "Qp",
+      "repr": "丿",
+      "glyph": "丿"
+    },
+    {
+      "code": "Qp",
+      "repr": "丿",
+      "glyph": "",
+      "context": "严"
+    },
+    {
+      "code": "Qp",
+      "repr": "丿",
+      "glyph": "",
+      "context": "么"
+    },
+    {
+      "code": "Qp",
+      "repr": "丿",
+      "glyph": "",
+      "context": "乒"
+    },
+    {
+      "code": "Qq",
+      "repr": "气",
+      "glyph": "气"
+    },
+    {
+      "code": "Qr",
+      "repr": "儿",
+      "glyph": "儿"
+    },
+    {
+      "code": "Qr",
+      "repr": "儿",
+      "glyph": "",
+      "context": "僭"
+    },
+    {
+      "code": "Qr",
+      "repr": "儿",
+      "glyph": "",
+      "context": "兄"
+    },
+    {
+      "code": "Qr",
+      "repr": "儿",
+      "glyph": "",
+      "context": "兆"
+    },
+    {
+      "code": "Qr",
+      "repr": "儿",
+      "glyph": "",
+      "context": "免"
+    },
+    {
+      "code": "Qr",
+      "repr": "荒下",
+      "glyph": "",
+      "context": "侃"
+    },
+    {
+      "code": "Qr",
+      "repr": "荒下",
+      "glyph": "",
+      "context": "荒"
+    },
+    {
+      "code": "Qu",
+      "repr": "瓜",
+      "glyph": "瓜"
+    },
+    {
+      "code": "Qu",
+      "repr": "瓜",
+      "glyph": "",
+      "context": "瓞"
+    },
+    {
+      "code": "Qy",
+      "repr": "鱼",
+      "glyph": "鱼"
+    },
+    {
+      "code": "Rc",
+      "repr": "彳",
+      "glyph": "彳"
+    },
+    {
+      "code": "Rc",
+      "repr": "彳",
+      "glyph": "",
+      "context": "行"
+    },
+    {
+      "code": "Re",
+      "repr": "舌",
+      "glyph": "舌"
+    },
+    {
+      "code": "Re",
+      "repr": "舌",
+      "glyph": "",
+      "context": "乱"
+    },
+    {
+      "code": "Re",
+      "repr": "舌",
+      "glyph": "",
+      "context": "恬"
+    },
+    {
+      "code": "Re",
+      "repr": "舌",
+      "glyph": "",
+      "context": "舍"
+    },
+    {
+      "code": "Rf",
+      "repr": "風",
+      "glyph": "風"
+    },
+    {
+      "code": "Rh",
+      "repr": "禾",
+      "glyph": "禾"
+    },
+    {
+      "code": "Rh",
+      "repr": "禾",
+      "glyph": "",
+      "context": "乘"
+    },
+    {
+      "code": "Rh",
+      "repr": "禾",
+      "glyph": "",
+      "context": "利"
+    },
+    {
+      "code": "Ri",
+      "repr": "匕",
+      "glyph": "匕"
+    },
+    {
+      "code": "Ri",
+      "repr": "匕",
+      "glyph": "",
+      "context": "乖"
+    },
+    {
+      "code": "Ri",
+      "repr": "匕",
+      "glyph": "",
+      "context": "仑"
+    },
+    {
+      "code": "Ri",
+      "repr": "匕",
+      "glyph": "",
+      "context": "化"
+    },
+    {
+      "code": "Ri",
+      "repr": "匕",
+      "glyph": "",
+      "context": "顷"
+    },
+    {
+      "code": "Ri",
+      "repr": "微上",
+      "glyph": "",
+      "context": "微"
+    },
+    {
+      "code": "Rj",
+      "repr": "臼",
+      "glyph": "臼"
+    },
+    {
+      "code": "Rj",
+      "repr": "臼",
+      "glyph": "",
+      "context": "叟"
+    },
+    {
+      "code": "Rj",
+      "repr": "臼",
+      "glyph": "",
+      "context": "掐"
+    },
+    {
+      "code": "Rj",
+      "repr": "臼",
+      "glyph": "",
+      "context": "插"
+    },
+    {
+      "code": "Rk",
+      "repr": "夕",
+      "glyph": "夕"
+    },
+    {
+      "code": "Rk",
+      "repr": "夕",
+      "glyph": "",
+      "context": "夜"
+    },
+    {
+      "code": "Rk",
+      "repr": "夕",
+      "glyph": "",
+      "context": "歹"
+    },
+    {
+      "code": "Rl",
+      "repr": "僉",
+      "glyph": "僉"
+    },
+    {
+      "code": "Rm",
+      "repr": "毛",
+      "glyph": "毛"
+    },
+    {
+      "code": "Rm",
+      "repr": "毛",
+      "glyph": "",
+      "context": "毯"
+    },
+    {
+      "code": "Rn",
+      "repr": "向",
+      "glyph": "向"
+    },
+    {
+      "code": "Rn",
+      "repr": "向框",
+      "glyph": "",
+      "context": "奥"
+    },
+    {
+      "code": "Rn",
+      "repr": "囟框",
+      "glyph": "",
+      "context": "囟"
+    },
+    {
+      "code": "Rn",
+      "repr": "囟框",
+      "glyph": "",
+      "context": "囱"
+    },
+    {
+      "code": "Ro",
+      "repr": "鳥",
+      "glyph": "鳥"
+    },
+    {
+      "code": "Ro",
+      "repr": "鳥上",
+      "glyph": "",
+      "context": "鳥"
+    },
+    {
+      "code": "Rq",
+      "repr": "犭",
+      "glyph": "犭"
+    },
+    {
+      "code": "Rq",
+      "repr": "犭",
+      "glyph": "",
+      "context": "犯"
+    },
+    {
+      "code": "Rs",
+      "repr": "饣",
+      "glyph": "饣"
+    },
+    {
+      "code": "Rs",
+      "repr": "饣",
+      "glyph": "",
+      "context": "饥"
+    },
+    {
+      "code": "Ru",
+      "repr": "入",
+      "glyph": "入"
+    },
+    {
+      "code": "Ru",
+      "repr": "入",
+      "glyph": "",
+      "context": "汆"
+    },
+    {
+      "code": "Ry",
+      "repr": "𧘇",
+      "glyph": "𧘇"
+    },
+    {
+      "code": "Ry",
+      "repr": "𧘇",
+      "glyph": "",
+      "context": "衣"
+    },
+    {
+      "code": "Ry",
+      "repr": "𧘇",
+      "glyph": "",
+      "context": "表"
+    },
+    {
+      "code": "Ry",
+      "repr": "𧘇",
+      "glyph": "",
+      "context": "旅"
+    },
+    {
+      "code": "Ry",
+      "repr": "𧘇",
+      "glyph": "",
+      "context": "派"
+    },
+    {
+      "code": "Sc",
+      "repr": "臣",
+      "glyph": "臣"
+    },
+    {
+      "code": "Sh",
+      "repr": "厂",
+      "glyph": "厂"
+    },
+    {
+      "code": "Si",
+      "repr": "二",
+      "glyph": "二"
+    },
+    {
+      "code": "Si",
+      "repr": "二",
+      "glyph": "",
+      "context": "专"
+    },
+    {
+      "code": "Si",
+      "repr": "二",
+      "glyph": "",
+      "context": "兰"
+    },
+    {
+      "code": "Si",
+      "repr": "二",
+      "glyph": "",
+      "context": "冒"
+    },
+    {
+      "code": "Si",
+      "repr": "二",
+      "glyph": "",
+      "context": "堇"
+    },
+    {
+      "code": "Si",
+      "repr": "二",
+      "glyph": "",
+      "context": "甘"
+    },
+    {
+      "code": "Si",
+      "repr": "冫",
+      "glyph": "冫"
+    },
+    {
+      "code": "Si",
+      "repr": "冫",
+      "glyph": "",
+      "context": "兆"
+    },
+    {
+      "code": "Si",
+      "repr": "冫",
+      "glyph": "",
+      "context": "冯"
+    },
+    {
+      "code": "Si",
+      "repr": "冫",
+      "glyph": "",
+      "context": "匀"
+    },
+    {
+      "code": "Si",
+      "repr": "⺀",
+      "glyph": "⺀"
+    },
+    {
+      "code": "Si",
+      "repr": "⺀",
+      "glyph": "",
+      "context": "冬"
+    },
+    {
+      "code": "Si",
+      "repr": "⺀",
+      "glyph": "",
+      "context": "斗"
+    },
+    {
+      "code": "Sj",
+      "repr": "卄",
+      "glyph": "卄"
+    },
+    {
+      "code": "Sj",
+      "repr": "卄",
+      "glyph": "",
+      "context": "升"
+    },
+    {
+      "code": "Sj",
+      "repr": "卄",
+      "glyph": "",
+      "context": "廿"
+    },
+    {
+      "code": "Sj",
+      "repr": "卄",
+      "glyph": "",
+      "context": "开"
+    },
+    {
+      "code": "Sj",
+      "repr": "卄",
+      "glyph": "",
+      "context": "甘"
+    },
+    {
+      "code": "Sj",
+      "repr": "卅",
+      "glyph": "卅"
+    },
+    {
+      "code": "Sj",
+      "repr": "卅",
+      "glyph": "",
+      "context": "带"
+    },
+    {
+      "code": "Sj",
+      "repr": "卌",
+      "glyph": "卌"
+    },
+    {
+      "code": "Sj",
+      "repr": "卌",
+      "glyph": "",
+      "context": "無"
+    },
+    {
+      "code": "Sj",
+      "repr": "卝",
+      "glyph": "卝"
+    },
+    {
+      "code": "Sj",
+      "repr": "卝",
+      "glyph": "",
+      "context": "芈"
+    },
+    {
+      "code": "Sj",
+      "repr": "艹",
+      "glyph": "艹"
+    },
+    {
+      "code": "Sj",
+      "repr": "艹",
+      "glyph": "",
+      "context": "展"
+    },
+    {
+      "code": "Sj",
+      "repr": "艹",
+      "glyph": "",
+      "context": "曹"
+    },
+    {
+      "code": "Sj",
+      "repr": "艹",
+      "glyph": "",
+      "context": "草"
+    },
+    {
+      "code": "Sj",
+      "repr": "龷",
+      "glyph": "龷"
+    },
+    {
+      "code": "Sj",
+      "repr": "龷",
+      "glyph": "",
+      "context": "共"
+    },
+    {
+      "code": "Sj",
+      "repr": "龷",
+      "glyph": "",
+      "context": "典"
+    },
+    {
+      "code": "Sj",
+      "repr": "龷",
+      "glyph": "",
+      "context": "垂"
+    },
+    {
+      "code": "Sj",
+      "repr": "龷",
+      "glyph": "",
+      "context": "昔"
+    },
+    {
+      "code": "Sj",
+      "repr": "龷",
+      "glyph": "",
+      "context": "曲"
+    },
+    {
+      "code": "Sj",
+      "repr": "冓上",
+      "glyph": "",
+      "context": "寒"
+    },
+    {
+      "code": "Sj",
+      "repr": "冓上",
+      "glyph": "",
+      "context": "襄"
+    },
+    {
+      "code": "Sk",
+      "repr": "丂",
+      "glyph": "丂"
+    },
+    {
+      "code": "Sk",
+      "repr": "丂",
+      "glyph": "",
+      "context": "与"
+    },
+    {
+      "code": "Sk",
+      "repr": "丂",
+      "glyph": "",
+      "context": "亏"
+    },
+    {
+      "code": "Sn",
+      "repr": "辰",
+      "glyph": "辰"
+    },
+    {
+      "code": "Sn",
+      "repr": "辰",
+      "glyph": "",
+      "context": "唇"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "𠂇"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "",
+      "context": "丈"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "",
+      "context": "在"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "",
+      "context": "宏"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "",
+      "context": "左"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "",
+      "context": "戎"
+    },
+    {
+      "code": "So",
+      "repr": "𠂇",
+      "glyph": "",
+      "context": "毋"
+    },
+    {
+      "code": "Sq",
+      "repr": "犬",
+      "glyph": "犬"
+    },
+    {
+      "code": "Sr",
+      "repr": "而",
+      "glyph": "而"
+    },
+    {
+      "code": "Te",
+      "repr": "人",
+      "glyph": "人"
+    },
+    {
+      "code": "Te",
+      "repr": "人",
+      "glyph": "",
+      "context": "丙"
+    },
+    {
+      "code": "Te",
+      "repr": "人",
+      "glyph": "",
+      "context": "今"
+    },
+    {
+      "code": "Te",
+      "repr": "人",
+      "glyph": "",
+      "context": "以"
+    },
+    {
+      "code": "Te",
+      "repr": "人",
+      "glyph": "",
+      "context": "决"
+    },
+    {
+      "code": "Te",
+      "repr": "人",
+      "glyph": "",
+      "context": "谷"
+    },
+    {
+      "code": "Th",
+      "repr": "长",
+      "glyph": "长"
+    },
+    {
+      "code": "Ti",
+      "repr": "八",
+      "glyph": "八"
+    },
+    {
+      "code": "Ti",
+      "repr": "八",
+      "glyph": "",
+      "context": "公"
+    },
+    {
+      "code": "Ti",
+      "repr": "八",
+      "glyph": "",
+      "context": "六"
+    },
+    {
+      "code": "Ti",
+      "repr": "八",
+      "glyph": "",
+      "context": "谷"
+    },
+    {
+      "code": "Ti",
+      "repr": "介下",
+      "glyph": "",
+      "context": "乔"
+    },
+    {
+      "code": "Ti",
+      "repr": "介下",
+      "glyph": "",
+      "context": "井"
+    },
+    {
+      "code": "Ti",
+      "repr": "介下",
+      "glyph": "",
+      "context": "介"
+    },
+    {
+      "code": "Ti",
+      "repr": "介下",
+      "glyph": "",
+      "context": "弗"
+    },
+    {
+      "code": "Tj",
+      "repr": "钅",
+      "glyph": "钅"
+    },
+    {
+      "code": "Tj",
+      "repr": "钅",
+      "glyph": "",
+      "context": "针"
+    },
+    {
+      "code": "Tk",
+      "repr": "自",
+      "glyph": "自"
+    },
+    {
+      "code": "Tk",
+      "repr": "自",
+      "glyph": "",
+      "context": "道"
+    },
+    {
+      "code": "Tm",
+      "repr": "齊右",
+      "glyph": "",
+      "context": "齊"
+    },
+    {
+      "code": "Tm",
+      "repr": "卯",
+      "glyph": "卯"
+    },
+    {
+      "code": "Tm",
+      "repr": "卯",
+      "glyph": "",
+      "context": "卵"
+    },
+    {
+      "code": "Tm",
+      "repr": "卯",
+      "glyph": "",
+      "context": "卿"
+    },
+    {
+      "code": "Tm",
+      "repr": "卯左",
+      "glyph": "",
+      "context": "卯"
+    },
+    {
+      "code": "Tm",
+      "repr": "乐上",
+      "glyph": "",
+      "context": "乐"
+    },
+    {
+      "code": "Tm",
+      "repr": "卬左",
+      "glyph": "",
+      "context": "兜"
+    },
+    {
+      "code": "Tm",
+      "repr": "卬左",
+      "glyph": "",
+      "context": "卬"
+    },
+    {
+      "code": "Tm",
+      "repr": "卬左",
+      "glyph": "",
+      "context": "印"
+    },
+    {
+      "code": "Tm",
+      "repr": "卬左",
+      "glyph": "",
+      "context": "氏"
+    },
+    {
+      "code": "Tn",
+      "repr": "用",
+      "glyph": "用"
+    },
+    {
+      "code": "Tn",
+      "repr": "用",
+      "glyph": "",
+      "context": "甬"
+    },
+    {
+      "code": "To",
+      "repr": "彡",
+      "glyph": "彡"
+    },
+    {
+      "code": "To",
+      "repr": "彡",
+      "glyph": "",
+      "context": "参"
+    },
+    {
+      "code": "To",
+      "repr": "彡",
+      "glyph": "",
+      "context": "形"
+    },
+    {
+      "code": "To",
+      "repr": "两撇",
+      "glyph": "",
+      "context": "勿"
+    },
+    {
+      "code": "To",
+      "repr": "癶右",
+      "glyph": "",
+      "context": "癶"
+    },
+    {
+      "code": "Tp",
+      "repr": "片",
+      "glyph": "片"
+    },
+    {
+      "code": "Tp",
+      "repr": "片",
+      "glyph": "",
+      "context": "版"
+    },
+    {
+      "code": "Tp",
+      "repr": "片",
+      "glyph": "",
+      "context": "肅"
+    },
+    {
+      "code": "Tp",
+      "repr": "片",
+      "glyph": "",
+      "context": "鼎"
+    },
+    {
+      "code": "Tu",
+      "repr": "手",
+      "glyph": "手"
+    },
+    {
+      "code": "Tu",
+      "repr": "龵",
+      "glyph": "龵"
+    },
+    {
+      "code": "Tu",
+      "repr": "龵",
+      "glyph": "",
+      "context": "拜"
+    },
+    {
+      "code": "Tu",
+      "repr": "龵",
+      "glyph": "",
+      "context": "看"
+    },
+    {
+      "code": "Ty",
+      "repr": "魚",
+      "glyph": "魚"
+    },
+    {
+      "code": "Ua",
+      "repr": "言",
+      "glyph": "言"
+    },
+    {
+      "code": "Ue",
+      "repr": "リ",
+      "glyph": "リ"
+    },
+    {
+      "code": "Ue",
+      "repr": "リ",
+      "glyph": "",
+      "context": "帅"
+    },
+    {
+      "code": "Ue",
+      "repr": "リ",
+      "glyph": "",
+      "context": "班"
+    },
+    {
+      "code": "Ue",
+      "repr": "丬",
+      "glyph": "丬"
+    },
+    {
+      "code": "Ue",
+      "repr": "丬",
+      "glyph": "",
+      "context": "北"
+    },
+    {
+      "code": "Ue",
+      "repr": "丬",
+      "glyph": "",
+      "context": "壮"
+    },
+    {
+      "code": "Ue",
+      "repr": "丷",
+      "glyph": "丷"
+    },
+    {
+      "code": "Ue",
+      "repr": "丷",
+      "glyph": "",
+      "context": "丫"
+    },
+    {
+      "code": "Ue",
+      "repr": "丷",
+      "glyph": "",
+      "context": "僚"
+    },
+    {
+      "code": "Ue",
+      "repr": "丷",
+      "glyph": "",
+      "context": "兑"
+    },
+    {
+      "code": "Ue",
+      "repr": "丷",
+      "glyph": "",
+      "context": "夹"
+    },
+    {
+      "code": "Ue",
+      "repr": "丷",
+      "glyph": "",
+      "context": "旁"
+    },
+    {
+      "code": "Ue",
+      "repr": "䒑",
+      "glyph": "䒑"
+    },
+    {
+      "code": "Ue",
+      "repr": "䒑",
+      "glyph": "",
+      "context": "亚"
+    },
+    {
+      "code": "Ue",
+      "repr": "䒑",
+      "glyph": "",
+      "context": "兰"
+    },
+    {
+      "code": "Ue",
+      "repr": "䒑",
+      "glyph": "",
+      "context": "前"
+    },
+    {
+      "code": "Ug",
+      "repr": "羊",
+      "glyph": "羊"
+    },
+    {
+      "code": "Ug",
+      "repr": "羊",
+      "glyph": "",
+      "context": "姜"
+    },
+    {
+      "code": "Ug",
+      "repr": "羊",
+      "glyph": "",
+      "context": "差"
+    },
+    {
+      "code": "Uo",
+      "repr": "火",
+      "glyph": "火"
+    },
+    {
+      "code": "Uo",
+      "repr": "火",
+      "glyph": "",
+      "context": "灯"
+    },
+    {
+      "code": "Uo",
+      "repr": "灬",
+      "glyph": "灬"
+    },
+    {
+      "code": "Uo",
+      "repr": "灬",
+      "glyph": "",
+      "context": "点"
+    },
+    {
+      "code": "Uu",
+      "repr": "广",
+      "glyph": "广"
+    },
+    {
+      "code": "Uw",
+      "repr": "亡",
+      "glyph": "亡"
+    },
+    {
+      "code": "Uw",
+      "repr": "亡",
+      "glyph": "",
+      "context": "忘"
+    },
+    {
+      "code": "Uw",
+      "repr": "亡",
+      "glyph": "",
+      "context": "氓"
+    },
+    {
+      "code": "Uw",
+      "repr": "贏頭",
+      "glyph": "",
+      "context": "贏"
+    },
+    {
+      "code": "Vc",
+      "repr": "巛",
+      "glyph": "巛"
+    },
+    {
+      "code": "Vc",
+      "repr": "巛",
+      "glyph": "",
+      "context": "巡"
+    },
+    {
+      "code": "Vc",
+      "repr": "巛",
+      "glyph": "",
+      "context": "巢"
+    },
+    {
+      "code": "Vc",
+      "repr": "巜",
+      "glyph": "巜"
+    },
+    {
+      "code": "Vc",
+      "repr": "巜",
+      "glyph": "",
+      "context": "粼"
+    },
+    {
+      "code": "Vg",
+      "repr": "弓",
+      "glyph": "弓"
+    },
+    {
+      "code": "Vg",
+      "repr": "弓",
+      "glyph": "",
+      "context": "夷"
+    },
+    {
+      "code": "Vg",
+      "repr": "弓",
+      "glyph": "",
+      "context": "引"
+    },
+    {
+      "code": "Vg",
+      "repr": "弓",
+      "glyph": "",
+      "context": "弗"
+    },
+    {
+      "code": "Vg",
+      "repr": "弓",
+      "glyph": "",
+      "context": "弟"
+    },
+    {
+      "code": "Vi",
+      "repr": "乙",
+      "glyph": "乙"
+    },
+    {
+      "code": "Vi",
+      "repr": "乙",
+      "glyph": "",
+      "context": "乞"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "𠃌"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "书"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "刁"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "成"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "拣"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "殷"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "那"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠃌",
+      "glyph": "",
+      "context": "韦"
+    },
+    {
+      "code": "Vi",
+      "repr": "乁",
+      "glyph": "乁"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠄎",
+      "glyph": "𠄎"
+    },
+    {
+      "code": "Vi",
+      "repr": "𠄎",
+      "glyph": "",
+      "context": "场"
+    },
+    {
+      "code": "Vi",
+      "repr": "乛",
+      "glyph": "乛"
+    },
+    {
+      "code": "Vi",
+      "repr": "乛",
+      "glyph": "",
+      "context": "丞"
+    },
+    {
+      "code": "Vi",
+      "repr": "乛",
+      "glyph": "",
+      "context": "书"
+    },
+    {
+      "code": "Vi",
+      "repr": "乛",
+      "glyph": "",
+      "context": "买"
+    },
+    {
+      "code": "Vi",
+      "repr": "乛",
+      "glyph": "",
+      "context": "今"
+    },
+    {
+      "code": "Vi",
+      "repr": "乛",
+      "glyph": "",
+      "context": "敢"
+    },
+    {
+      "code": "Vi",
+      "repr": "亅",
+      "glyph": "亅"
+    },
+    {
+      "code": "Vi",
+      "repr": "亅",
+      "glyph": "",
+      "context": "争"
+    },
+    {
+      "code": "Vi",
+      "repr": "㔾",
+      "glyph": "㔾"
+    },
+    {
+      "code": "Vi",
+      "repr": "㔾",
+      "glyph": "",
+      "context": "仓"
+    },
+    {
+      "code": "Vi",
+      "repr": "⺄",
+      "glyph": "⺄"
+    },
+    {
+      "code": "Vi",
+      "repr": "⺄",
+      "glyph": "",
+      "context": "汛"
+    },
+    {
+      "code": "Vj",
+      "repr": "乃",
+      "glyph": "乃"
+    },
+    {
+      "code": "Vj",
+      "repr": "乃",
+      "glyph": "",
+      "context": "及"
+    },
+    {
+      "code": "Vk",
+      "repr": "子",
+      "glyph": "子"
+    },
+    {
+      "code": "Vl",
+      "repr": "了",
+      "glyph": "了"
+    },
+    {
+      "code": "Vl",
+      "repr": "了",
+      "glyph": "",
+      "context": "亟"
+    },
+    {
+      "code": "Vl",
+      "repr": "了",
+      "glyph": "",
+      "context": "亨"
+    },
+    {
+      "code": "Vl",
+      "repr": "了",
+      "glyph": "",
+      "context": "孑"
+    },
+    {
+      "code": "Vl",
+      "repr": "了",
+      "glyph": "",
+      "context": "孓"
+    },
+    {
+      "code": "Vn",
+      "repr": "艮",
+      "glyph": "艮"
+    },
+    {
+      "code": "Vn",
+      "repr": "艮",
+      "glyph": "",
+      "context": "很"
+    },
+    {
+      "code": "Vn",
+      "repr": "艮",
+      "glyph": "",
+      "context": "良"
+    },
+    {
+      "code": "Vo",
+      "repr": "幺",
+      "glyph": "幺"
+    },
+    {
+      "code": "Vo",
+      "repr": "幺",
+      "glyph": "",
+      "context": "奚"
+    },
+    {
+      "code": "Vo",
+      "repr": "幺",
+      "glyph": "",
+      "context": "幻"
+    },
+    {
+      "code": "Vo",
+      "repr": "幺",
+      "glyph": "",
+      "context": "幽"
+    },
+    {
+      "code": "Vo",
+      "repr": "幺",
+      "glyph": "",
+      "context": "玄"
+    },
+    {
+      "code": "Vp",
+      "repr": "皮",
+      "glyph": "皮"
+    },
+    {
+      "code": "Vs",
+      "repr": "纟",
+      "glyph": "纟"
+    },
+    {
+      "code": "Vs",
+      "repr": "纟",
+      "glyph": "",
+      "context": "丝"
+    },
+    {
+      "code": "Vs",
+      "repr": "纟",
+      "glyph": "",
+      "context": "红"
+    },
+    {
+      "code": "Vs",
+      "repr": "纟上",
+      "glyph": "",
+      "context": "丝"
+    },
+    {
+      "code": "Vs",
+      "repr": "纟上",
+      "glyph": "",
+      "context": "乡"
+    },
+    {
+      "code": "Vv",
+      "repr": "厶",
+      "glyph": "厶"
+    },
+    {
+      "code": "Vv",
+      "repr": "厶",
+      "glyph": "",
+      "context": "丢"
+    },
+    {
+      "code": "Vv",
+      "repr": "厶",
+      "glyph": "",
+      "context": "么"
+    },
+    {
+      "code": "Vv",
+      "repr": "厶",
+      "glyph": "",
+      "context": "允"
+    },
+    {
+      "code": "Vv",
+      "repr": "厶",
+      "glyph": "",
+      "context": "勾"
+    },
+    {
+      "code": "Vv",
+      "repr": "厶",
+      "glyph": "",
+      "context": "即"
+    },
+    {
+      "code": "Wg",
+      "repr": "生",
+      "glyph": "生"
+    },
+    {
+      "code": "Wi",
+      "repr": "隹",
+      "glyph": "隹"
+    },
+    {
+      "code": "Wi",
+      "repr": "隹",
+      "glyph": "",
+      "context": "准"
+    },
+    {
+      "code": "Wi",
+      "repr": "隹",
+      "glyph": "",
+      "context": "崔"
+    },
+    {
+      "code": "Wj",
+      "repr": "金",
+      "glyph": "金"
+    },
+    {
+      "code": "Wj",
+      "repr": "金",
+      "glyph": "",
+      "context": "劉"
+    },
+    {
+      "code": "Wk",
+      "repr": "千",
+      "glyph": "千"
+    },
+    {
+      "code": "Wk",
+      "repr": "千",
+      "glyph": "",
+      "context": "乖"
+    },
+    {
+      "code": "Wk",
+      "repr": "千",
+      "glyph": "",
+      "context": "重"
+    },
+    {
+      "code": "Wl",
+      "repr": "乂",
+      "glyph": "乂"
+    },
+    {
+      "code": "Wl",
+      "repr": "乂",
+      "glyph": "",
+      "context": "义"
+    },
+    {
+      "code": "Wl",
+      "repr": "乂",
+      "glyph": "",
+      "context": "交"
+    },
+    {
+      "code": "Wl",
+      "repr": "乂",
+      "glyph": "",
+      "context": "史"
+    },
+    {
+      "code": "Wl",
+      "repr": "鬯上",
+      "glyph": "",
+      "context": "鬯"
+    },
+    {
+      "code": "Wm",
+      "repr": "身",
+      "glyph": "身"
+    },
+    {
+      "code": "Wm",
+      "repr": "身",
+      "glyph": "",
+      "context": "射"
+    },
+    {
+      "code": "Wn",
+      "repr": "牛",
+      "glyph": "牛"
+    },
+    {
+      "code": "Wn",
+      "repr": "牛",
+      "glyph": "",
+      "context": "制"
+    },
+    {
+      "code": "Wn",
+      "repr": "牛",
+      "glyph": "",
+      "context": "朱"
+    },
+    {
+      "code": "Wn",
+      "repr": "⺧",
+      "glyph": "⺧"
+    },
+    {
+      "code": "Wn",
+      "repr": "⺧",
+      "glyph": "",
+      "context": "先"
+    },
+    {
+      "code": "Wn",
+      "repr": "⺧",
+      "glyph": "",
+      "context": "告"
+    },
+    {
+      "code": "Wn",
+      "repr": "⺧",
+      "glyph": "",
+      "context": "攒"
+    },
+    {
+      "code": "Wo",
+      "repr": "缶",
+      "glyph": "缶"
+    },
+    {
+      "code": "Wo",
+      "repr": "缶",
+      "glyph": "",
+      "context": "徭"
+    },
+    {
+      "code": "Wo",
+      "repr": "缶",
+      "glyph": "",
+      "context": "掏"
+    },
+    {
+      "code": "Wu",
+      "repr": "鬼",
+      "glyph": "鬼"
+    },
+    {
+      "code": "Wu",
+      "repr": "鬼",
+      "glyph": "",
+      "context": "魁"
+    },
+    {
+      "code": "Wu",
+      "repr": "卑上",
+      "glyph": "",
+      "context": "卑"
+    },
+    {
+      "code": "Ww",
+      "repr": "爲下",
+      "glyph": "",
+      "context": "爲"
+    },
+    {
+      "code": "Ww",
+      "repr": "為下",
+      "glyph": "",
+      "context": "為"
+    },
+    {
+      "code": "Wy",
+      "repr": "勹",
+      "glyph": "勹"
+    },
+    {
+      "code": "Wy",
+      "repr": "勹",
+      "glyph": "",
+      "context": "万"
+    },
+    {
+      "code": "Wy",
+      "repr": "勹",
+      "glyph": "",
+      "context": "勺"
+    },
+    {
+      "code": "Wy",
+      "repr": "勹",
+      "glyph": "",
+      "context": "敖"
+    },
+    {
+      "code": "Wy",
+      "repr": "月",
+      "glyph": "月"
+    },
+    {
+      "code": "Wy",
+      "repr": "月",
+      "glyph": "",
+      "context": "前"
+    },
+    {
+      "code": "Wy",
+      "repr": "⺆",
+      "glyph": "⺆"
+    },
+    {
+      "code": "Wy",
+      "repr": "⺆",
+      "glyph": "",
+      "context": "丹"
+    },
+    {
+      "code": "Wy",
+      "repr": "⺆",
+      "glyph": "",
+      "context": "册"
+    },
+    {
+      "code": "Wy",
+      "repr": "⺆",
+      "glyph": "",
+      "context": "周"
+    },
+    {
+      "code": "Wy",
+      "repr": "祭上",
+      "glyph": "",
+      "context": "祭"
+    },
+    {
+      "code": "Xg",
+      "repr": "丩",
+      "glyph": "丩"
+    },
+    {
+      "code": "Xg",
+      "repr": "丩",
+      "glyph": "",
+      "context": "发"
+    },
+    {
+      "code": "Xg",
+      "repr": "丩",
+      "glyph": "",
+      "context": "叫"
+    },
+    {
+      "code": "Xg",
+      "repr": "丩",
+      "glyph": "",
+      "context": "收"
+    },
+    {
+      "code": "Xg",
+      "repr": "丱",
+      "glyph": "丱"
+    },
+    {
+      "code": "Xg",
+      "repr": "丱",
+      "glyph": "",
+      "context": "噓"
+    },
+    {
+      "code": "Xg",
+      "repr": "凵",
+      "glyph": "凵"
+    },
+    {
+      "code": "Xg",
+      "repr": "凵",
+      "glyph": "",
+      "context": "出"
+    },
+    {
+      "code": "Xg",
+      "repr": "凵",
+      "glyph": "",
+      "context": "匈"
+    },
+    {
+      "code": "Xg",
+      "repr": "凵",
+      "glyph": "",
+      "context": "屯"
+    },
+    {
+      "code": "Xg",
+      "repr": "屮",
+      "glyph": "屮"
+    },
+    {
+      "code": "Xg",
+      "repr": "屮",
+      "glyph": "",
+      "context": "出"
+    },
+    {
+      "code": "Xg",
+      "repr": "屮",
+      "glyph": "",
+      "context": "朔"
+    },
+    {
+      "code": "Xi",
+      "repr": "㇉",
+      "glyph": "㇉"
+    },
+    {
+      "code": "Xi",
+      "repr": "㇉",
+      "glyph": "",
+      "context": "丐"
+    },
+    {
+      "code": "Xi",
+      "repr": "㇉",
+      "glyph": "",
+      "context": "专"
+    },
+    {
+      "code": "Xi",
+      "repr": "㇉",
+      "glyph": "",
+      "context": "姊"
+    },
+    {
+      "code": "Xi",
+      "repr": "〇",
+      "glyph": "〇"
+    },
+    {
+      "code": "Xi",
+      "repr": "乚",
+      "glyph": "乚"
+    },
+    {
+      "code": "Xi",
+      "repr": "乚",
+      "glyph": "",
+      "context": "乩"
+    },
+    {
+      "code": "Xi",
+      "repr": "乚",
+      "glyph": "",
+      "context": "以"
+    },
+    {
+      "code": "Xi",
+      "repr": "乚",
+      "glyph": "",
+      "context": "匹"
+    },
+    {
+      "code": "Xi",
+      "repr": "乚",
+      "glyph": "",
+      "context": "曷"
+    },
+    {
+      "code": "Xi",
+      "repr": "习",
+      "glyph": "习"
+    },
+    {
+      "code": "Xi",
+      "repr": "𡿨",
+      "glyph": "𡿨"
+    },
+    {
+      "code": "Xj",
+      "repr": "卩",
+      "glyph": "卩"
+    },
+    {
+      "code": "Xj",
+      "repr": "卩",
+      "glyph": "",
+      "context": "卫"
+    },
+    {
+      "code": "Xj",
+      "repr": "卩",
+      "glyph": "",
+      "context": "印"
+    },
+    {
+      "code": "Xj",
+      "repr": "卩",
+      "glyph": "",
+      "context": "服"
+    },
+    {
+      "code": "Xk",
+      "repr": "力",
+      "glyph": "力"
+    },
+    {
+      "code": "Xl",
+      "repr": "反彐",
+      "glyph": "",
+      "context": "疟"
+    },
+    {
+      "code": "Xl",
+      "repr": "彐",
+      "glyph": "彐"
+    },
+    {
+      "code": "Xl",
+      "repr": "彐",
+      "glyph": "",
+      "context": "争"
+    },
+    {
+      "code": "Xl",
+      "repr": "彐",
+      "glyph": "",
+      "context": "即"
+    },
+    {
+      "code": "Xl",
+      "repr": "彐",
+      "glyph": "",
+      "context": "录"
+    },
+    {
+      "code": "Xl",
+      "repr": "肀",
+      "glyph": "肀"
+    },
+    {
+      "code": "Xl",
+      "repr": "肀",
+      "glyph": "",
+      "context": "唐"
+    },
+    {
+      "code": "Xl",
+      "repr": "肀",
+      "glyph": "",
+      "context": "肃"
+    },
+    {
+      "code": "Xm",
+      "repr": "马",
+      "glyph": "马"
+    },
+    {
+      "code": "Xn",
+      "repr": "廴",
+      "glyph": "廴"
+    },
+    {
+      "code": "Xn",
+      "repr": "廴",
+      "glyph": "",
+      "context": "建"
+    },
+    {
+      "code": "Xp",
+      "repr": "爿",
+      "glyph": "爿"
+    },
+    {
+      "code": "Xp",
+      "repr": "爿",
+      "glyph": "",
+      "context": "奘"
+    },
+    {
+      "code": "Xp",
+      "repr": "爿",
+      "glyph": "",
+      "context": "肅"
+    },
+    {
+      "code": "Xp",
+      "repr": "爿",
+      "glyph": "",
+      "context": "臧"
+    },
+    {
+      "code": "Xp",
+      "repr": "爿",
+      "glyph": "",
+      "context": "鼎"
+    },
+    {
+      "code": "Ya",
+      "repr": "鸟",
+      "glyph": "鸟"
+    },
+    {
+      "code": "Ya",
+      "repr": "鸟上",
+      "glyph": "",
+      "context": "鸟"
+    },
+    {
+      "code": "Yd",
+      "repr": "𠂤",
+      "glyph": "𠂤"
+    },
+    {
+      "code": "Yd",
+      "repr": "𠂤",
+      "glyph": "",
+      "context": "追"
+    },
+    {
+      "code": "Yd",
+      "repr": "𠂤",
+      "glyph": "",
+      "context": "阜"
+    },
+    {
+      "code": "Ye",
+      "repr": "合",
+      "glyph": "合"
+    },
+    {
+      "code": "Ye",
+      "repr": "合",
+      "glyph": "",
+      "context": "命"
+    },
+    {
+      "code": "Yf",
+      "repr": "九",
+      "glyph": "九"
+    },
+    {
+      "code": "Yf",
+      "repr": "九",
+      "glyph": "",
+      "context": "丸"
+    },
+    {
+      "code": "Yf",
+      "repr": "九",
+      "glyph": "",
+      "context": "抛"
+    },
+    {
+      "code": "Yi",
+      "repr": "心",
+      "glyph": "心"
+    },
+    {
+      "code": "Yi",
+      "repr": "心",
+      "glyph": "",
+      "context": "必"
+    },
+    {
+      "code": "Yi",
+      "repr": "心",
+      "glyph": "",
+      "context": "忌"
+    },
+    {
+      "code": "Yi",
+      "repr": "忄",
+      "glyph": "忄"
+    },
+    {
+      "code": "Yi",
+      "repr": "忄",
+      "glyph": "",
+      "context": "忆"
+    },
+    {
+      "code": "Yk",
+      "repr": "豸",
+      "glyph": "豸"
+    },
+    {
+      "code": "Yk",
+      "repr": "豸",
+      "glyph": "",
+      "context": "豹"
+    },
+    {
+      "code": "Ym",
+      "repr": "冖",
+      "glyph": "冖"
+    },
+    {
+      "code": "Ym",
+      "repr": "冖",
+      "glyph": "",
+      "context": "写"
+    },
+    {
+      "code": "Ym",
+      "repr": "冖",
+      "glyph": "",
+      "context": "农"
+    },
+    {
+      "code": "Ym",
+      "repr": "⺈",
+      "glyph": "⺈"
+    },
+    {
+      "code": "Ym",
+      "repr": "⺈",
+      "glyph": "",
+      "context": "久"
+    },
+    {
+      "code": "Ym",
+      "repr": "⺈",
+      "glyph": "",
+      "context": "免"
+    },
+    {
+      "code": "Ym",
+      "repr": "⺈",
+      "glyph": "",
+      "context": "尔"
+    },
+    {
+      "code": "Ys",
+      "repr": "食",
+      "glyph": "食"
+    },
+    {
+      "code": "Yw",
+      "repr": "烏",
+      "glyph": "烏"
+    },
+    {
+      "code": "Yw",
+      "repr": "烏上",
+      "glyph": "",
+      "context": "烏"
+    },
+    {
+      "code": "Ol",
+      "repr": "京头",
+      "glyph": "",
+      "context": "衰"
+    },
+    {
+      "code": "Ol",
+      "repr": "京头",
+      "glyph": "",
+      "context": "衷"
+    },
+    {
+      "code": "Ol",
+      "repr": "京头",
+      "glyph": "",
+      "context": "襄"
+    },
+    {
+      "code": "Ye",
+      "repr": "合",
+      "glyph": "",
+      "context": "龠"
+    },
+    {
+      "code": "Eh",
+      "repr": "夊",
+      "glyph": "",
+      "context": "囱"
+    },
+    {
+      "code": "Eh",
+      "repr": "夊",
+      "glyph": "",
+      "context": "处"
+    },
+    {
+      "code": "Gn",
+      "repr": "王",
+      "glyph": "",
+      "context": "⺩"
+    },
+    {
+      "code": "Gn",
+      "repr": "王",
+      "glyph": "",
+      "context": "环"
+    }
+  ],
+  "categories": [
+    {
+      "name": "横区",
+      "codes": [
+        "Ac",
+        "Ah",
+        "Ai",
+        "Aj",
+        "Ak",
+        "An",
+        "Ao",
+        "Ar",
+        "Au",
+        "Aw",
+        "Dd",
+        "Dg",
+        "Dh",
+        "Di",
+        "Dj",
+        "Dk",
+        "Dl",
+        "Dm",
+        "Dn",
+        "Do",
+        "Ds",
+        "Du",
+        "Dw",
+        "Dx",
+        "Dy",
+        "Fa",
+        "Fi",
+        "Fo",
+        "Fu",
+        "Fv",
+        "Gc",
+        "Gd",
+        "Ge",
+        "Gf",
+        "Gg",
+        "Gi",
+        "Gn",
+        "Go",
+        "Gu",
+        "Gy",
+        "Ha",
+        "Hc",
+        "He",
+        "Hf",
+        "Hg",
+        "Hi",
+        "Hk",
+        "Ho",
+        "Hs",
+        "Ht",
+        "Hw",
+        "Hy",
+        "Sc",
+        "Sh",
+        "Si",
+        "Sj",
+        "Sk",
+        "Sn",
+        "So",
+        "Sq",
+        "Sr"
+      ]
+    },
+    {
+      "name": "竖区",
+      "codes": [
+        "Ja",
+        "Jd",
+        "Je",
+        "Jm",
+        "Jr",
+        "Js",
+        "Jt",
+        "Kb",
+        "Kc",
+        "Kd",
+        "Ke",
+        "Kf",
+        "Kg",
+        "Kj",
+        "Kk",
+        "Kl",
+        "Kn",
+        "Ko",
+        "Ks",
+        "Kv",
+        "Kx",
+        "Ky",
+        "Li",
+        "Lv",
+        "Ma",
+        "Mb",
+        "Mc",
+        "Md",
+        "Mf",
+        "Mg",
+        "Mi",
+        "Mn",
+        "Mo",
+        "Mu",
+        "Mv",
+        "Mw",
+        "Mx",
+        "Na",
+        "Nc",
+        "Nd",
+        "Ne",
+        "Nf",
+        "Ni",
+        "Ns",
+        "Nv",
+        "Nw"
+      ]
+    },
+    {
+      "name": "撇区",
+      "codes": [
+        "Eb",
+        "Ee",
+        "Eh",
+        "Ei",
+        "Ej",
+        "Ek",
+        "En",
+        "Eo",
+        "Ew",
+        "Qc",
+        "Qh",
+        "Qi",
+        "Qj",
+        "Qk",
+        "Qo",
+        "Qp",
+        "Qq",
+        "Qr",
+        "Qu",
+        "Qy",
+        "Rc",
+        "Re",
+        "Rf",
+        "Rh",
+        "Ri",
+        "Rj",
+        "Rk",
+        "Rl",
+        "Rm",
+        "Rn",
+        "Ro",
+        "Rq",
+        "Rs",
+        "Ru",
+        "Ry",
+        "Te",
+        "Th",
+        "Ti",
+        "Tj",
+        "Tk",
+        "Tm",
+        "Tn",
+        "To",
+        "Tp",
+        "Tu",
+        "Ty",
+        "Wg",
+        "Wi",
+        "Wj",
+        "Wk",
+        "Wl",
+        "Wm",
+        "Wn",
+        "Wo",
+        "Wu",
+        "Ww",
+        "Wy",
+        "Ya",
+        "Yd",
+        "Ye",
+        "Yf",
+        "Yi",
+        "Yk",
+        "Ym",
+        "Ys",
+        "Yw"
+      ]
+    },
+    {
+      "name": "捺区",
+      "codes": [
+        "Id",
+        "Ie",
+        "Il",
+        "Is",
+        "Oa",
+        "Ob",
+        "Od",
+        "Og",
+        "Oi",
+        "Ol",
+        "Ox",
+        "Pa",
+        "Pb",
+        "Pd",
+        "Pe",
+        "Pi",
+        "Pm",
+        "Pn",
+        "Pw",
+        "Px",
+        "Py",
+        "Ua",
+        "Ue",
+        "Ug",
+        "Uo",
+        "Uu",
+        "Uw"
+      ]
+    },
+    {
+      "name": "折区",
+      "codes": [
+        "Bc",
+        "Bd",
+        "Bh",
+        "Bi",
+        "Bj",
+        "Bk",
+        "Bm",
+        "Bs",
+        "Bu",
+        "Cb",
+        "Ci",
+        "Cj",
+        "Ck",
+        "Cn",
+        "Cu",
+        "Cy",
+        "Vc",
+        "Vg",
+        "Vi",
+        "Vj",
+        "Vk",
+        "Vl",
+        "Vn",
+        "Vo",
+        "Vp",
+        "Vs",
+        "Vv",
+        "Xg",
+        "Xi",
+        "Xj",
+        "Xk",
+        "Xl",
+        "Xm",
+        "Xn",
+        "Xp"
+      ]
+    },
+    {
+      "name": "常用字根前100",
+      "codes": [
+        "Ac",
+        "Ai",
+        "An",
+        "Ao",
+        "Au",
+        "Bd",
+        "Bh",
+        "Bj",
+        "Bu",
+        "Cb",
+        "Cj",
+        "Cn",
+        "Cy",
+        "Dh",
+        "Di",
+        "Dk",
+        "Do",
+        "Du",
+        "Dx",
+        "Eb",
+        "Ee",
+        "Eh",
+        "Ej",
+        "Fi",
+        "Fo",
+        "Fv",
+        "Gd",
+        "Gg",
+        "Gn",
+        "Hc",
+        "Hf",
+        "Hk",
+        "Hs",
+        "Ht",
+        "Id",
+        "Is",
+        "Jr",
+        "Jt",
+        "Kb",
+        "Kf",
+        "Kj",
+        "Ks",
+        "Kx",
+        "Lv",
+        "Ma",
+        "Md",
+        "Mf",
+        "Mi",
+        "Mo",
+        "Mv",
+        "Nf",
+        "Ni",
+        "Ns",
+        "Nw",
+        "Oa",
+        "Ob",
+        "Od",
+        "Og",
+        "Pd",
+        "Pm",
+        "Pn",
+        "Pw",
+        "Qh",
+        "Qi",
+        "Qj",
+        "Qk",
+        "Qp",
+        "Qr",
+        "Rc",
+        "Rh",
+        "Ri",
+        "Rk",
+        "Si",
+        "Sj",
+        "So",
+        "Sq",
+        "Te",
+        "Ti",
+        "Tk",
+        "To",
+        "Tu",
+        "Ue",
+        "Ug",
+        "Uo",
+        "Vg",
+        "Vi",
+        "Vk",
+        "Vl",
+        "Vn",
+        "Vs",
+        "Vv",
+        "Wl",
+        "Wn",
+        "Wy",
+        "Xg",
+        "Xi",
+        "Xk",
+        "Xl",
+        "Yi",
+        "Ym"
+      ]
+    }
+  ]
+}
