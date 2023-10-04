@@ -6,19 +6,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>字根练习</title>
 	<style>
+		#menu-button {
+			position: fixed;
+			top: 10px;
+			right: 10px;
+			z-index: 9999;
+			font-size: 20px;
+		}
+
+		#menu {
+			position: fixed;
+			top: 50px;
+			right: 10px;
+			background-color: #ffffff;
+			border: 1px solid #ccc;
+			padding: 10px;
+			z-index: 9999;
+		}
+
 		#container {
 			position: relative;
-			top: -30px;
 			display: inline-block;
 			left: 50%;
 			transform: translate(-50%);
+			height: 200px;
 		}
 
 		#glyph-card {
-			font-size: 8em;
+			font-size: 150px;
 			display: inline-block;
 			width: 100px;
-			height: 140px;
+			height: 200px;
 		}
 
 		#glyph-card span {
@@ -45,7 +63,7 @@
 			border-bottom: 1px solid black;
 			margin: 0 auto 0;
 			font-family: monospace;
-			font-size: 2em;
+			font-size: 50px;
 			text-transform: capitalize;
 			display: block;
 			width: 50%;
@@ -77,7 +95,8 @@
 </head>
 
 <body>
-	<div>
+	<button id="menu-button">☰</button>
+	<div id="menu" style="display: none;">
 		<label for="zigen-categories">字根分区:</label>
 		<select name="zigen-categories" id="zigen-categories" onchange="chooseCategories(false);"></select>
 		<br>
@@ -155,6 +174,7 @@
 				currentIndex = 0;
 			}
 
+			hideMenu();
 			showZigen();
 		}
 
@@ -256,6 +276,11 @@
 			localStorage.setItem('show-tips', needTips);
 		}
 
+		function hideMenu() {
+			console.log('hiding menu');
+			document.getElementById('menu').style.display = 'none';
+		}
+
 		fetch('config.json')
 			.then((response) => response.json())
 			.then((json) => {
@@ -292,14 +317,19 @@
 			window.scrollTo({top: 0, behavior: 'smooth' });
 		});
 
-		inputElement.focus();
-
 		// load cache options
 		var randomInput = document.getElementById('random');
 		randomInput.checked = localStorage.getItem('random') == 'true';
 
 		var showTipsInput = document.getElementById('show-tips');
 		showTipsInput.checked = localStorage.getItem('show-tips') == 'true';
+
+		// options menu
+		const optionsButton = document.getElementById('menu-button');
+		const optionsMenu = document.getElementById('menu');
+		optionsButton.addEventListener('click', function() {
+			optionsMenu.style.display = optionsMenu.style.display === 'none' ? 'block' : 'none';
+		});
 
 	</script>
 </body>
