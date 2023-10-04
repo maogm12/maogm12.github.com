@@ -3,9 +3,17 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>字根练习</title>
 	<style>
+		#container {
+			position: relative;
+			display: inline-block;
+			left: 50%;
+			transform: translate(-50%);
+			height: 200px;
+		}
+
 		#menu-button {
 			position: fixed;
 			top: 10px;
@@ -24,14 +32,6 @@
 			z-index: 9999;
 		}
 
-		#container {
-			position: relative;
-			display: inline-block;
-			left: 50%;
-			transform: translate(-50%);
-			height: 200px;
-		}
-
 		#glyph-card {
 			font-size: 150px;
 			display: inline-block;
@@ -45,14 +45,14 @@
 			transform: translate(-50%);
 		}
 
-		#glyph-card #glyph {
+		#glyph {
 			top: 0;
 			color: black;
 		}
 
-		#glyph-card #glyph-context {
+		#glyph-context {
 			top: 0;
-			color: lightgray;
+			color: rgb(229, 229, 234);
 		}
 
 		#answer {
@@ -91,6 +91,12 @@
 			text-align: center;
 			margin-right: 5px;
 		}
+
+		@media (prefers-color-scheme: dark) {
+			#glyph-context {
+				color: rgb(44, 44, 46);
+			}
+		}
 	</style>
 </head>
 
@@ -98,26 +104,27 @@
 	<button id="menu-button">☰</button>
 	<div id="menu" style="display: none;">
 		<label for="zigen-categories">字根分区:</label>
-		<select name="zigen-categories" id="zigen-categories" onchange="chooseCategories(false);"></select>
+		<select name="zigen-categories" id="zigen-categories"></select>
 		<br>
 		<label for="random">随机展示字根：</label>
-		<input type="checkbox" name="random" id="random" onchange="updateRandomOption();">
+		<input type="checkbox" name="random" id="random">
+		<br>
+		<label for="show-code">显示编码：</label>
+		<input type="checkbox" name="show-code" id="show-code">
 		<br>
 		<label for="show-tips">打开提示：</label>
-		<input type="checkbox" name="show-tips" id="show-tips" onchange="updateTips();">
+		<input type="checkbox" name="show-tips" id="show-tips">
+		<br>
+		<label for="answer-len">答案长度：</label>
+		<input type="number" name="answer-len" id="answer-len">
 	</div>
-	<div id="container">
-		<div id="glyph-card">
-			<span id="glyph-context">
-				冠
-			</span>
+	<div id="glyph-card">
+		<span id="glyph-context">
+		</span>
 
-			<span id="glyph">
-				&#xE000;
-			</span>
-		</div>
+		<span id="glyph">
+		</span>
 	</div>
-
 
 	<input type="text" id="answer">
 
@@ -127,210 +134,400 @@
 	</p>
 
 	<script>
-		var zigenConfig;
-		var currentGlyphs = [];
-		var currentIndex = 0;
-		var currentGlyph;
+		class App {
+			// elements
+			menuButton;
+			menuContainer;
+			randomInput;
+			showCodeInput;
+			showTipsInput;
+			answerLenInput;
+			categoryOptions;
+			answerInput;
+			tipsDiv;
+			noteUl;
+			glyphCard;
+			glyph;
+			glyphContext;
 
-		function configCategories() {
-			var categoryOptions = document.getElementById("zigen-categories");
-			Object.entries(zigenConfig.categories).forEach(([index, category]) => {
-				var option = document.createElement("option");
-				option.value = index;
-				option.text = category.name;
-				categoryOptions.add(option);
-			});
+			zigenConfig = null;
+			currentGlyphs = null;
+			currentIndex = 0;
+			currentGlyph = null;
 
-			var categoryKey = `${zigenConfig.name}_${zigenConfig.version}_category`;
-			var indexKey = `${zigenConfig.name}_${zigenConfig.version}_index`;
-			let cachedCategory = localStorage.getItem(categoryKey);
-			if (!!cachedCategory) {
-				categoryOptions.selectedIndex = cachedCategory;
-				console.log(`Restoring category [${categoryKey}: ${cachedCategory}]`)
+			constructor() {
+				// menu container
+				this.menuButton = document.getElementById('menu-button');
+				this.menuContainer = document.getElementById('menu');
+				this.randomInput = document.getElementById('random');
+				this.showCodeInput = document.getElementById('show-code');
+				this.showTipsInput = document.getElementById('show-tips');
+				this.answerLenInput = document.getElementById('answer-len');
+				this.initMenu();
 
-				currentIndex = localStorage.getItem(indexKey) || 0;
-				console.log(`Restoring index [${indexKey}: ${currentIndex}]`);
-			} else {
-				categoryOptions.selectedIndex = 0;
-				currentIndex = 0;
-				localStorage.removeItem(indexKey);
+				// categories
+				this.categoryOptions = document.getElementById("zigen-categories");
+				this.initCategories();
+
+				// glyph
+				this.glyphCard = document.getElementById('glyph-card');
+				this.glyph = document.getElementById('glyph');
+				this.glyphContext = document.getElementById('glyph-context');
+
+				// answer
+				this.answerInput = document.getElementById('answer');
+				this.initAnswer();
+
+				// tips
+				this.tipsDiv = document.getElementById('tips');
+
+				// notes
+				this.noteUl = document.getElementById('notes');
+
+				this.init();
 			}
 
-
-			chooseCategories(true); // init load
-		}
-
-		function chooseCategories(initLoad = false) {
-			var categoryOptions = document.getElementById("zigen-categories");
-			var categoryIndex = categoryOptions.options[categoryOptions.selectedIndex].value;
-
-			var categoryKey = `${zigenConfig.name}_${zigenConfig.version}_category`;
-			localStorage.setItem(categoryKey, categoryOptions.selectedIndex);
-
-			var codes = zigenConfig.categories[categoryIndex].codes;
-			currentGlyphs = zigenConfig.glyphs.filter(glyph => codes.includes(glyph.code));
-
-			if (!initLoad) {
-				currentIndex = 0;
+			// getters
+			get shouldShowRandomZigen() {
+				return this.randomInput.checked;
 			}
 
-			hideMenu();
-			showZigen();
-		}
-
-		function showZigen() {
-			if (document.getElementById('random').checked) {
-				currentIndex = Math.floor(Math.random() * currentGlyphs.length);
-			} else {
-				if (currentIndex >= currentGlyphs.length) {
-					currentIndex = 0;
-				}
-
-				var indexKey = `${zigenConfig.name}_${zigenConfig.version}_index`;
-				localStorage.setItem(indexKey, currentIndex);
-				console.log(`Saving index [${indexKey}: ${currentIndex}]`);
+			get shouldShowTips() {
+				return this.showTipsInput.checked;
 			}
 
-			let glyph = currentGlyphs[currentIndex];
-			currentGlyph = glyph;
-			document.getElementById('glyph').innerText = glyph.glyph;
-			document.getElementById('glyph-context').innerText = glyph.context || "";
-
-			updateTips();
-		}
-
-		function loadFont() {
-			const zigenFont = new FontFace(zigenConfig.fontName, 'url(' + zigenConfig.font + ')');
-			document.fonts.add(zigenFont);
-			zigenFont.load().then(
-				() => {
-					// font loaded successfully!
-					var card = document.getElementById('glyph-card');
-					card.style.fontFamily = zigenConfig.fontName;
-				},
-				(err) => {
-					console.error(err);
-				},);
-		}
-
-		function loadNotes() {
-			var noteUl = document.getElementById('notes');
-			zigenConfig.notes.forEach(note => {
-				var li = document.createElement('li');
-				var keySpan = document.createElement('span');
-				keySpan.classList.add('note-key');
-				keySpan.innerText = note.startsWith;
-				li.appendChild(keySpan);
-				var noteSpan = document.createElement('span');
-				noteSpan.innerText = note.content;
-				li.appendChild(noteSpan);
-				noteUl.appendChild(li);
-			});
-		}
-
-		function writeAnswer() {
-			var answerInput = document.getElementById('answer');
-			var answer = answerInput.value;
-			if (currentGlyph.code.toLowerCase().startsWith(answer.toLowerCase())) {
-				answerInput.style.color = "green";
-			} else {
-				answerInput.style.color = "red";
+			get shouldShowCode() {
+				return this.showCodeInput.checked;
 			}
 
-			if (answer.toLowerCase() == currentGlyph.code.toLowerCase()) {
-				currentIndex++;
-				answerInput.value = "";
-				showZigen();
+			get configName() {
+				return this.zigenConfig ? this.zigenConfig.name : "";
 			}
-		}
 
+			get configVersion() {
+				return this.zigenConfig ? this.zigenConfig.version : "";
+			}
 
-		function updateRandomOption() {
-			var randomInput = document.getElementById('random');
-			localStorage.setItem('random', randomInput.checked);
-			showZigen();
-		}
+			get maxAnswerLength() {
+				return this.answerLenInput.value;
+			}
 
-		function updateTips() {
-			var answerInput = document.getElementById('answer');
-			var tipsDiv = document.getElementById('tips');
+			init() {
+				this.categoryOptions.innerHTML = "";
+				this.categoryIndex = 0;
+				this.currentIndex = 0;
 
-			let needTips = document.getElementById('show-tips').checked && !!currentGlyph;
-			if (needTips) {
-				answerInput.placeholder = currentGlyph.code;
-				tipsDiv.hidden = false;
-				tipsDiv.innerHTML = "";
-				zigenConfig.notes.forEach(note => {
-					if (currentGlyph.code.toLowerCase().startsWith(note.startsWith.toLowerCase())) {
-						if (tipsDiv.innerHTML != "") {
-							tipsDiv.innerHTML += "<br>";
-						}
-						tipsDiv.innerHTML = note.content;
+				this.answerInput.value = "";
+				this.tipsDiv.innerHTML = "";
+				this.noteUl.innerHTML = "";
+			}
+
+			// init menu
+			initMenu() {
+				const self = this;
+
+				// menu container
+				this.menuButton.addEventListener('click', function () {
+					self.toggleMenu();
+				});
+
+				window.addEventListener('click', function (event) {
+					if (event.target != self.menuButton && !self.menuContainer.contains(event.target)) {
+						self.hideMenu();
 					}
 				});
-			} else {
-				answerInput.placeholder = "";
-				tipsDiv.hidden = true;
+
+				// random option
+				this.randomInput.checked = localStorage.getItem('random') == 'true';
+				this.randomInput.onchange = function () {
+					localStorage.setItem('random', self.randomInput.checked);
+					self.renderZigen();
+				}
+
+				// show code
+				this.showCodeInput.checked = localStorage.getItem('show-code') == 'true';
+				this.showCodeInput.onchange = function () {
+					localStorage.setItem('show-code', self.showCodeInput.checked);
+					self.refreshCode();
+				}
+
+				// show tips option
+				this.showTipsInput.checked = localStorage.getItem('show-tips') == 'true';
+				this.showTipsInput.onchange = function () {
+					localStorage.setItem('show-tips', self.showTipsInput.checked);
+					self.refreshTips();
+				}
 			}
 
-			localStorage.setItem('show-tips', needTips);
-		}
-
-		function hideMenu() {
-			console.log('hiding menu');
-			document.getElementById('menu').style.display = 'none';
-		}
-
-		fetch('config.json')
-			.then((response) => response.json())
-			.then((json) => {
-				zigenConfig = json;
-				document.title = zigenConfig.name + ' ' + zigenConfig.version;
-				configCategories();
-				loadFont();
-				loadNotes();
-				showZigen();
-			});
-
-		const inputElement = document.getElementById("answer");
-
-		inputElement.addEventListener('keydown', function (event) {
-			if (event.key === 'Backspace') {
-				return true;
+			initCategories() {
+				const self = this;
+				this.categoryOptions.addEventListener('change', function () {
+					self.didSelectCategory(true);
+				});
 			}
 
-			// Check if the key pressed is a letter
-			if (event.key.match(/[a-z]/i) && inputElement.value.length < currentGlyph.code.length) {
-				return true;
-			} else {
-				// Prevent any other key from being pressed
-				event.preventDefault();
-				return false;
+			initAnswer() {
+				const self = this;
+				this.answerInput.addEventListener('keydown', function (event) {
+					if (event.key === 'Backspace') {
+						return true;
+					}
+
+					// Check if the key pressed is a letter
+					if (event.key.match(/[a-z]/i) && self.answerInput.value.length < self.currentGlyph.code.length) {
+						return true;
+					} else {
+						// Prevent any other key from being pressed
+						event.preventDefault();
+						return false;
+					}
+				});
+
+				this.answerInput.addEventListener('input', function () {
+					const answer = self.answerInput.value;
+					const noError = self.currentGlyph.code.toLowerCase().startsWith(answer.toLowerCase());
+
+					if (noError) {
+						self.answerInput.style.color = "green";
+					} else {
+						self.answerInput.style.color = "red";
+					}
+
+					if (answer.toLowerCase() == self.currentGlyph.code.toLowerCase() ||
+						(noError && answer.length >= self.maxAnswerLength)) {
+						self.answerInput.value = "";
+						self.renderZigen();
+					}
+				});
+
+				this.answerInput.addEventListener('focus', function () {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+
+					// move cursor to end
+					var currentValue = self.answerInput.value;
+					self.answerInput.value = "";
+					self.answerInput.value = currentValue;
+				});
 			}
-		});
 
-		inputElement.addEventListener("input", function () {
-			writeAnswer();
-		});
+			// config
+			loadConfig(configUrl) {
+				fetch(configUrl)
+					.then((response) => response.json())
+					.then((json) => {
+						// loaded config
+						console.log('Loaded config');
+						this.zigenConfig = json;
 
-		inputElement.addEventListener("focus", function () {
-			window.scrollTo({top: 0, behavior: 'smooth' });
-		});
+						this.loadFont();
 
-		// load cache options
-		var randomInput = document.getElementById('random');
-		randomInput.checked = localStorage.getItem('random') == 'true';
+						document.title = this.configName + ' ' + this.configVersion;
+						this.loadNotes();
 
-		var showTipsInput = document.getElementById('show-tips');
-		showTipsInput.checked = localStorage.getItem('show-tips') == 'true';
+						this.configCategories();
+						this.loadAnswerLength();
+					}).catch((error) => {
+						console.error('Error loading config', error);
+					});
+			}
 
-		// options menu
-		const optionsButton = document.getElementById('menu-button');
-		const optionsMenu = document.getElementById('menu');
-		optionsButton.addEventListener('click', function() {
-			optionsMenu.style.display = optionsMenu.style.display === 'none' ? 'block' : 'none';
-		});
+			// menu
+			hideMenu() {
+				this.menuContainer.style.display = 'none';
+			}
 
+			toggleMenu() {
+				this.menuContainer.style.display = this.menuContainer.style.display == 'none' ? 'block' : 'none';
+			}
+
+			refreshCode() {
+				if (!this.zigenConfig || !this.currentGlyph) {
+					throw new Error("No config or glyph");
+				}
+
+				if (this.shouldShowCode) {
+					this.answerInput.placeholder = this.currentGlyph.code;
+				} else {
+					this.answerInput.placeholder = "";
+				}
+			}
+
+			refreshTips() {
+				if (!this.zigenConfig || !this.currentGlyph) {
+					throw new Error("No config or glyph");
+				}
+
+				if (this.shouldShowTips) {
+					this.tipsDiv.hidden = false;
+					this.tipsDiv.innerHTML = "";
+					this.zigenConfig.notes.forEach(note => {
+						if (this.currentGlyph.code.toLowerCase().startsWith(note.startsWith.toLowerCase())) {
+							if (this.tipsDiv.innerHTML != "") {
+								this.tipsDiv.innerHTML += "<br>";
+							}
+							this.tipsDiv.innerHTML = note.content;
+						}
+					});
+				} else {
+					this.tipsDiv.hidden = true;
+				}
+			}
+
+			// Categories
+			configCategories() {
+				if (!this.zigenConfig) {
+					throw new Error("No config");
+				}
+
+				this.categoryOptions.innerHTML = "";
+				Object.entries(this.zigenConfig.categories).forEach(([index, category]) => {
+					var option = document.createElement("option");
+					option.value = index;
+					option.text = category.name;
+					this.categoryOptions.add(option);
+				});
+
+				var categoryKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_category`;
+				var indexKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_index`;
+				let cachedCategory = localStorage.getItem(categoryKey);
+				if (!!cachedCategory) {
+					this.categoryOptions.selectedIndex = cachedCategory;
+					console.log(`Restoring category [${categoryKey}: ${cachedCategory}]`)
+
+					this.currentIndex = localStorage.getItem(indexKey) || 0;
+					console.log(`Restoring index [${indexKey}: ${this.currentIndex}]`);
+				} else {
+					this.categoryOptions.selectedIndex = 0;
+					this.currentIndex = 0;
+					localStorage.removeItem(indexKey);
+				}
+
+				this.didSelectCategory(false);
+			}
+
+			didSelectCategory(manualTrigger = false) {
+				this.categoryIndex = this.categoryOptions.options[this.categoryOptions.selectedIndex].value;
+				var codes = this.zigenConfig.categories[this.categoryIndex].codes;
+				this.currentGlyphs = this.zigenConfig.glyphs.filter(glyph => codes.includes(glyph.code));
+
+				if (manualTrigger) {
+					var categoryKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_category`;
+					localStorage.setItem(categoryKey, this.categoryOptions.selectedIndex);
+
+					this.currentIndex = 0;
+				}
+
+				this.hideMenu();
+				this.renderZigen(false);
+			}
+
+			loadFont() {
+				if (!this.zigenConfig) {
+					throw new Error("No config");
+				}
+
+				if (!this.zigenConfig.font) {
+					console.log("No font in config");
+					return;
+				}
+
+				const zigenFont = new FontFace(this.zigenConfig.fontName, 'url(' + this.zigenConfig.font + ')');
+				document.fonts.add(zigenFont);
+				zigenFont.load().then(
+					() => {
+						// font loaded successfully!
+						this.glyphCard.style.fontFamily = this.zigenConfig.fontName;
+					},
+					(err) => {
+						console.error(err);
+					},);
+			}
+
+			loadNotes() {
+				if (!this.zigenConfig) {
+					throw new Error("No config");
+				}
+
+				this.noteUl.innerHTML = "";
+				this.zigenConfig.notes.forEach(note => {
+					var li = document.createElement('li');
+					var keySpan = document.createElement('span');
+					keySpan.classList.add('note-key');
+					keySpan.innerText = note.startsWith;
+					li.appendChild(keySpan);
+					var noteSpan = document.createElement('span');
+					noteSpan.innerText = note.content;
+					li.appendChild(noteSpan);
+					this.noteUl.appendChild(li);
+				});
+			}
+
+			loadAnswerLength() {
+				if (!this.zigenConfig) {
+					throw new Error("No config");
+				}
+
+				const self = this;
+
+				var maxCodeLen = 0;
+				this.zigenConfig.glyphs.forEach(glyph => {
+					if (maxCodeLen < glyph.code.length) {
+						maxCodeLen = glyph.code.length;
+					}
+				});
+
+				if (maxCodeLen == 0) {
+					throw new Error("No code");
+				}
+
+				this.answerLenInput.min = 1;
+				this.answerLenInput.max = maxCodeLen;
+
+				const lenKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_answer_len`;
+				this.answerLenInput.value = localStorage.getItem(lenKey) || maxCodeLen;
+
+				this.answerLenInput.onchange = function () {
+					localStorage.setItem(lenKey, self.answerLenInput.value);
+				}
+			}
+
+			renderZigen(goNext = true) {
+				if (!this.zigenConfig || !this.currentGlyphs || this.currentGlyphs.length == 0) {
+					throw new Error("No config or glyphs");
+				}
+
+				// choose next index
+				if (goNext) {
+					if (this.shouldShowRandomZigen) {
+						this.currentIndex = Math.floor(Math.random() * this.currentGlyphs.length);
+					} else {
+						this.currentIndex++;
+						if (this.currentIndex >= this.currentGlyphs.length) {
+							this.currentIndex = 0;
+						}
+					}
+				}
+
+				var indexKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_index`;
+				localStorage.setItem(indexKey, this.currentIndex);
+				console.log(`Saving index [${indexKey}: ${this.currentIndex}]`);
+
+				this.currentGlyph = this.currentGlyphs[this.currentIndex];
+				console.log(`Choose glyph ${this.currentIndex}: [${this.currentGlyph.code}, ${this.currentGlyph.repr}]`);
+
+				// render
+				this.glyph.innerText = this.currentGlyph.glyph || "";
+				this.glyphContext.innerText = this.currentGlyph.context || "";
+
+				this.refreshCode();
+				this.refreshTips();
+			}
+		};
+	</script>
+
+	<script>
+		const app = new App();
+		app.loadConfig('config.json');
 	</script>
 </body>
 
