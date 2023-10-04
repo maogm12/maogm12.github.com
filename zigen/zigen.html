@@ -26,10 +26,11 @@
 			position: fixed;
 			top: 50px;
 			right: 10px;
-			background-color: #ffffff;
 			border: 1px solid #ccc;
 			padding: 10px;
 			z-index: 9999;
+			background-color: white;
+			border-radius: 4px;
 		}
 
 		#glyph-card {
@@ -73,6 +74,7 @@
 			text-align: center;
 			border: 1px solid lightgray;
 			border-radius: 4px;
+			font-size: larger;
 		}
 
 		#notes {
@@ -92,9 +94,47 @@
 			margin-right: 5px;
 		}
 
+		.answer-correct {
+			color: #34C759FF;
+		}
+
+		.answer-error {
+			color: #FF3B30FF;
+		}
+
 		@media (prefers-color-scheme: dark) {
+			html {
+				background-color: black;
+				color:white;
+			}
+
+			#menu {
+				background-color: black;
+			}
+
+			#glyph {
+				color: white;
+			}
+
 			#glyph-context {
 				color: rgb(44, 44, 46);
+			}
+
+			input {
+				color: white;
+				background-color: transparent;
+			}
+
+			.answer-correct {
+				color: #30D158FF;
+			}
+
+			.answer-error {
+				color: #FF453AFF;
+			}
+
+			input#answer {
+				border-bottom: 1px solid white;
 			}
 		}
 	</style>
@@ -152,7 +192,7 @@
 
 			zigenConfig = null;
 			currentGlyphs = null;
-			currentIndex = 0;
+			currentIndex;
 			currentGlyph = null;
 
 			constructor() {
@@ -231,7 +271,7 @@
 					self.toggleMenu();
 				});
 
-				window.addEventListener('click', function (event) {
+				document.addEventListener('click', function (event) {
 					if (event.target != self.menuButton && !self.menuContainer.contains(event.target)) {
 						self.hideMenu();
 					}
@@ -240,8 +280,13 @@
 				// random option
 				this.randomInput.checked = localStorage.getItem('random') == 'true';
 				this.randomInput.onchange = function () {
-					localStorage.setItem('random', self.randomInput.checked);
-					self.renderZigen();
+					localStorage.setItem('random', self.shouldShowRandomZigen);
+					if (!self.shouldShowRandomZigen) {
+						self.currentIndex = 0;
+						self.renderZigen(false); // not go next
+					} else {
+						self.renderZigen();
+					}
 				}
 
 				// show code
@@ -288,9 +333,11 @@
 					const noError = self.currentGlyph.code.toLowerCase().startsWith(answer.toLowerCase());
 
 					if (noError) {
-						self.answerInput.style.color = "green";
+						self.answerInput.classList.remove('answer-error');
+						self.answerInput.classList.add('answer-correct');
 					} else {
-						self.answerInput.style.color = "red";
+						self.answerInput.classList.add('answer-error');
+						self.answerInput.classList.remove('answer-correct');
 					}
 
 					if (answer.toLowerCase() == self.currentGlyph.code.toLowerCase() ||
@@ -301,12 +348,12 @@
 				});
 
 				this.answerInput.addEventListener('focus', function () {
-					window.scrollTo({ top: 0, behavior: 'smooth' });
-
 					// move cursor to end
 					var currentValue = self.answerInput.value;
 					self.answerInput.value = "";
 					self.answerInput.value = currentValue;
+
+					setTimeout(() => window.scrollTo({top:0, behavior:"smooth"}), 500);
 				});
 			}
 
@@ -318,14 +365,13 @@
 						// loaded config
 						console.log('Loaded config');
 						this.zigenConfig = json;
-
 						this.loadFont();
 
 						document.title = this.configName + ' ' + this.configVersion;
 						this.loadNotes();
+						this.loadAnswerLength();
 
 						this.configCategories();
-						this.loadAnswerLength();
 					}).catch((error) => {
 						console.error('Error loading config', error);
 					});
@@ -340,13 +386,19 @@
 				this.menuContainer.style.display = this.menuContainer.style.display == 'none' ? 'block' : 'none';
 			}
 
+			refreshAnswer() {
+				this.answerInput.value = "";
+				this.answerInput.classList.remove('answer-correct');
+				this.answerInput.classList.remove('answer-error');
+			}
+
 			refreshCode() {
 				if (!this.zigenConfig || !this.currentGlyph) {
 					throw new Error("No config or glyph");
 				}
 
 				if (this.shouldShowCode) {
-					this.answerInput.placeholder = this.currentGlyph.code;
+					this.answerInput.placeholder = this.currentGlyph.code.substring(0, this.maxAnswerLength);
 				} else {
 					this.answerInput.placeholder = "";
 				}
@@ -410,10 +462,10 @@
 				var codes = this.zigenConfig.categories[this.categoryIndex].codes;
 				this.currentGlyphs = this.zigenConfig.glyphs.filter(glyph => codes.includes(glyph.code));
 
-				if (manualTrigger) {
-					var categoryKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_category`;
-					localStorage.setItem(categoryKey, this.categoryOptions.selectedIndex);
+				var categoryKey = `${this.zigenConfig.name}_${this.zigenConfig.version}_category`;
+				localStorage.setItem(categoryKey, this.categoryOptions.selectedIndex);
 
+				if (manualTrigger) {
 					this.currentIndex = 0;
 				}
 
@@ -487,6 +539,12 @@
 				this.answerLenInput.value = localStorage.getItem(lenKey) || maxCodeLen;
 
 				this.answerLenInput.onchange = function () {
+					if (self.answerLenInput.value > maxCodeLen) {
+						self.answerLenInput.value = maxCodeLen;
+					} else if (self.answerLenInput.value < 1) {
+						self.answerLenInput.value = 1;
+					}
+
 					localStorage.setItem(lenKey, self.answerLenInput.value);
 				}
 			}
@@ -519,6 +577,7 @@
 				this.glyph.innerText = this.currentGlyph.glyph || "";
 				this.glyphContext.innerText = this.currentGlyph.context || "";
 
+				this.refreshAnswer();
 				this.refreshCode();
 				this.refreshTips();
 			}
