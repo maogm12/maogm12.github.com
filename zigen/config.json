@@ -86,7 +86,23 @@
 		{
 			"startsWith": "P",
 			"content": "文门亦米走之底(辶chuò)，病头(疒)麻穴衣字旁(衤)。"
-		}
+		},
+    {
+      "startsWith": "X",
+      "content": "逆勾(乚𠃊𠄌㇉)叉（凵屮丩彐肀)，建底（廴）习力马。"
+    },
+    {
+      "startsWith": "C",
+      "content": "巳女也予五（五下）阝巴。"
+    },
+    {
+      "startsWith": "V",
+      "content": "幺纟了子乙，弓艮乃巛皮。"
+    },
+    {
+      "startsWith": "B",
+      "content": "飛刀已登丑眉上，母框又令鼠下累。"
+    }
 	],
 	"glyphs": [
 		{
