@@ -105,7 +105,7 @@
 		@media (prefers-color-scheme: dark) {
 			html {
 				background-color: black;
-				color:white;
+				color: white;
 			}
 
 			#menu {
@@ -166,7 +166,7 @@
 		</span>
 	</div>
 
-	<input type="text" id="answer">
+	<input type="text" id="answer" autocomplete="off" autocorrect="off" autocapitalize="off" />
 
 	<p>
 	<div id="tips"></div>
@@ -302,6 +302,11 @@
 					localStorage.setItem('show-tips', self.showTipsInput.checked);
 					self.refreshTips();
 				}
+
+				// answer length
+				this.answerLenInput.addEventListener('change', function () {
+					self.refreshCode();
+				}); 
 			}
 
 			initCategories() {
@@ -319,7 +324,7 @@
 					}
 
 					// Check if the key pressed is a letter
-					if (event.key.match(/[a-z]/i) && self.answerInput.value.length < self.currentGlyph.code.length) {
+					if (event.key.match(/[a-z]/i) && self.answerInput.value.length < Math.min(self.currentGlyph.code.length, self.maxAnswerLength)) {
 						return true;
 					} else {
 						// Prevent any other key from being pressed
@@ -353,7 +358,7 @@
 					self.answerInput.value = "";
 					self.answerInput.value = currentValue;
 
-					setTimeout(() => window.scrollTo({top:0, behavior:"smooth"}), 500);
+					setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 500);
 				});
 			}
 
