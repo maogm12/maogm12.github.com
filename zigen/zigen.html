@@ -6,6 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>字根练习</title>
 	<style>
+		@keyframes pulse-animation {
+			0% { transform: scale(1); }
+			10% { transform: scale(1.2); }
+			100% { transform: scale(1); }
+		}
+
+		.pulse {
+			animation: pulse-animation 0.5s;
+		}
+
 		#container {
 			position: relative;
 			display: inline-block;
@@ -31,6 +41,14 @@
 			z-index: 9999;
 			background-color: white;
 			border-radius: 4px;
+		}
+
+		#feedback {
+			position: fixed;
+			left: 10px;
+			top: 10px;
+			font-family: monospace;
+			font-size: 30px;
 		}
 
 		#glyph-card {
@@ -102,6 +120,10 @@
 			color: #FF3B30FF;
 		}
 
+		.hide {
+			display: none;
+		}
+
 		@media (prefers-color-scheme: dark) {
 			html {
 				background-color: black;
@@ -158,6 +180,11 @@
 		<label for="answer-len">答案长度：</label>
 		<input type="number" name="answer-len" id="answer-len">
 	</div>
+
+	<div id="feedback">
+		<span id="feedback-content">+10</span>
+	</div>
+
 	<div id="glyph-card">
 		<span id="glyph-context">
 		</span>
@@ -183,6 +210,8 @@
 			showTipsInput;
 			answerLenInput;
 			categoryOptions;
+			feedback;
+			feedbackContent;
 			answerInput;
 			tipsDiv;
 			noteUl;
@@ -194,6 +223,8 @@
 			currentGlyphs = null;
 			currentIndex;
 			currentGlyph = null;
+
+			consecutiveCorrectCount = 0;
 
 			constructor() {
 				// menu container
@@ -208,6 +239,10 @@
 				// categories
 				this.categoryOptions = document.getElementById("zigen-categories");
 				this.initCategories();
+
+				// feedback
+				this.feedback = document.getElementById('feedback');
+				this.feedbackContent = document.getElementById('feedback-content');
 
 				// glyph
 				this.glyphCard = document.getElementById('glyph-card');
@@ -260,6 +295,7 @@
 				this.answerInput.value = "";
 				this.tipsDiv.innerHTML = "";
 				this.noteUl.innerHTML = "";
+				this.feedbackContent.innerText = "";
 			}
 
 			// init menu
@@ -343,10 +379,14 @@
 					} else {
 						self.answerInput.classList.add('answer-error');
 						self.answerInput.classList.remove('answer-correct');
+						self.consecutiveCorrectCount = 0;
+						self.refreshFeedback();
 					}
 
 					if (answer.toLowerCase() == self.currentGlyph.code.toLowerCase() ||
 						(noError && answer.length >= self.maxAnswerLength)) {
+						self.consecutiveCorrectCount++;
+						self.refreshFeedback();
 						self.answerInput.value = "";
 						self.renderZigen();
 					}
@@ -360,6 +400,20 @@
 
 					setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 500);
 				});
+			}
+
+			refreshFeedback() {
+				if (this.consecutiveCorrectCount>= 3) {
+					this.feedbackContent.innerText = `+${this.consecutiveCorrectCount}`;
+					this.feedback.classList.add('pulse');
+					const self = this;
+					this.feedback.addEventListener('animationend', () =>{
+						self.feedback.classList.remove('pulse');
+					});
+				} else {
+					this.feedbackContent.innerText = "";
+					this.feedback.classList.remove('pulse');
+				}
 			}
 
 			// config
