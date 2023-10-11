@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<title>字根练习</title>
 	<style>
 		@keyframes pulse-animation {
@@ -53,15 +53,8 @@
 
 		#glyph-card {
 			font-size: 150px;
-			display: inline-block;
-			width: 100px;
-			height: 200px;
-		}
-
-		#glyph-card span {
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%);
+			position: relative;
+			text-align: center;
 		}
 
 		#glyph {
@@ -70,7 +63,10 @@
 		}
 
 		#glyph-context {
-			top: 0;
+			position: absolute;
+			z-index: -1;
+			left: 50%;
+			transform: translate(-50%);
 			color: rgb(229, 229, 234);
 		}
 
@@ -83,33 +79,22 @@
 			margin: 0 auto 0;
 			font-family: monospace;
 			font-size: 50px;
-			text-transform: capitalize;
 			display: block;
 			width: 50%;
 		}
 
 		#tips {
-			text-align: center;
-			border: 1px solid lightgray;
-			border-radius: 4px;
-			font-size: larger;
-		}
-
-		#notes {
 			list-style-type: none;
 			list-style-position: inside;
 			padding-left: 0;
 		}
 
-		.note-key {
-			border: 1px solid gray;
-			font-family: monospace;
-			border-radius: 4px;
-			width: 15px;
-			height: 15px;
-			display: inline-block;
+		#tips > li {
 			text-align: center;
-			margin-right: 5px;
+			border: 1px solid lightgray;
+			border-radius: 4px;
+			font-size: larger;
+			margin: 5px auto;
 		}
 
 		.answer-correct {
@@ -182,23 +167,19 @@
 	</div>
 
 	<div id="feedback">
-		<span id="feedback-content">+10</span>
+		<span id="feedback-content">+3</span>
 	</div>
 
 	<div id="glyph-card">
-		<span id="glyph-context">
-		</span>
-
-		<span id="glyph">
-		</span>
+		<span id="glyph-context"></span>
+		<span id="glyph"></span>
 	</div>
 
 	<input type="text" id="answer" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 
-	<p>
-	<div id="tips"></div>
-	<ul id="notes"></ul>
-	</p>
+	<div>
+		<ul id="tips"></ul>
+	</div>
 
 	<script>
 		class App {
@@ -213,8 +194,7 @@
 			feedback;
 			feedbackContent;
 			answerInput;
-			tipsDiv;
-			noteUl;
+			tipsContainer;
 			glyphCard;
 			glyph;
 			glyphContext;
@@ -225,6 +205,7 @@
 			currentGlyph = null;
 
 			consecutiveCorrectCount = 0;
+			currentErrorCount = 0;
 
 			constructor() {
 				// menu container
@@ -254,10 +235,7 @@
 				this.initAnswer();
 
 				// tips
-				this.tipsDiv = document.getElementById('tips');
-
-				// notes
-				this.noteUl = document.getElementById('notes');
+				this.tipsContainer = document.getElementById('tips');
 
 				this.init();
 			}
@@ -287,14 +265,17 @@
 				return this.answerLenInput.value;
 			}
 
+			get currentCode() {
+				return this.currentGlyph ? this.currentGlyph.code : "";
+			}
+
 			init() {
 				this.categoryOptions.innerHTML = "";
 				this.categoryIndex = 0;
 				this.currentIndex = 0;
 
 				this.answerInput.value = "";
-				this.tipsDiv.innerHTML = "";
-				this.noteUl.innerHTML = "";
+				this.tipsContainer.innerHTML = "";
 				this.feedbackContent.innerText = "";
 			}
 
@@ -370,7 +351,18 @@
 				});
 
 				this.answerInput.addEventListener('input', function () {
-					const answer = self.answerInput.value;
+					var answer = self.answerInput.value;
+					for (var i = 0; i < Math.min(answer.length, self.currentCode.length); i++) {
+						if (self.currentCode[i] >= 'a') {
+							// small letter
+							answer = answer.substring(0, i) + answer[i].toLowerCase() + answer.substring(i + 1);
+						} else {
+							// capital letter
+							answer = answer.substring(0, i) + answer[i].toUpperCase() + answer.substring(i + 1);
+						}
+					}
+					self.answerInput.value = answer;
+
 					const noError = self.currentGlyph.code.toLowerCase().startsWith(answer.toLowerCase());
 
 					if (noError) {
@@ -381,7 +373,17 @@
 						self.answerInput.classList.remove('answer-correct');
 						self.consecutiveCorrectCount = 0;
 						self.refreshFeedback();
+
+						self.currentErrorCount++;
+						if (self.currentErrorCount >= 3) {
+							self.answerInput.value = ""
+							self.refreshCode();
+							self.currentErrorCount = 0;
+							return;
+						}
 					}
+
+					
 
 					if (answer.toLowerCase() == self.currentGlyph.code.toLowerCase() ||
 						(noError && answer.length >= self.maxAnswerLength)) {
@@ -427,7 +429,6 @@
 						this.loadFont();
 
 						document.title = this.configName + ' ' + this.configVersion;
-						this.loadNotes();
 						this.loadAnswerLength();
 
 						this.configCategories();
@@ -456,11 +457,26 @@
 					throw new Error("No config or glyph");
 				}
 
-				if (this.shouldShowCode) {
+				if (this.shouldShowCode || this.currentErrorCount >= 3) {
 					this.answerInput.placeholder = this.currentGlyph.code.substring(0, this.maxAnswerLength);
 				} else {
 					this.answerInput.placeholder = "";
 				}
+			}
+
+			findMatchingNotes() {
+				if (!this.zigenConfig || !this.currentGlyph) {
+					throw new Error("No config or glyph");
+				}
+
+				var notes = [];
+				this.zigenConfig.notes.forEach(note => {
+					if (RegExp(note.match).test(this.currentCode)) {
+						notes.push(note);
+					}
+				});
+
+				return notes;
 			}
 
 			refreshTips() {
@@ -469,18 +485,15 @@
 				}
 
 				if (this.shouldShowTips) {
-					this.tipsDiv.hidden = false;
-					this.tipsDiv.innerHTML = "";
-					this.zigenConfig.notes.forEach(note => {
-						if (this.currentGlyph.code.toLowerCase().startsWith(note.startsWith.toLowerCase())) {
-							if (this.tipsDiv.innerHTML != "") {
-								this.tipsDiv.innerHTML += "<br>";
-							}
-							this.tipsDiv.innerHTML = note.content;
-						}
+					this.tipsContainer.hidden = false;
+					this.tipsContainer.innerHTML = "";
+					this.findMatchingNotes().forEach(note => {
+						var li = document.createElement('li');
+						li.innerHTML = note.content;
+						this.tipsContainer.appendChild(li);
 					});
 				} else {
-					this.tipsDiv.hidden = true;
+					this.tipsContainer.hidden = true;
 				}
 			}
 
@@ -552,25 +565,6 @@
 					(err) => {
 						console.error(err);
 					},);
-			}
-
-			loadNotes() {
-				if (!this.zigenConfig) {
-					throw new Error("No config");
-				}
-
-				this.noteUl.innerHTML = "";
-				this.zigenConfig.notes.forEach(note => {
-					var li = document.createElement('li');
-					var keySpan = document.createElement('span');
-					keySpan.classList.add('note-key');
-					keySpan.innerText = note.startsWith;
-					li.appendChild(keySpan);
-					var noteSpan = document.createElement('span');
-					noteSpan.innerText = note.content;
-					li.appendChild(noteSpan);
-					this.noteUl.appendChild(li);
-				});
 			}
 
 			loadAnswerLength() {

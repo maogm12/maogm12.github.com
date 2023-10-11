@@ -1,108 +1,109 @@
 {
 	"name": "宇浩字根",
 	"version": "2.5.0",
-	"font": "YuhaoZigen-ExtraLight.ttf",
+	"font": "YuhaoZigen-ExtraLight.woff2",
+	"fontName": "YuhaoZigen",
 	"notes": [
 		{
-			"startsWith": "A",
+			"match": "A",
 			"content": "丁丌(jī)行右(亍)瓦，耳下(丅)打(扌丁)七寸。"
 		},
 		{
-			"startsWith": "S",
+			"match": "S",
 			"content": "草头(艹卅𠂇)二犬厂，辰考(丂)而有臣。"
 		},
 		{
-			"startsWith": "D",
+			"match": "D",
 			"content": "古來十石尤其戊，西雨不走馬豕丰。"
 		},
 		{
-			"startsWith": "F",
+			"match": "F",
 			"content": "一木甫三工。"
 		},
 		{
-			"startsWith": "G",
+			"match": "G",
 			"content": "大王革春(𡗗)夫，框(匚)面弋酉戈。"
 		},
 		{
-			"startsWith": "H",
+			"match": "H",
 			"content": "老上(耂)青(龶)士示(礻)兀牙，末世土干未至车。"
 		},
 		{
-			"startsWith": "J",
+			"match": "J",
 			"content": "早日山曰田。"
 		},
 		{
-			"startsWith": "K",
+			"match": "K",
 			"content": "甲申由禺电，下框(冂)凹里业，虫贝水上见。"
 		},
 		{
-			"startsWith": "L",
+			"match": "L",
 			"content": "口是心非。 "
 		},
 		{
-			"startsWith": "M",
+			"match": "M",
 			"content": "巾网(罒wǎng)貝皿且具上，小目立刀(刂)卜虎(虍)骨。"
 		},
 		{
-			"startsWith": "N",
+			"match": "N",
 			"content": "方框(囗)二三(丨〢〣)竖，黑册尚止(龰)足。"
 		},
 		{
-			"startsWith": "Q",
+			"match": "Q",
 			"content": "荒下没右(殳)鱼儿气，撇(丿)川瓜矢几竹舟。 "
 		},
 		{
-			"startsWith": "W",
+			"match": "W",
 			"content": "周围(⺆勹)炙顶(⺼)皆同月，千鬼上身生金牛(牜)，告头(⺧)杀上(乂)谁侧(隹)缶？"
 		},
 		{
-			"startsWith": "E",
+			"match": "E",
 			"content": "反文(攵pū)人(亻)欠斤，白爪壬乌夭。"
 		},
 		{
-			"startsWith": "R",
+			"match": "R",
 			"content": "双人(彳)食(饣)匕入舌臼，微禾向夕反犬(犭)毛，衣下(𧘇)古風僉繁鳥。"
 		},
 		{
-			"startsWith": "T",
+			"match": "T",
 			"content": "八人手长二三撇(彡)，金边(钅)自用介下卯。"
 		},
 		{
-			"startsWith": "Y",
+			"match": "Y",
 			"content": "秃盖(冖mì)心合豸(zhì)，阜(𠂤duī)上食九鸟。"
 		},
 		{
-			"startsWith": "U",
+			"match": "U",
 			"content": "兰头(丷䒑)将(丬)左四点(灬)火，广言亡羊赢外框。"
 		},
 		{
-			"startsWith": "I",
+			"match": "I",
 			"content": "鹿户三点(ッ)立水(氵)上。"
 		},
 		{
-			"startsWith": "O",
+			"match": "O",
 			"content": "辛亥高宝盖(宀)，言旁(讠)点(丶)捺(乀)方。"
 		},
 		{
-			"startsWith": "P",
+			"match": "P",
 			"content": "文门亦米走之底(辶chuò)，病头(疒)麻穴衣字旁(衤)。"
 		},
-    {
-      "startsWith": "X",
-      "content": "逆勾(乚𠃊𠄌㇉)叉（凵屮丩彐肀)，建底（廴）习力马。"
-    },
-    {
-      "startsWith": "C",
-      "content": "巳女也予五（五下）阝巴。"
-    },
-    {
-      "startsWith": "V",
-      "content": "幺纟了子乙，弓艮乃巛皮。"
-    },
-    {
-      "startsWith": "B",
-      "content": "飛刀已登丑眉上，母框又令鼠下累。"
-    }
+		{
+			"match": "X",
+			"content": "逆勾(乚𠃊𠄌㇉)叉（凵屮丩彐肀)，建底（廴）习力马。"
+		},
+		{
+			"match": "C",
+			"content": "巳女也予五（五下）阝巴。"
+		},
+		{
+			"match": "V",
+			"content": "幺纟了子乙，弓艮乃巛皮。"
+		},
+		{
+			"match": "B",
+			"content": "飛刀已丑登眉上，母框又令鼠下累。"
+		}
 	],
 	"glyphs": [
 		{
@@ -4998,6 +4999,756 @@
 			"repr": "王",
 			"glyph": "",
 			"context": "环"
+		},
+		{
+			"code": "EWOd",
+			"repr": "的",
+			"glyph": "的"
+		},
+		{
+			"code": "Fii",
+			"repr": "一",
+			"glyph": "一"
+		},
+		{
+			"code": "JFNf",
+			"repr": "是",
+			"glyph": "是"
+		},
+		{
+			"code": "Vll",
+			"repr": "了",
+			"glyph": "了"
+		},
+		{
+			"code": "QAGg",
+			"repr": "我",
+			"glyph": "我"
+		},
+		{
+			"code": "Duu",
+			"repr": "不",
+			"glyph": "不"
+		},
+		{
+			"code": "Tee",
+			"repr": "人",
+			"glyph": "人"
+		},
+		{
+			"code": "SNHt",
+			"repr": "在",
+			"glyph": "在"
+		},
+		{
+			"code": "ECye",
+			"repr": "他",
+			"glyph": "他"
+		},
+		{
+			"code": "SWyo",
+			"repr": "有",
+			"glyph": "有"
+		},
+		{
+			"code": "PPdw",
+			"repr": "这",
+			"glyph": "这"
+		},
+		{
+			"code": "TNse",
+			"repr": "个",
+			"glyph": "个"
+		},
+		{
+			"code": "Kss",
+			"repr": "上",
+			"glyph": "上"
+		},
+		{
+			"code": "EPne",
+			"repr": "们",
+			"glyph": "们"
+		},
+		{
+			"code": "FPmi",
+			"repr": "来",
+			"glyph": "来"
+		},
+		{
+			"code": "HMdk",
+			"repr": "到",
+			"glyph": "到"
+		},
+		{
+			"code": "JAcr",
+			"repr": "时",
+			"glyph": "时"
+		},
+		{
+			"code": "Gdd",
+			"repr": "大",
+			"glyph": "大"
+		},
+		{
+			"code": "HCyt",
+			"repr": "地",
+			"glyph": "地"
+		},
+		{
+			"code": "OXOd",
+			"repr": "为",
+			"glyph": "为"
+		},
+		{
+			"code": "Vkk",
+			"repr": "子",
+			"glyph": "子"
+		},
+		{
+			"code": "LNsv",
+			"repr": "中",
+			"glyph": "中"
+		},
+		{
+			"code": "EYMa",
+			"repr": "你",
+			"glyph": "你"
+		},
+		{
+			"code": "OULQ",
+			"repr": "说",
+			"glyph": "说"
+		},
+		{
+			"code": "Wgg",
+			"repr": "生",
+			"glyph": "生"
+		},
+		{
+			"code": "NGOd",
+			"repr": "国",
+			"glyph": "国"
+		},
+		{
+			"code": "QAok",
+			"repr": "年",
+			"glyph": "年"
+		},
+		{
+			"code": "UMfg",
+			"repr": "着",
+			"glyph": "着"
+		},
+		{
+			"code": "OMDo",
+			"repr": "就",
+			"glyph": "就"
+		},
+		{
+			"code": "VACj",
+			"repr": "那",
+			"glyph": "那"
+		},
+		{
+			"code": "RLvh",
+			"repr": "和",
+			"glyph": "和"
+		},
+		{
+			"code": "DCnx",
+			"repr": "要",
+			"glyph": "要"
+		},
+		{
+			"code": "CCyn",
+			"repr": "她",
+			"glyph": "她"
+		},
+		{
+			"code": "XXgg",
+			"repr": "出",
+			"glyph": "出"
+		},
+		{
+			"code": "Cyy",
+			"repr": "也",
+			"glyph": "也"
+		},
+		{
+			"code": "RJFA",
+			"repr": "得",
+			"glyph": "得"
+		},
+		{
+			"code": "Kkk",
+			"repr": "里",
+			"glyph": "里"
+		},
+		{
+			"code": "EFLv",
+			"repr": "后",
+			"glyph": "后"
+		},
+		{
+			"code": "Tkk",
+			"repr": "自",
+			"glyph": "自"
+		},
+		{
+			"code": "XOTe",
+			"repr": "以",
+			"glyph": "以"
+		},
+		{
+			"code": "TSVv",
+			"repr": "会",
+			"glyph": "会"
+		},
+		{
+			"code": "ODsb",
+			"repr": "家",
+			"glyph": "家"
+		},
+		{
+			"code": "ALvn",
+			"repr": "可",
+			"glyph": "可"
+		},
+		{
+			"code": "Akk",
+			"repr": "下",
+			"glyph": "下"
+		},
+		{
+			"code": "Srr",
+			"repr": "而",
+			"glyph": "而"
+		},
+		{
+			"code": "APdc",
+			"repr": "过",
+			"glyph": "过"
+		},
+		{
+			"code": "FGdi",
+			"repr": "天",
+			"glyph": "天"
+		},
+		{
+			"code": "HVvt",
+			"repr": "去",
+			"glyph": "去"
+		},
+		{
+			"code": "VWRR",
+			"repr": "能",
+			"glyph": "能"
+		},
+		{
+			"code": "BAcu",
+			"repr": "对",
+			"glyph": "对"
+		},
+		{
+			"code": "Maa",
+			"repr": "小",
+			"glyph": "小"
+		},
+		{
+			"code": "RRkk",
+			"repr": "多",
+			"glyph": "多"
+		},
+		{
+			"code": "WSUo",
+			"repr": "然",
+			"glyph": "然"
+		},
+		{
+			"code": "FAui",
+			"repr": "于",
+			"glyph": "于"
+		},
+		{
+			"code": "Yii",
+			"repr": "心",
+			"glyph": "心"
+		},
+		{
+			"code": "IYVk",
+			"repr": "学",
+			"glyph": "学"
+		},
+		{
+			"code": "QVvp",
+			"repr": "么",
+			"glyph": "么"
+		},
+		{
+			"code": "Pee",
+			"repr": "之",
+			"glyph": "之"
+		},
+		{
+			"code": "HJCj",
+			"repr": "都",
+			"glyph": "都"
+		},
+		{
+			"code": "CVkn",
+			"repr": "好",
+			"glyph": "好"
+		},
+		{
+			"code": "TMfu",
+			"repr": "看",
+			"glyph": "看"
+		},
+		{
+			"code": "DBjk",
+			"repr": "起",
+			"glyph": "起"
+		},
+		{
+			"code": "XBOd",
+			"repr": "发",
+			"glyph": "发"
+		},
+		{
+			"code": "MXla",
+			"repr": "当",
+			"glyph": "当"
+		},
+		{
+			"code": "IQhs",
+			"repr": "没",
+			"glyph": "没"
+		},
+		{
+			"code": "DViw",
+			"repr": "成",
+			"glyph": "成"
+		},
+		{
+			"code": "LTiv",
+			"repr": "只",
+			"glyph": "只"
+		},
+		{
+			"code": "CLvn",
+			"repr": "如",
+			"glyph": "如"
+		},
+		{
+			"code": "ALXl",
+			"repr": "事",
+			"glyph": "事"
+		},
+		{
+			"code": "ACbo",
+			"repr": "把",
+			"glyph": "把"
+		},
+		{
+			"code": "DPdu",
+			"repr": "还",
+			"glyph": "还"
+		},
+		{
+			"code": "Tnn",
+			"repr": "用",
+			"glyph": "用"
+		},
+		{
+			"code": "QVNQ",
+			"repr": "第",
+			"glyph": "第"
+		},
+		{
+			"code": "FUgv",
+			"repr": "样",
+			"glyph": "样"
+		},
+		{
+			"code": "UTPd",
+			"repr": "道",
+			"glyph": "道"
+		},
+		{
+			"code": "FMYi",
+			"repr": "想",
+			"glyph": "想"
+		},
+		{
+			"code": "EQMo",
+			"repr": "作",
+			"glyph": "作"
+		},
+		{
+			"code": "RLNs",
+			"repr": "种",
+			"glyph": "种"
+		},
+		{
+			"code": "FSji",
+			"repr": "开",
+			"glyph": "开"
+		},
+		{
+			"code": "UGdg",
+			"repr": "美",
+			"glyph": "美"
+		},
+		{
+			"code": "ULYi",
+			"repr": "总",
+			"glyph": "总"
+		},
+		{
+			"code": "TTee",
+			"repr": "从",
+			"glyph": "从"
+		},
+		{
+			"code": "FDoi",
+			"repr": "无",
+			"glyph": "无"
+		},
+		{
+			"code": "YHWy",
+			"repr": "情",
+			"glyph": "情"
+		},
+		{
+			"code": "Bjj",
+			"repr": "己",
+			"glyph": "己"
+		},
+		{
+			"code": "Gii",
+			"repr": "面",
+			"glyph": "面"
+		},
+		{
+			"code": "JABu",
+			"repr": "最",
+			"glyph": "最"
+		},
+		{
+			"code": "Cnn",
+			"repr": "女",
+			"glyph": "女"
+		},
+		{
+			"code": "EJFi",
+			"repr": "但",
+			"glyph": "但"
+		},
+		{
+			"code": "GKxn",
+			"repr": "现",
+			"glyph": "现"
+		},
+		{
+			"code": "UWMd",
+			"repr": "前",
+			"glyph": "前"
+		},
+		{
+			"code": "NRSi",
+			"repr": "些",
+			"glyph": "些"
+		},
+		{
+			"code": "IEje",
+			"repr": "所",
+			"glyph": "所"
+		},
+		{
+			"code": "KFLv",
+			"repr": "同",
+			"glyph": "同"
+		},
+		{
+			"code": "Jrr",
+			"repr": "日",
+			"glyph": "日"
+		},
+		{
+			"code": "Tuu",
+			"repr": "手",
+			"glyph": "手"
+		},
+		{
+			"code": "Buu",
+			"repr": "又",
+			"glyph": "又"
+		},
+		{
+			"code": "RAhc",
+			"repr": "行",
+			"glyph": "行"
+		},
+		{
+			"code": "IJYi",
+			"repr": "意",
+			"glyph": "意"
+		},
+		{
+			"code": "SVXk",
+			"repr": "动",
+			"glyph": "动"
+		},
+		{
+			"code": "Ogg",
+			"repr": "方",
+			"glyph": "方"
+		},
+		{
+			"code": "DWyj",
+			"repr": "期",
+			"glyph": "期"
+		},
+		{
+			"code": "ORib",
+			"repr": "它",
+			"glyph": "它"
+		},
+		{
+			"code": "SGdi",
+			"repr": "头",
+			"glyph": "头"
+		},
+		{
+			"code": "VBFo",
+			"repr": "经",
+			"glyph": "经"
+		},
+		{
+			"code": "Thh",
+			"repr": "长",
+			"glyph": "长"
+		},
+		{
+			"code": "Qrr",
+			"repr": "儿",
+			"glyph": "儿"
+		},
+		{
+			"code": "NLvw",
+			"repr": "回",
+			"glyph": "回"
+		},
+		{
+			"code": "EIde",
+			"repr": "位",
+			"glyph": "位"
+		},
+		{
+			"code": "TBdi",
+			"repr": "分",
+			"glyph": "分"
+		},
+		{
+			"code": "EYSB",
+			"repr": "爱",
+			"glyph": "爱"
+		},
+		{
+			"code": "HRit",
+			"repr": "老",
+			"glyph": "老"
+		},
+		{
+			"code": "NGdw",
+			"repr": "因",
+			"glyph": "因"
+		},
+		{
+			"code": "RVnc",
+			"repr": "很",
+			"glyph": "很"
+		},
+		{
+			"code": "VYes",
+			"repr": "给",
+			"glyph": "给"
+		},
+		{
+			"code": "RLvk",
+			"repr": "名",
+			"glyph": "名"
+		},
+		{
+			"code": "IHVv",
+			"repr": "法",
+			"glyph": "法"
+		},
+		{
+			"code": "PJrn",
+			"repr": "间",
+			"glyph": "间"
+		},
+		{
+			"code": "DEjj",
+			"repr": "斯",
+			"glyph": "斯"
+		},
+		{
+			"code": "QLvi",
+			"repr": "知",
+			"glyph": "知"
+		},
+		{
+			"code": "Hii",
+			"repr": "世",
+			"glyph": "世"
+		},
+		{
+			"code": "EDie",
+			"repr": "什",
+			"glyph": "什"
+		},
+		{
+			"code": "FKTT",
+			"repr": "两",
+			"glyph": "两"
+		},
+		{
+			"code": "SEii",
+			"repr": "次",
+			"glyph": "次"
+		},
+		{
+			"code": "EFLW",
+			"repr": "使",
+			"glyph": "使"
+		},
+		{
+			"code": "Wmm",
+			"repr": "身",
+			"glyph": "身"
+		},
+		{
+			"code": "HJrt",
+			"repr": "者",
+			"glyph": "者"
+		},
+		{
+			"code": "PVpy",
+			"repr": "被",
+			"glyph": "被"
+		},
+		{
+			"code": "Oll",
+			"repr": "高",
+			"glyph": "高"
+		},
+		{
+			"code": "Bii",
+			"repr": "已",
+			"glyph": "已"
+		},
+		{
+			"code": "IFvd",
+			"repr": "亲",
+			"glyph": "亲"
+		},
+		{
+			"code": "Djj",
+			"repr": "其",
+			"glyph": "其"
+		},
+		{
+			"code": "STPd",
+			"repr": "进",
+			"glyph": "进"
+		},
+		{
+			"code": "NRii",
+			"repr": "此",
+			"glyph": "此"
+		},
+		{
+			"code": "ORea",
+			"repr": "话",
+			"glyph": "话"
+		},
+		{
+			"code": "NMvs",
+			"repr": "常",
+			"glyph": "常"
+		},
+		{
+			"code": "SFik",
+			"repr": "与",
+			"glyph": "与"
+		},
+		{
+			"code": "IRes",
+			"repr": "活",
+			"glyph": "活"
+		},
+		{
+			"code": "FNii",
+			"repr": "正",
+			"glyph": "正"
+		},
+		{
+			"code": "DFLY",
+			"repr": "感",
+			"glyph": "感"
+		},
+		{
+			"code": "Kxx",
+			"repr": "见",
+			"glyph": "见"
+		},
+		{
+			"code": "JWyr",
+			"repr": "明",
+			"glyph": "明"
+		},
+		{
+			"code": "PLvn",
+			"repr": "问",
+			"glyph": "问"
+		},
+		{
+			"code": "Xkk",
+			"repr": "力",
+			"glyph": "力"
+		},
+		{
+			"code": "GKkn",
+			"repr": "理",
+			"glyph": "理"
+		},
+		{
+			"code": "YMam",
+			"repr": "尔",
+			"glyph": "尔"
+		},
+		{
+			"code": "MLUo",
+			"repr": "点",
+			"glyph": "点"
+		},
+		{
+			"code": "Pww",
+			"repr": "文",
+			"glyph": "文"
+		},
+		{
+			"code": "Qjj",
+			"repr": "几",
+			"glyph": "几"
+		},
+		{
+			"code": "OFNf",
+			"repr": "定",
+			"glyph": "定"
 		}
 	],
 	"categories": [
@@ -5364,6 +6115,161 @@
 				"Xl",
 				"Yi",
 				"Ym"
+			]
+		},
+		{
+			"name": "常用汉字前150",
+			"codes": [
+				"EWOd",
+				"Fii",
+				"JFNf",
+				"Vll",
+				"QAGg",
+				"Duu",
+				"Tee",
+				"SNHt",
+				"ECye",
+				"SWyo",
+				"PPdw",
+				"TNse",
+				"Kss",
+				"EPne",
+				"FPmi",
+				"HMdk",
+				"JAcr",
+				"Gdd",
+				"HCyt",
+				"OXOd",
+				"Vkk",
+				"LNsv",
+				"EYMa",
+				"OULQ",
+				"Wgg",
+				"NGOd",
+				"QAok",
+				"UMfg",
+				"OMDo",
+				"VACj",
+				"RLvh",
+				"DCnx",
+				"CCyn",
+				"XXgg",
+				"Cyy",
+				"RJFA",
+				"Kkk",
+				"EFLv",
+				"Tkk",
+				"XOTe",
+				"TSVv",
+				"ODsb",
+				"ALvn",
+				"Akk",
+				"Srr",
+				"APdc",
+				"FGdi",
+				"HVvt",
+				"VWRR",
+				"BAcu",
+				"Maa",
+				"RRkk",
+				"WSUo",
+				"FAui",
+				"Yii",
+				"IYVk",
+				"QVvp",
+				"Pee",
+				"HJCj",
+				"CVkn",
+				"TMfu",
+				"DBjk",
+				"XBOd",
+				"MXla",
+				"IQhs",
+				"DViw",
+				"LTiv",
+				"CLvn",
+				"ALXl",
+				"ACbo",
+				"DPdu",
+				"Tnn",
+				"QVNQ",
+				"FUgv",
+				"UTPd",
+				"FMYi",
+				"EQMo",
+				"RLNs",
+				"FSji",
+				"UGdg",
+				"ULYi",
+				"TTee",
+				"FDoi",
+				"YHWy",
+				"Bjj",
+				"Gii",
+				"JABu",
+				"Cnn",
+				"EJFi",
+				"GKxn",
+				"UWMd",
+				"NRSi",
+				"IEje",
+				"KFLv",
+				"Jrr",
+				"Tuu",
+				"Buu",
+				"RAhc",
+				"IJYi",
+				"SVXk",
+				"Ogg",
+				"DWyj",
+				"ORib",
+				"SGdi",
+				"VBFo",
+				"Thh",
+				"Qrr",
+				"NLvw",
+				"EIde",
+				"TBdi",
+				"EYSB",
+				"HRit",
+				"NGdw",
+				"RVnc",
+				"VYes",
+				"RLvk",
+				"IHVv",
+				"PJrn",
+				"DEjj",
+				"QLvi",
+				"Hii",
+				"EDie",
+				"FKTT",
+				"SEii",
+				"EFLW",
+				"Wmm",
+				"HJrt",
+				"PVpy",
+				"Oll",
+				"Bii",
+				"IFvd",
+				"Djj",
+				"STPd",
+				"NRii",
+				"ORea",
+				"NMvs",
+				"SFik",
+				"IRes",
+				"FNii",
+				"DFLY",
+				"Kxx",
+				"JWyr",
+				"PLvn",
+				"Xkk",
+				"GKkn",
+				"YMam",
+				"MLUo",
+				"Pww",
+				"Qjj",
+				"OFNf"
 			]
 		}
 	]
