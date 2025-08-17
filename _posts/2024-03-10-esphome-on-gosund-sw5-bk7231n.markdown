@@ -13,32 +13,46 @@ slug: gosund-sw5-in-homeassistant
 
 ## 楔子
 
-去年搬家后，在新家里发现有三个前房主留下的智能开关，可以连WiFi的那种，样子平平，在墙上倒是不显突兀。拆下来发现是一个叫[Gosund](https://us.gosund.com/products/app-gosund-smart-light-switch-sw5)的牌子，正好当时正准备把家里的开关换成智能开关，看了不少其他牌子，最后兜兜转转，还是去Temu上买了一些一样的。Amazon上其实也有，不过不知为何，名字已经换成了[Ghome](https://a.co/d/hMzTv45)。
+去年搬家后，在新家里发现有三个前房主留下的智能开关，可以连WiFi的那种，样子平平，在墙上倒是不显突兀。拆下来发现是一个叫[Gosund]的牌子，正好当时正准备把家里的开关换成智能开关，也看了不少其他牌子，最后兜兜转转，还是去Temu上买了一些一样的。Amazon上其实也有，不过不知为何，名字已经换成了[Ghome]。
 
-关于智能家居，我的目的很简单，就是能躺在床上用手机开关灯。由于我在家里已经部署了[Home Assistant](https://www.home-assistant.io)，这里只记录一下我是怎么把这些开关集成进来，并且导入Apple Home和Amazon Alexa里面的，关于Home Assistant的详细部分以后有机会可以继续分享。
+关于智能家居，我的目的很简单，就是能躺在床上用手机开关灯。由于我在家里已经部署了[Home Assistant]，这里只记录一下我是怎么把这些开关集成进来，并且导入Apple Home和Amazon Alexa里面的，关于Home Assistant的其他使用经验以后有机会可以继续分享。
+
+[Gosund]: https://us.gosund.com/products/app-gosund-smart-light-switch-sw5
+[Ghome]: https://a.co/d/hMzTv45
+[Home Assistant]: https://www.home-assistant.io
 
 ## 基本思路
 
 1. 把所有开关集成到Home Assistant里。
-2. 由于家里人都是用的iPhone，我用一台Apple TV当家居中枢，所有设备用[HomeKit Bridge集成](https://www.home-assistant.io/integrations/homekit/)导出到家居中枢，这样家里所有的苹果设备就都可以控制这些开关了。
-3. 家里还有一些Echo Dot，我把这些设备也用[Emulated Hue集成](https://www.home-assistant.io/integrations/emulated_hue/)导入到了Alexa里，这样就可以实现用Alexa语音控制了。
+2. 选择一些实体（比如开关或灯）接入智能家居。
+   1. Apple Home：由于家里人基本都是用的iPhone，我有一台Apple TV当家居中枢，Home Assistant里的设备可以用[HomeKit Bridge集成]接入过来，以供家里的苹果设备控制。
+   2. Alexa：家里还有一些Echo Dot，关于如何接入Alexa，具体可以参考[官方Amazon Alexa文档]。我选用的是[Emulated Hue集成]，可以很方便的做到用Alexa语音控制开关灯。
 
 ![智能开关集成到Home Assistant](../images/switch-ha-smarthome.svg)
+
+[HomeKit Bridge集成]: https://www.home-assistant.io/integrations/homekit/
+[官方Amazon Alexa文档]: https://www.home-assistant.io/integrations/alexa/
+[Emulated Hue集成]: https://www.home-assistant.io/integrations/emulated_hue/
 
 ## 集成到Home Assistant
 
 说起类似的WiFi智能开关，不得不提一家叫[涂鸦智能](https://www.tuya.com/cn/)的公司，我猜他提供了一整套智能家居解决方案，厂商只需要集成他们的芯片并使用背后的涂鸦云，就可以很方便的把自己的设备变「智能」，并接入Alexa或者Google Home之类的智能家居平台。这种开关一搜一大把，本文内容也部分适用。
 
-我第一次发现这个还是几年前用Costco买的一些Feit的智能灯泡，之前一直用Feit的官方App，后来偶然从Reddit上看到用一个叫「Tuya Smart」的App也可以控制这些设备，试用后发现界面都是一模一样的。再之后才得知这家叫「涂鸦」的公司。
+我第一次发现这个还是几年前用Costco买的一些Feit的智能灯泡，一开始一直使用Feit的官方App，后来偶然从Reddit上看到用一个叫「Tuya Smart」的App也可以控制这些设备，试用后发现界面都是一模一样的。再之后才得知这家叫「涂鸦」的公司。
+
+闲话休提，言归正传。
 
 ### Home Assistant官方的Tuya集成
 
-如果想把这些开关集成到Home Assistant里，最简单的方法是使用官方的[Tuya集成](https://www.home-assistant.io/integrations/tuya/):
+如果想把这些开关集成到Home Assistant里，最简单的方法是使用官方的[Tuya集成]。
 ![tuya集成](../images/tuya-intergration.png)
+
 
 这部分Home Assistant的文档已经十分详细，不再赘述。
 
-但是这种方式依然依赖涂鸦的服务器，从按下按钮到开关接通把灯点亮中间经过了网络请求，能明显感受到延迟。万一涂鸦的服务器挂了，我也不知具体会有什么后果。
+但是这种方式依然依赖涂鸦的服务器，从按下按钮到开关接通把灯点亮中间经过了网络请求，能明显感受到延迟。万一涂鸦的服务器挂了，我也不知具体会有什么后果。猜测
+
+[Tuya集成]: https://www.home-assistant.io/integrations/tuya/
 
 ### localtuya
 
