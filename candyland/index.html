@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>糖果乐园抽牌器</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fff5f7;
+            --candy-red: #ff3333;
+            --candy-white: #ffffff;
+            --text-main: #5d4037;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            touch-action: manipulation;
+            /* 优化移动端点击速度 */
+        }
+
+        /* Candy Cane 标题 */
+        .candy-cane-title {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 4rem;
+            margin: 10px 0;
+            background: repeating-linear-gradient(45deg,
+                    var(--candy-red),
+                    var(--candy-red) 12px,
+                    var(--candy-white) 12px,
+                    var(--candy-white) 24px);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.1));
+            animation: moveStripes 6s linear infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes moveStripes {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        .card-box {
+            width: 280px;
+            height: 400px;
+            background: #ffffff;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(255, 182, 193, 0.4);
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 10px solid #fff;
+            position: relative;
+            transition: transform 0.1s ease;
+        }
+
+        .card-box:active {
+            transform: scale(0.96);
+        }
+
+        /* 颜色块样式 */
+        .square {
+            width: 100px;
+            height: 100px;
+            border-radius: 18px;
+            border: 5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .double-gap {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* 特殊角色 */
+        .spec-icon {
+            font-size: 110px;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .spec-name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff4081;
+        }
+
+        /* UI 按钮 */
+        .stats {
+            margin: 15px;
+            color: #888;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .draw-btn {
+            background: linear-gradient(135deg, #ff80ab, #f50057);
+            color: white;
+        }
+
+        .reset-btn {
+            background: #bdbdbd;
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        /* 游戏颜色 */
+        .bg-red {
+            background-color: #ff5252;
+        }
+
+        .bg-orange {
+            background-color: #ffab40;
+        }
+
+        .bg-yellow {
+            background-color: #ffd740;
+        }
+
+        .bg-green {
+            background-color: #69f0ae;
+        }
+
+        .bg-blue {
+            background-color: #40c4ff;
+        }
+
+        .bg-purple {
+            background-color: #e040fb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="candy-cane-title">Candy Land</h1>
+
+    <div class="card-box" id="main-display" onclick="drawCard()">
+        <div id="content">
+            <div style="font-size: 70px;">🎠</div>
+            <p style="color:#ff80ab; font-weight:bold; font-size: 20px;">点我抽牌</p>
+        </div>
+    </div>
+
+    <div class="stats">
+        剩余卡牌：<span id="count">--</span> / <span id="total">--</span>
+    </div>
+
+    <div class="btn-group">
+        <button class="draw-btn" onclick="drawCard()">点击抽牌</button>
+        <button class="reset-btn" onclick="resetGame()">重新洗牌</button>
+    </div>
+
+    <script>
+        const COLORS = [
+            { name: '红', class: 'bg-red' },
+            { name: '橙', class: 'bg-orange' },
+            { name: '黄', class: 'bg-yellow' },
+            { name: '绿', class: 'bg-green' },
+            { name: '蓝', class: 'bg-blue' },
+            { name: '紫', class: 'bg-purple' }
+        ];
+
+        const SPECIALS = [
+            { name: '纸杯蛋糕', icon: '🧁' },
+            { name: '冰淇淋', icon: '🍦' },
+            { name: '星星糖', icon: '⭐' },
+            { name: '姜饼人', icon: '🍪' },
+            { name: '棒棒糖', icon: '🍭' },
+            { name: '雪糕', icon: '🧊' },
+            { name: '巧克力', icon: '🍫' }
+        ];
+
+        let deck = [];
+
+        function initDeck() {
+            deck = [];
+            // 构建标准牌组
+            COLORS.forEach(c => {
+                // 每个颜色：6张单色，4张双色
+                for (let i = 0; i < 6; i++) deck.push({ type: 'single', color: c });
+                for (let i = 0; i < 4; i++) deck.push({ type: 'double', color: c });
+            });
+            // 加上您指定的特殊角色
+            SPECIALS.forEach(s => deck.push({ type: 'special', info: s }));
+
+            // 洗牌
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+
+            document.getElementById('total').innerText = deck.length;
+            updateCount();
+        }
+
+        function drawCard() {
+            if (deck.length === 0) {
+                alert("牌抽完了！点击确定重新洗牌。");
+                resetGame();
+                return;
+            }
+
+            const card = deck.pop();
+            const display = document.getElementById('content');
+            updateCount();
+
+            if (card.type === 'single') {
+                display.innerHTML = `<div class="square ${card.color.class}"></div>`;
+            } else if (card.type === 'double') {
+                display.innerHTML = `
+                <div class="double-gap">
+                    <div class="square ${card.color.class}"></div>
+                    <div class="square ${card.color.class}"></div>
+                </div>`;
+            } else {
+                display.innerHTML = `
+                <div class="spec-icon">${card.info.icon}</div>
+                <div class="spec-name">${card.info.name}</div>`;
+            }
+        }
+
+        function updateCount() {
+            document.getElementById('count').innerText = deck.length;
+        }
+
+        function resetGame() {
+            initDeck();
+            document.getElementById('content').innerHTML = `
+            <div style="font-size: 70px;">✨</div>
+            <p style="color:#ff80ab; font-weight:bold; font-size: 20px;">洗牌成功！</p>`;
+        }
+
+        // 页面加载自动初始化
+        initDeck();
+    </script>
+
+</body>
+
+</html>
