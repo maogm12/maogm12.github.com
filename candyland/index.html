@@ -3,257 +3,361 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>糖果乐园抽牌器</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fff5f7;
-            --candy-red: #ff3333;
-            --candy-white: #ffffff;
+            /* 背景改为更干净的奶白色，防止偏色 */
+            --bg-color: #fffafc;
+            --card-bg: #ffffff;
+            --primary-pink: #ff80ab;
+            --accent-color: #f50057;
             --text-main: #5d4037;
         }
 
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-family: 'Fredoka One', 'PingFang SC', sans-serif;
             background-color: var(--bg-color);
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
-            touch-action: manipulation;
-            /* 优化移动端点击速度 */
+            padding-top: 60px;
+            /* 为顶部标题留空间 */
+            overflow: hidden;
         }
 
-        /* Candy Cane 标题 */
-        .candy-cane-title {
-            font-family: 'Mountains of Christmas', cursive;
-            font-size: 4rem;
-            margin: 10px 0;
-            background: repeating-linear-gradient(45deg,
-                    var(--candy-red),
-                    var(--candy-red) 12px,
-                    var(--candy-white) 12px,
-                    var(--candy-white) 24px);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.1));
-            animation: moveStripes 6s linear infinite;
-            background-size: 200% 200%;
+        /* --- 左上角设置按钮 --- */
+        .settings-gear {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 28px;
+            z-index: 10;
+            cursor: pointer;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
         }
 
-        @keyframes moveStripes {
-            from {
-                background-position: 0 0;
-            }
+        .settings-gear:active {
+            transform: rotate(90deg);
+        }
 
-            to {
-                background-position: 100% 100%;
-            }
+        /* --- 弹出菜单层 --- */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .menu-box {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            width: 80%;
+            max-width: 300px;
+            border: 4px solid var(--primary-pink);
+        }
+
+        .menu-title {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .menu-desc {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* --- 新的果冻泡泡标题 --- */
+        .jelly-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.2rem;
+            color: #fff;
+            margin: 0 0 15px 0;
+            /* 创建可爱的粉色描边和发光效果 */
+            text-shadow:
+                3px 3px 0px var(--primary-pink),
+                -3px -3px 0px var(--primary-pink),
+                3px -3px 0px var(--primary-pink),
+                -3px 3px 0px var(--primary-pink),
+                0 5px 15px rgba(255, 105, 180, 0.6);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* --- 卡牌主体优化 --- */
+        .card-area-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
         .card-box {
-            width: 280px;
-            height: 400px;
-            background: #ffffff;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(255, 182, 193, 0.4);
-            margin: 10px auto;
+            width: 260px;
+            height: 380px;
+            background: var(--card-bg);
+            border-radius: 35px;
+            /* 优化阴影：多层混合阴影，增强手机端的立体感和漂浮感 */
+            box-shadow:
+                0 10px 25px -5px rgba(255, 105, 180, 0.4),
+                0 5px 10px -5px rgba(0, 0, 0, 0.1),
+                inset 0 0 0 8px #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            border: 10px solid #fff;
             position: relative;
-            transition: transform 0.1s ease;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            border: 2px solid #fff0f5;
+            /* 微妙的边界定义 */
         }
 
         .card-box:active {
-            transform: scale(0.96);
+            transform: scale(0.97);
+            box-shadow: 0 5px 15px -5px rgba(255, 105, 180, 0.5);
         }
 
-        /* 颜色块样式 */
+        /* 内容样式 */
         .square {
-            width: 100px;
-            height: 100px;
-            border-radius: 18px;
-            border: 5px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .double-gap {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
-        /* 特殊角色 */
         .spec-icon {
-            font-size: 110px;
-            margin-bottom: 15px;
+            font-size: 100px;
+            margin-bottom: 10px;
             line-height: 1;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
         }
 
         .spec-name {
-            font-size: 32px;
-            font-weight: bold;
-            color: #ff4081;
+            font-size: 28px;
+            color: var(--accent-color);
         }
 
-        /* UI 按钮 */
-        .stats {
-            margin: 15px;
-            color: #888;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .btn-group {
+        /* 底部控制区 */
+        .bottom-controls {
+            width: 100%;
+            padding: 20px 0 40px 0;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            width: 200px;
+            align-items: center;
+            background: linear-gradient(to top, var(--bg-color) 20%, transparent);
         }
 
-        button {
-            padding: 15px;
-            font-size: 22px;
+        .stats {
+            margin-bottom: 15px;
+            color: #aaa;
+            font-size: 14px;
             font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .main-btn {
+            padding: 15px 50px;
+            font-size: 20px;
             border-radius: 50px;
             border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .draw-btn {
             background: linear-gradient(135deg, #ff80ab, #f50057);
             color: white;
+            box-shadow: 0 5px 15px rgba(245, 0, 87, 0.3);
+            font-family: 'Fredoka One', sans-serif;
+            letter-spacing: 1px;
         }
 
-        .reset-btn {
-            background: #bdbdbd;
+        .main-btn:active {
+            transform: translateY(2px);
+        }
+
+        .reset-confirm-btn {
+            background: var(--accent-color);
             color: white;
-            font-size: 14px;
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            margin-top: 15px;
+            font-family: inherit;
         }
 
-        /* 游戏颜色 */
+        .close-menu-btn {
+            background: transparent;
+            color: #888;
+            border: 2px solid #eee;
+            width: 100%;
+            padding: 10px;
+            border-radius: 50px;
+            margin-top: 10px;
+            font-family: inherit;
+        }
+
+        /* 颜色 */
         .bg-red {
-            background-color: #ff5252;
+            background: #ff5252;
         }
 
         .bg-orange {
-            background-color: #ffab40;
+            background: #ffab40;
         }
 
         .bg-yellow {
-            background-color: #ffd740;
+            background: #ffd740;
         }
 
         .bg-green {
-            background-color: #69f0ae;
+            background: #00e676;
         }
 
         .bg-blue {
-            background-color: #40c4ff;
+            background: #40c4ff;
         }
 
         .bg-purple {
-            background-color: #e040fb;
+            background: #d500f9;
         }
     </style>
 </head>
 
 <body>
 
-    <h1 class="candy-cane-title">Candy Land</h1>
+    <div class="settings-gear" onclick="toggleMenu()">⚙️</div>
 
-    <div class="card-box" id="main-display" onclick="drawCard()">
-        <div id="content">
-            <div style="font-size: 70px;">🎠</div>
-            <p style="color:#ff80ab; font-weight:bold; font-size: 20px;">点我抽牌</p>
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+        <div class="menu-box" onclick="event.stopPropagation()">
+            <h2 class="menu-title">设置</h2>
+            <p class="menu-desc">重新洗牌按钮藏在这里，<br>防止游戏时误触哦。</p>
+            <button class="reset-confirm-btn" onclick="resetGameAndClose()">🔄 确认重新洗牌</button>
+            <button class="close-menu-btn" onclick="toggleMenu()">返回游戏</button>
         </div>
     </div>
 
-    <div class="stats">
-        剩余卡牌：<span id="count">--</span> / <span id="total">--</span>
+    <h1 class="jelly-title">Candy Land</h1>
+
+    <div class="card-area-container">
+        <div class="card-box" id="main-display" onclick="drawCard()">
+            <div id="content">
+                <div style="font-size: 80px;">🍭</div>
+                <p style="color:var(--primary-pink); font-size: 22px;">点此抽牌</p>
+            </div>
+        </div>
     </div>
 
-    <div class="btn-group">
-        <button class="draw-btn" onclick="drawCard()">点击抽牌</button>
-        <button class="reset-btn" onclick="resetGame()">重新洗牌</button>
+    <div class="bottom-controls">
+        <div class="stats">
+            剩余卡牌：<span id="count">--</span> / <span id="total">--</span>
+        </div>
+        <button class="main-btn" onclick="drawCard()">抽一张！</button>
     </div>
 
     <script>
+        // 保持原有的数据结构不变
         const COLORS = [
-            { name: '红', class: 'bg-red' },
-            { name: '橙', class: 'bg-orange' },
-            { name: '黄', class: 'bg-yellow' },
-            { name: '绿', class: 'bg-green' },
-            { name: '蓝', class: 'bg-blue' },
-            { name: '紫', class: 'bg-purple' }
+            { name: '红', class: 'bg-red' }, { name: '橙', class: 'bg-orange' },
+            { name: '黄', class: 'bg-yellow' }, { name: '绿', class: 'bg-green' },
+            { name: '蓝', class: 'bg-blue' }, { name: '紫', class: 'bg-purple' }
         ];
-
         const SPECIALS = [
-            { name: '纸杯蛋糕', icon: '🧁' },
-            { name: '冰淇淋', icon: '🍦' },
-            { name: '星星糖', icon: '⭐' },
-            { name: '姜饼人', icon: '🍪' },
-            { name: '棒棒糖', icon: '🍭' },
-            { name: '雪糕', icon: '🧊' },
+            { name: '纸杯蛋糕', icon: '🧁' }, { name: '冰淇淋', icon: '🍦' },
+            { name: '星星糖', icon: '⭐' }, { name: '姜饼人', icon: '🍪' },
+            { name: '棒棒糖', icon: '🍭' }, { name: '雪糕', icon: '🧊' },
             { name: '巧克力', icon: '🍫' }
         ];
 
         let deck = [];
 
+        // 菜单控制
+        function toggleMenu() {
+            document.getElementById('menuOverlay').classList.toggle('active');
+        }
+
+        function resetGameAndClose() {
+            resetGame();
+            toggleMenu();
+        }
+
         function initDeck() {
             deck = [];
-            // 构建标准牌组
             COLORS.forEach(c => {
-                // 每个颜色：6张单色，4张双色
                 for (let i = 0; i < 6; i++) deck.push({ type: 'single', color: c });
                 for (let i = 0; i < 4; i++) deck.push({ type: 'double', color: c });
             });
-            // 加上您指定的特殊角色
             SPECIALS.forEach(s => deck.push({ type: 'special', info: s }));
-
-            // 洗牌
-            for (let i = deck.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [deck[i], deck[j]] = [deck[j], deck[i]];
-            }
-
+            shuffle(deck);
             document.getElementById('total').innerText = deck.length;
             updateCount();
         }
 
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
         function drawCard() {
             if (deck.length === 0) {
-                alert("牌抽完了！点击确定重新洗牌。");
-                resetGame();
+                // 牌抽完时，自动弹出菜单提示洗牌
+                toggleMenu();
+                alert("牌堆已空！请在设置菜单中重新洗牌。");
                 return;
             }
-
             const card = deck.pop();
-            const display = document.getElementById('content');
+            renderCard(card);
             updateCount();
+        }
 
+        function renderCard(card) {
+            const display = document.getElementById('content');
+            let html = '';
             if (card.type === 'single') {
-                display.innerHTML = `<div class="square ${card.color.class}"></div>`;
+                html = `<div class="square ${card.color.class}"></div>`;
             } else if (card.type === 'double') {
-                display.innerHTML = `
-                <div class="double-gap">
-                    <div class="square ${card.color.class}"></div>
-                    <div class="square ${card.color.class}"></div>
-                </div>`;
+                html = `<div class="double-gap"><div class="square ${card.color.class}"></div><div class="square ${card.color.class}"></div></div>`;
             } else {
-                display.innerHTML = `
-                <div class="spec-icon">${card.info.icon}</div>
-                <div class="spec-name">${card.info.name}</div>`;
+                html = `<div class="spec-icon">${card.info.icon}</div><div class="spec-name">${card.info.name}</div>`;
             }
+            display.innerHTML = html;
         }
 
         function updateCount() {
@@ -264,10 +368,12 @@
             initDeck();
             document.getElementById('content').innerHTML = `
             <div style="font-size: 70px;">✨</div>
-            <p style="color:#ff80ab; font-weight:bold; font-size: 20px;">洗牌成功！</p>`;
+            <p style="color:var(--primary-pink); font-size: 20px;">已重新洗牌</p>`;
         }
 
-        // 页面加载自动初始化
+        // 禁止双击缩放
+        document.addEventListener('dblclick', function (event) { event.preventDefault(); }, { passive: false });
+
         initDeck();
     </script>
 
